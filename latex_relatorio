@@ -1,0 +1,907 @@
+\documentclass[12pt,a4paper]{article}
+
+% --------------------------------------------------
+% Pacotes
+% --------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{titlesec}
+
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+
+\sisetup{
+    output-decimal-marker = {,},
+    per-mode = symbol
+}
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.1cm}
+
+% Compactação vertical sem alterar o tamanho das figuras
+\AtBeginDocument{
+    \setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+    \setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+    \setlength{\abovedisplayshortskip}{2pt plus 1pt minus 1pt}
+    \setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+    \setlength{\jot}{2pt}
+}
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\subsection}{0pt}{7pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{5pt}{2pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+
+    {\large UNIVERSIDADE FEDERAL DE MINAS GERAIS}\\[0.3cm]
+    {\large ESCOLA DE ENGENHARIA}\\[0.3cm]
+
+    {\Large \textbf{Teoria da Decisão}}\\[1cm]
+
+    {\LARGE \textbf{Entrega #1}}\\[0.4cm]
+
+    {\Large \textbf{MONO-OBJETIVO}}\\[2.5cm]
+
+    \begin{flushleft}
+        \textbf{Integrantes:}\\
+        Gustavo Madureira Tavares de Melo -- 2022055629\\
+        Luisa Marques Laboissiere -- \\
+        Outros membros do grupo -- 
+    \end{flushleft}
+
+    \vfill
+
+    Belo Horizonte\\
+    2026
+\end{titlepage}
+
+% ============================================================
+% FORMULAÇÃO DO PROBLEMA
+% ============================================================
+
+\section{Formulação do Problema}
+
+\subsection{Descrição do problema}
+
+O problema consiste na definição da composição de dez pilhas de minério
+utilizadas para alimentar dois equipamentos de sinterização, denominados
+Sinter 1 e Sinter 2. Cada equipamento é abastecido por um conjunto de cinco
+pilhas, sendo que todas as pilhas associadas ao mesmo equipamento compartilham
+os mesmos requisitos de qualidade.
+
+Cada pilha deve atingir uma massa previamente especificada e é formada pela
+combinação de diferentes minérios disponíveis no pátio da usina. Os minérios
+possuem diferentes custos de aquisição e diferentes teores de ferro total
+(FeT), sílica ($SiO_2$) e alumina ($Al_2O_3$).
+
+O transporte dos minérios é realizado por caminhões com capacidade fixa de
+$2$ kt. Portanto, a quantidade de minério destinada a cada pilha deve ser um
+múltiplo da capacidade de um caminhão.
+
+Além disso, existem restrições logísticas que determinam quais minérios podem
+ser utilizados em cada equipamento de sinterização, bem como limites mínimos
+e máximos de disponibilidade para cada minério.
+
+O problema possui três objetivos, que nesta primeira etapa são considerados
+separadamente:
+
+\begin{enumerate}
+    \item minimizar o custo total de aquisição dos minérios;
+    \item minimizar a soma dos desvios quadráticos dos teores de $SiO_2$
+    em relação ao valor-alvo de cada equipamento;
+    \item minimizar a soma dos desvios quadráticos dos teores de $Al_2O_3$
+    em relação ao valor-alvo de cada equipamento.
+\end{enumerate}
+
+Dessa forma, são considerados três problemas mono-objetivo com o mesmo
+conjunto de variáveis e restrições, modificando-se apenas a função objetivo
+otimizada em cada execução.
+
+
+% ============================================================
+% CONJUNTOS
+% ============================================================
+
+\subsection{Conjuntos e índices}
+
+Sejam definidos os seguintes conjuntos:
+
+\begin{itemize}
+    \item $I = \{1,\ldots,n\}$: conjunto dos minérios disponíveis;
+    \item $P = \{1,\ldots,10\}$: conjunto das pilhas;
+    \item $G = \{1,2\}$: conjunto dos equipamentos de sinterização.
+\end{itemize}
+
+No conjunto de dados utilizado neste trabalho, existem vinte minérios,
+portanto:
+
+\begin{equation}
+    I = \{1,\ldots,20\}.
+\end{equation}
+
+As pilhas são divididas entre os equipamentos da seguinte forma:
+
+\begin{equation}
+    P_1 = \{1,2,3,4,5\},
+\end{equation}
+
+\begin{equation}
+    P_2 = \{6,7,8,9,10\}.
+\end{equation}
+
+Define-se ainda $g(p)$ como o equipamento de sinterização associado à
+pilha $p$.
+
+
+% ============================================================
+% PARÂMETROS
+% ============================================================
+
+\subsection{Parâmetros}
+
+Para cada minério $i \in I$, são considerados os seguintes parâmetros:
+
+\begin{itemize}
+
+    \item $c_i$: custo de aquisição do minério $i$, em R\$/t;
+
+    \item $s_i$: teor de $SiO_2$ do minério $i$, em \%;
+
+    \item $a_i$: teor de $Al_2O_3$ do minério $i$, em \%;
+
+    \item $f_i$: teor de ferro total (FeT) do minério $i$, em \%;
+
+    \item $D_i^{\min}$: disponibilidade mínima do minério $i$,
+    em número de caminhões;
+
+    \item $D_i^{\max}$: disponibilidade máxima do minério $i$,
+    em número de caminhões.
+
+\end{itemize}
+
+Define-se ainda o parâmetro binário:
+
+\begin{equation}
+e_{ig} =
+\begin{cases}
+1, & \text{se o minério $i$ pode alimentar o equipamento $g$},\\
+0, & \text{caso contrário}.
+\end{cases}
+\end{equation}
+
+Para cada pilha $p \in P$, define-se:
+
+\begin{equation}
+    M_p = \text{massa final requerida para a pilha $p$, em kt}.
+\end{equation}
+
+A capacidade fixa de cada caminhão é dada por:
+
+\begin{equation}
+    C = 2 \text{ kt}.
+\end{equation}
+
+Como o custo dos minérios é expresso em R\$/t, também é utilizada a
+capacidade em toneladas:
+
+\begin{equation}
+    C_t = 2000 \text{ t}.
+\end{equation}
+
+Para cada equipamento $g \in G$, são definidos os limites e valores-alvo
+de qualidade:
+
+\begin{itemize}
+
+    \item $L_g^{Si}$: limite mínimo de $SiO_2$;
+
+    \item $U_g^{Si}$: limite máximo de $SiO_2$;
+
+    \item $T_g^{Si}$: valor-alvo de $SiO_2$;
+
+    \item $L_g^{Al}$: limite mínimo de $Al_2O_3$;
+
+    \item $U_g^{Al}$: limite máximo de $Al_2O_3$;
+
+    \item $T_g^{Al}$: valor-alvo de $Al_2O_3$.
+
+\end{itemize}
+
+
+% ============================================================
+% VARIÁVEL
+% ============================================================
+
+\subsection{Variável de decisão}
+
+A variável de decisão é definida como:
+
+\begin{equation}
+    x_{ip} \in \mathbb{Z}_{\geq 0},
+\end{equation}
+
+onde $x_{ip}$ representa o número de caminhões do minério $i$ destinados
+à pilha $p$.
+
+Como cada caminhão possui capacidade de $2$ kt, a massa do minério $i$
+utilizada na pilha $p$ é:
+
+\begin{equation}
+    2x_{ip} \text{ kt}.
+\end{equation}
+
+
+% ============================================================
+% QUALIDADE DAS PILHAS
+% ============================================================
+
+\subsection{Cálculo da qualidade das pilhas}
+
+O teor de $SiO_2$ resultante na pilha $p$ é calculado pela média ponderada
+dos minérios utilizados:
+
+\begin{equation}
+Si_p =
+\frac{
+C\sum_{i\in I}s_i x_{ip}
+}{
+M_p
+}.
+\end{equation}
+
+Como $C=2$ kt:
+
+\begin{equation}
+\boxed{
+Si_p =
+\frac{
+2\sum_{i\in I}s_i x_{ip}
+}{
+M_p
+}
+}
+\end{equation}
+
+De forma análoga, o teor de $Al_2O_3$ é dado por:
+
+\begin{equation}
+\boxed{
+Al_p =
+\frac{
+2\sum_{i\in I}a_i x_{ip}
+}{
+M_p
+}
+}
+\end{equation}
+
+
+% ============================================================
+% RESTRIÇÕES
+% ============================================================
+
+\subsection{Restrições}
+
+\subsubsection{Atendimento da massa das pilhas}
+
+Cada pilha deve atingir exatamente sua massa especificada:
+
+\begin{equation}
+\boxed{
+C\sum_{i\in I}x_{ip}=M_p,
+\qquad
+\forall p\in P
+}
+\end{equation}
+
+ou, considerando $C=2$ kt:
+
+\begin{equation}
+\boxed{
+2\sum_{i\in I}x_{ip}=M_p,
+\qquad
+\forall p\in P.
+}
+\end{equation}
+
+
+\subsubsection{Limites de $SiO_2$}
+
+O teor de $SiO_2$ de cada pilha deve estar dentro dos limites definidos
+para o equipamento ao qual a pilha pertence:
+
+\begin{equation}
+\boxed{
+L_{g(p)}^{Si}
+\leq
+\frac{
+2\sum_{i\in I}s_i x_{ip}
+}{
+M_p
+}
+\leq
+U_{g(p)}^{Si},
+\qquad
+\forall p\in P.
+}
+\end{equation}
+
+Uma vez que $M_p$ é constante, essa restrição pode ser escrita como:
+
+\begin{equation}
+\boxed{
+L_{g(p)}^{Si} M_p
+\leq
+2\sum_{i\in I}s_i x_{ip}
+\leq
+U_{g(p)}^{Si} M_p,
+\qquad
+\forall p\in P.
+}
+\end{equation}
+
+
+\subsubsection{Limites de $Al_2O_3$}
+
+Analogamente:
+
+\begin{equation}
+\boxed{
+L_{g(p)}^{Al}
+\leq
+\frac{
+2\sum_{i\in I}a_i x_{ip}
+}{
+M_p
+}
+\leq
+U_{g(p)}^{Al},
+\qquad
+\forall p\in P.
+}
+\end{equation}
+
+ou:
+
+\begin{equation}
+\boxed{
+L_{g(p)}^{Al}M_p
+\leq
+2\sum_{i\in I}a_i x_{ip}
+\leq
+U_{g(p)}^{Al}M_p,
+\qquad
+\forall p\in P.
+}
+\end{equation}
+
+
+\subsubsection{Compatibilidade entre minério e equipamento}
+
+Cada minério pode ser utilizado apenas nos equipamentos para os quais
+é considerado elegível. Dessa forma:
+
+\begin{equation}
+\boxed{
+x_{ip}
+\leq
+D_i^{\max}e_{i,g(p)},
+\qquad
+\forall i\in I,\ \forall p\in P.
+}
+\end{equation}
+
+Caso $e_{i,g(p)}=0$, tem-se necessariamente:
+
+\begin{equation}
+    x_{ip}=0.
+\end{equation}
+
+
+\subsubsection{Disponibilidade dos minérios}
+
+A utilização total de cada minério deve respeitar seus limites mínimo
+e máximo de disponibilidade:
+
+\begin{equation}
+\boxed{
+D_i^{\min}
+\leq
+\sum_{p\in P}x_{ip}
+\leq
+D_i^{\max},
+\qquad
+\forall i\in I.
+}
+\end{equation}
+
+
+\subsubsection{Integralidade}
+
+Como cada unidade representa um caminhão completo:
+
+\begin{equation}
+\boxed{
+x_{ip}\in\mathbb{Z}_{\geq0},
+\qquad
+\forall i\in I,\ \forall p\in P.
+}
+\end{equation}
+
+
+% ============================================================
+% OBJETIVOS
+% ============================================================
+
+\subsection{Funções objetivo}
+
+\subsubsection{Minimização do custo total}
+
+A primeira função objetivo considera o custo total de aquisição dos minérios.
+
+Como $c_i$ é expresso em R\$/t e cada caminhão possui $2000$ toneladas,
+a função objetivo é:
+
+\begin{equation}
+\boxed{
+f_1(x)=
+\sum_{p\in P}
+\sum_{i\in I}
+2000\,c_i x_{ip}
+}
+\end{equation}
+
+O primeiro problema mono-objetivo é, portanto:
+
+\begin{equation}
+\boxed{
+\min_{x\in X} f_1(x),
+}
+\end{equation}
+
+onde $X$ representa o conjunto das soluções que satisfazem as restrições
+do problema.
+
+
+\subsubsection{Minimização do desvio de $SiO_2$}
+
+Para cada pilha, calcula-se a diferença entre seu teor de $SiO_2$ e o
+valor-alvo definido para o respectivo equipamento.
+
+A segunda função objetivo é definida como:
+
+\begin{equation}
+\boxed{
+f_2(x)=
+\sum_{p\in P}
+\left(
+Si_p-T_{g(p)}^{Si}
+\right)^2
+}
+\end{equation}
+
+ou, substituindo $Si_p$:
+
+\begin{equation}
+\boxed{
+f_2(x)=
+\sum_{p\in P}
+\left(
+\frac{
+2\sum_{i\in I}s_i x_{ip}
+}{
+M_p
+}
+-
+T_{g(p)}^{Si}
+\right)^2.
+}
+\end{equation}
+
+O segundo problema mono-objetivo é:
+
+\begin{equation}
+\boxed{
+\min_{x\in X} f_2(x).
+}
+\end{equation}
+
+
+\subsubsection{Minimização do desvio de $Al_2O_3$}
+
+De forma análoga, a terceira função objetivo é:
+
+\begin{equation}
+\boxed{
+f_3(x)=
+\sum_{p\in P}
+\left(
+Al_p-T_{g(p)}^{Al}
+\right)^2
+}
+\end{equation}
+
+ou:
+
+\begin{equation}
+\boxed{
+f_3(x)=
+\sum_{p\in P}
+\left(
+\frac{
+2\sum_{i\in I}a_i x_{ip}
+}{
+M_p
+}
+-
+T_{g(p)}^{Al}
+\right)^2.
+}
+\end{equation}
+
+O terceiro problema mono-objetivo é:
+
+\begin{equation}
+\boxed{
+\min_{x\in X} f_3(x).
+}
+\end{equation}
+
+
+% ============================================================
+% CONJUNTO VIÁVEL
+% ============================================================
+
+\subsection{Síntese da formulação}
+
+Os três problemas considerados nesta etapa compartilham o mesmo conjunto
+viável:
+
+\begin{equation}
+X =
+\left\{
+x :
+\begin{array}{l}
+2\displaystyle\sum_{i\in I}x_{ip}=M_p,
+\quad \forall p\in P,
+\\[3mm]
+
+L_{g(p)}^{Si}
+\leq
+\dfrac{
+2\displaystyle\sum_{i\in I}s_i x_{ip}
+}{
+M_p
+}
+\leq
+U_{g(p)}^{Si},
+\quad \forall p\in P,
+\\[4mm]
+
+L_{g(p)}^{Al}
+\leq
+\dfrac{
+2\displaystyle\sum_{i\in I}a_i x_{ip}
+}{
+M_p
+}
+\leq
+U_{g(p)}^{Al},
+\quad \forall p\in P,
+\\[4mm]
+
+D_i^{\min}
+\leq
+\displaystyle\sum_{p\in P}x_{ip}
+\leq
+D_i^{\max},
+\quad \forall i\in I,
+\\[3mm]
+
+x_{ip}
+\leq
+D_i^{\max}e_{i,g(p)},
+\quad \forall i\in I,\forall p\in P,
+\\[3mm]
+
+x_{ip}\in\mathbb{Z}_{\geq0}.
+\end{array}
+\right\}.
+\end{equation}
+
+Assim, os três problemas resolvidos nesta etapa são:
+
+\begin{align}
+P_1 &: \min_{x\in X} f_1(x),\\
+P_2 &: \min_{x\in X} f_2(x),\\
+P_3 &: \min_{x\in X} f_3(x).
+\end{align}
+
+
+% ============================================================
+% OBSERVAÇÃO SOBRE FET
+% ============================================================
+
+\subsection{Tratamento do teor de ferro total}
+
+Embora o teor de ferro total (FeT) esteja presente nos dados de entrada,
+ele não é considerado como uma restrição ativa nesta etapa.
+
+Os limites fornecidos para FeT são de $0\%$ e $100\%$, de forma que
+qualquer combinação dos minérios disponíveis satisfaz automaticamente
+esses valores. Consequentemente, o FeT não influencia a otimização
+realizada neste estudo.
+
+
+% ============================================================
+% REPRESENTAÇÃO COMPUTACIONAL
+% ============================================================
+
+\section{Representação Computacional da Solução}
+
+Para a implementação da metaheurística, optou-se por representar cada
+pilha como um vetor de minérios, no qual cada posição corresponde a um
+caminhão de $2$ kt.
+
+Dessa forma, uma pilha de massa $M_p$ é representada por um vetor com:
+
+\begin{equation}
+n_p =
+\frac{M_p}{2}
+\end{equation}
+
+posições.
+
+Por exemplo, uma pilha com massa total de $20$ kt contém dez posições.
+Uma possível representação é:
+
+\begin{equation}
+P_1 =
+[M_4,M_4,M_{10},M_{10},M_{11},
+M_{14},M_{14},M_{14},M_{14},M_{14}].
+\end{equation}
+
+Cada elemento do vetor identifica o minério transportado por um caminhão.
+Essa representação foi escolhida por permitir que as estruturas de
+vizinhança sejam implementadas diretamente por meio da alteração ou troca
+das posições dos vetores.
+
+
+% ============================================================
+% SOLUÇÃO INICIAL
+% ============================================================
+
+\section{Heurística Construtiva da Solução Inicial}
+
+A solução inicial é construída utilizando uma heurística gulosa baseada
+no custo dos minérios.
+
+O procedimento possui dois objetivos principais:
+
+\begin{enumerate}
+
+    \item garantir inicialmente o atendimento das restrições estruturais
+    relacionadas à massa, compatibilidade e disponibilidade dos minérios;
+
+    \item produzir rapidamente uma solução que possa ser posteriormente
+    aprimorada pela metaheurística VNS/GVNS.
+
+\end{enumerate}
+
+Nesta etapa, não é exigido que a solução inicial respeite os limites de
+qualidade de $SiO_2$ e $Al_2O_3$. Caso ocorram violações, estas serão
+tratadas posteriormente pela estratégia de busca.
+
+
+\subsection{Etapas da construção}
+
+A heurística é dividida em duas etapas.
+
+\subsubsection{Atendimento das disponibilidades mínimas}
+
+Inicialmente, são identificados todos os minérios que possuem
+disponibilidade mínima obrigatória.
+
+Para cada minério $i$, são adicionados $D_i^{\min}$ caminhões às pilhas,
+respeitando:
+
+\begin{itemize}
+
+    \item a compatibilidade do minério com o equipamento;
+
+    \item a capacidade máxima da pilha.
+
+\end{itemize}
+
+A utilização de cada minério é atualizada após cada inserção.
+
+
+\subsubsection{Preenchimento das pilhas}
+
+Após o atendimento das disponibilidades mínimas, as pilhas são percorridas
+sequencialmente.
+
+Para cada pilha, são identificados os minérios compatíveis com o
+equipamento correspondente e esses minérios são ordenados em ordem
+crescente de custo.
+
+Enquanto houver posições disponíveis na pilha, seleciona-se o minério
+compatível de menor custo que ainda possua disponibilidade.
+
+O procedimento é repetido até que todas as pilhas atinjam suas respectivas
+massas.
+
+
+% ============================================================
+% PSEUDOCÓDIGO
+% ============================================================
+
+\subsection{Pseudocódigo da heurística construtiva}
+
+O Algoritmo~\ref{alg:construtiva} apresenta o procedimento utilizado
+para construir a solução inicial.
+
+\begin{algorithm}[H]
+
+\caption{Heurística construtiva da solução inicial}
+\label{alg:construtiva}
+
+\begin{algorithmic}[1]
+
+\State Criar todas as pilhas inicialmente vazias
+\State Inicializar $uso_i \gets 0$, $\forall i\in I$
+
+\For{cada minério $i\in I$}
+
+    \For{$k=1$ até $D_i^{\min}$}
+
+        \State Encontrar uma pilha $p$ com espaço disponível
+        \Statex \hspace{\algorithmicindent}
+        e tal que $e_{i,g(p)}=1$
+
+        \State Inserir o minério $i$ na pilha $p$
+
+        \State $uso_i \gets uso_i + 1$
+
+    \EndFor
+
+\EndFor
+
+\For{cada pilha $p\in P$}
+
+    \State Construir o conjunto de minérios elegíveis para $g(p)$
+
+    \State Ordenar os minérios elegíveis por custo crescente
+
+    \While{$|P_p| < M_p/2$}
+
+        \State Selecionar o minério elegível $i$ de menor custo
+
+        \Statex \hspace{\algorithmicindent}
+        tal que $uso_i < D_i^{\max}$
+
+        \State Inserir $i$ na pilha $p$
+
+        \State $uso_i \gets uso_i + 1$
+
+    \EndWhile
+
+\EndFor
+
+\State \Return solução construída
+
+\end{algorithmic}
+
+\end{algorithm}
+
+
+% ============================================================
+% VIABILIDADE
+% ============================================================
+
+\section{Avaliação da Solução Inicial}
+
+Para facilitar o tratamento das soluções durante a metaheurística,
+a viabilidade foi dividida em duas categorias: viabilidade estrutural
+e viabilidade de qualidade.
+
+
+\subsection{Viabilidade estrutural}
+
+Uma solução é considerada estruturalmente viável quando satisfaz
+simultaneamente:
+
+\begin{enumerate}
+
+    \item a massa exata de cada pilha;
+
+    \item a compatibilidade entre minério e equipamento;
+
+    \item a disponibilidade mínima de cada minério;
+
+    \item a disponibilidade máxima de cada minério.
+
+\end{enumerate}
+
+A heurística construtiva foi desenvolvida de forma a preservar essas
+restrições durante a construção da solução.
+
+
+\subsection{Viabilidade de qualidade}
+
+Separadamente, verifica-se se cada pilha satisfaz os limites de $SiO_2$
+e $Al_2O_3$ definidos para seu respectivo equipamento.
+
+Para $SiO_2$, verifica-se:
+
+\begin{equation}
+L_{g(p)}^{Si}
+\leq
+Si_p
+\leq
+U_{g(p)}^{Si}.
+\end{equation}
+
+Para $Al_2O_3$:
+
+\begin{equation}
+L_{g(p)}^{Al}
+\leq
+Al_p
+\leq
+U_{g(p)}^{Al}.
+\end{equation}
+
+A solução inicial pode apresentar violações dessas restrições. Essa
+possibilidade é prevista no procedimento proposto, uma vez que a
+heurística construtiva prioriza inicialmente a obtenção de uma solução
+estruturalmente consistente.
+
+O tratamento das violações de qualidade será incorporado à estratégia
+de busca da metaheurística VNS/GVNS.
+
+
+% ============================================================
+% AVALIAÇÃO DOS OBJETIVOS
+% ============================================================
+
+\section{Avaliação das Funções Objetivo}
+
+Após a construção da solução inicial, são calculados os três valores de
+função objetivo:
+
+\begin{equation}
+f_1(x),
+\qquad
+f_2(x),
+\qquad
+f_3(x).
+\end{equation}
+
+O primeiro representa o custo total da composição, enquanto os demais
+representam a dispersão dos valores de $SiO_2$ e $Al_2O_3$ em relação
+aos respectivos alvos.
+
+Esses valores são utilizados como referência inicial para a etapa de
+busca. Em cada execução mono-objetivo, a VNS/GVNS utilizará uma das
+funções $f_1$, $f_2$ ou $f_3$ como critério principal para avaliar
+a melhoria das soluções candidatas.
+
+\end{document}
