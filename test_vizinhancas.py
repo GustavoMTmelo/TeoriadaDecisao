@@ -2,8 +2,6 @@ import copy
 import random
 from collections import Counter
 
-import pytest
-
 from sol_inicial import (
     contar_uso_minerios,
     eh_compativel,
