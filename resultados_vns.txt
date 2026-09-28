@@ -1,0 +1,61 @@
+
+============================================================
+EXPERIMENTO — F1
+============================================================
+  Execução 1/5  (seed=42) ... valor = 60680000.000000  (16.3s)
+  Execução 2/5  (seed=123) ... valor = 60440000.000000  (16.0s)
+  Execução 3/5  (seed=456) ... valor = 60660000.000000  (17.1s)
+  Execução 4/5  (seed=789) ... valor = 60300000.000000  (17.5s)
+  Execução 5/5  (seed=1011) ... valor = 60480000.000000  (16.6s)
+
+  Estatísticas (F1):
+    Mínimo:        60300000.000000
+    Média:         60512000.000000
+    Desvio padrão: 159122.594247
+    Máximo:        60680000.000000
+    Qualidade viável: True
+  Salvo: convergencia_f1.png
+  Salvo: melhor_solucao_f1.png
+
+============================================================
+EXPERIMENTO — F2
+============================================================
+  Execução 1/5  (seed=42) ... valor = 2.373029  (16.7s)
+  Execução 2/5  (seed=123) ... valor = 2.373828  (17.8s)
+  Execução 3/5  (seed=456) ... valor = 2.372757  (24.8s)
+  Execução 4/5  (seed=789) ... valor = 2.373927  (18.7s)
+  Execução 5/5  (seed=1011) ... valor = 2.373844  (23.8s)
+
+  Estatísticas (F2):
+    Mínimo:        2.372757
+    Média:         2.373477
+    Desvio padrão: 0.000543
+    Máximo:        2.373927
+    Qualidade viável: True
+  Salvo: convergencia_f2.png
+  Salvo: melhor_solucao_f2.png
+
+============================================================
+EXPERIMENTO — F3
+============================================================
+  Execução 1/5  (seed=42) ... valor = 1.453254  (24.7s)
+  Execução 2/5  (seed=123) ... valor = 1.450865  (26.9s)
+  Execução 3/5  (seed=456) ... valor = 1.452281  (27.0s)
+  Execução 4/5  (seed=789) ... valor = 1.436169  (27.9s)
+  Execução 5/5  (seed=1011) ... valor = 1.443334  (28.7s)
+
+  Estatísticas (F3):
+    Mínimo:        1.436169
+    Média:         1.447180
+    Desvio padrão: 0.007289
+    Máximo:        1.453254
+    Qualidade viável: True
+  Salvo: convergencia_f3.png
+  Salvo: melhor_solucao_f3.png
+
+============================================================
+RESUMO FINAL
+============================================================
+  F1  min=60300000.000000  media=60512000.000000  dp=159122.594247  max=60680000.000000
+  F2  min=2.372757  media=2.373477  dp=0.000543  max=2.373927
+  F3  min=1.436169  media=1.447180  dp=0.007289  max=1.453254
