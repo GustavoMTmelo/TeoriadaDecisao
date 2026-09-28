@@ -57,7 +57,7 @@
 
     {\Large \textbf{Teoria da Decisão}}\\[1cm]
 
-    {\LARGE \textbf{Entrega #1}}\\[0.4cm]
+    {\LARGE \textbf{Entrega \#1}}\\[0.4cm]
 
     {\Large \textbf{MONO-OBJETIVO}}\\[2.5cm]
 
@@ -65,8 +65,10 @@
         \textbf{Integrantes:}\\
         Felipe Augusto Cruz Sousa -- 2019430481\\
         Gustavo Madureira Tavares de Melo -- 2022055629\\
+        Henry Diniz Sepini Rodrigues Amaral - 2022055653\\
         Lucas Rodrigues Prosperi Ayala -- 2021019580\\
-        Luisa Marques Laboissiere -- \textit{(matrícula)}
+        Luisa Marques Laboissiere -- 2022102856\\
+        Thales Gregory Vasconcelos Santos - 2018019630
     \end{flushleft}
 
     \vfill
@@ -921,39 +923,59 @@ interno por \textit{Variable Neighborhood Descent} (VND).
 
 \subsection{Tratamento de inviabilidade}
 
-Adotou-se uma abordagem mista para o tratamento de inviabilidade:
+A estratégia adotada distingue dois tipos de inviabilidade, cada um tratado de
+maneira diferente.
 
-\begin{itemize}
-    \item \textbf{Restrições estruturais} (massa das pilhas,
-    compatibilidade, disponibilidade mínima/máxima): qualquer movimento
-    que as viole é \emph{rejeitado}. Dessa forma, todas as soluções
-    exploradas pela busca são estruturalmente viáveis por construção.
+\textbf{Restrições estruturais} (massa das pilhas, compatibilidade entre minério e
+equipamento, disponibilidade mínima e máxima de cada minério): qualquer movimento
+que as viole é \emph{rejeitado}. Essa escolha decorre da natureza física dessas restrições:
+a massa de cada pilha é determinada logisticamente pelo número de caminhões alocados, a
+elegibilidade de minérios é um critério operacional fixo do processo de sinterização e os
+limites de disponibilidade refletem contratos de fornecimento. Preservar essas restrições
+por construção simplifica a avaliação de cada candidato e elimina a necessidade de reparo
+posterior.
 
-    \item \textbf{Restrições de qualidade} ($SiO_2$ e $Al_2O_3$ fora
-    dos limites): tratadas por \emph{penalização}. A função de fitness é:
-    \begin{equation}
-        \phi(x) = f(x) + \lambda \cdot \text{pen}(x),
-    \end{equation}
-    onde
-    \begin{equation}
-        \text{pen}(x) =
-        \sum_{p \in P}
-        \left[
-            \max\!\left(0,\, L_{g(p)}^{Si} - Si_p\right)^2
-          + \max\!\left(0,\, Si_p - U_{g(p)}^{Si}\right)^2
-          + \max\!\left(0,\, L_{g(p)}^{Al} - Al_p\right)^2
-          + \max\!\left(0,\, Al_p - U_{g(p)}^{Al}\right)^2
-        \right].
-    \end{equation}
+\textbf{Restrições de qualidade} ($SiO_2$ e $Al_2O_3$ fora dos limites): tratadas por
+\emph{penalização}, permitindo que a busca explore temporariamente regiões de inviabilidade
+de qualidade. Isso é desejável porque certas melhorias exigem atravessar composições
+intermediárias que violam momentaneamente os limites, em particular quando múltiplas pilhas
+precisam ser ajustadas em conjunto. A função de \textit{fitness} utilizada é:
+\begin{equation}
+    \phi(x) = f(x) + \lambda \cdot \text{pen}(x),
+\end{equation}
+onde
+\begin{equation}
+\begin{aligned}
+    \text{pen}(x) = \sum_{p \in P} \bigl[{}
+        &\max\!\left(0,\, L_{g(p)}^{Si} - Si_p\right)^2
+       + \max\!\left(0,\, Si_p - U_{g(p)}^{Si}\right)^2 \\
+        &+ \max\!\left(0,\, L_{g(p)}^{Al} - Al_p\right)^2
+       + \max\!\left(0,\, Al_p - U_{g(p)}^{Al}\right)^2
+    \bigr].
+\end{aligned}
+\end{equation}
 
-    Os pesos de penalidade utilizados foram:
-    \begin{equation}
-        \lambda_{f_1} = 10^{12}, \qquad
-        \lambda_{f_2} = \lambda_{f_3} = 10^{4}.
-    \end{equation}
-    Esses valores foram calibrados para garantir que qualquer solução
-    com violação de qualidade seja sempre dominada por soluções viáveis.
-\end{itemize}
+Os pesos de penalidade foram definidos levando em conta a escala de cada função objetivo:
+\begin{equation}
+    \lambda_{f_1} = 10^{12}, \qquad
+    \lambda_{f_2} = \lambda_{f_3} = 10^{4}.
+\end{equation}
+
+Para $f_1$, expresso em R\$, com magnitude da ordem de $6 \times 10^7$ R\$, uma violação
+de qualidade da ordem de $10^{-4}\ \%^2$ gera um custo de penalidade de $10^8$ R\$,
+superior ao melhor $f_1$ viável encontrado ($\approx 6{,}03 \times 10^7$ R\$). Com esse
+peso, soluções inviáveis de qualidade recebem um \textit{fitness} substancialmente pior
+que soluções viáveis competitivas, tornando a penalidade efetivamente equivalente a uma
+rejeição para esse objetivo.
+
+Para $f_2$ e $f_3$, que têm magnitude na ordem de $1$--$10$, uma violação típica dos
+limites de qualidade (por exemplo, $0{,}1\ \%^2$) gera uma penalidade de $10^3$, muito
+superior aos melhores valores viáveis encontrados ($\approx 2{,}37$ e $\approx 1{,}44$,
+respectivamente). Isso desencoraja fortemente soluções inviáveis, sem impedir que a busca
+atravesse momentaneamente regiões de leve inviabilidade.
+
+Em todos os casos, a melhor solução reportada ao final de cada execução é obrigatoriamente
+viável quanto à qualidade.
 
 
 \subsection{Estruturas de vizinhança}
@@ -963,18 +985,48 @@ quanto no VND:
 
 \begin{itemize}
     \item $N_1$: substitui \emph{um} caminhão numa pilha por outro
-    minério compatível com o equipamento correspondente.
+    minério compatível com o equipamento correspondente. Sorteia-se
+    aleatoriamente uma pilha, uma posição na composição e um novo minério
+    diferente do atual, desde que elegível para o equipamento da pilha.
 
-    \item $N_2$: troca um caminhão entre duas pilhas \emph{distintas},
-    preservando a contagem total de cada minério.
+    \item $N_2$: troca um caminhão entre duas pilhas \emph{distintas}.
+    Dadas as pilhas $p_1$ e $p_2$, sorteia-se aleatoriamente uma posição
+    em cada uma. O movimento é executado somente quando há
+    \emph{compatibilidade cruzada}: o minério retirado de $p_1$ deve ser
+    elegível para o equipamento de $p_2$, e o minério retirado de $p_2$
+    deve ser elegível para o equipamento de $p_1$. Movimentos que não
+    atendam a essa condição são descartados. Quando válido, o movimento
+    preserva a massa de ambas as pilhas e a contagem global de cada minério.
 
     \item $N_3$: substitui \emph{dois} caminhões na \emph{mesma} pilha
-    simultaneamente, permitindo modificações mais amplas na composição.
+    simultaneamente. Sorteia-se uma pilha, duas posições distintas e dois
+    novos minérios compatíveis. O movimento exige que ambas as posições
+    sejam efetivamente alteradas e que a composição resultante difira da
+    original (não é mera permutação interna).
+
+    A escolha dessa vizinhança se justifica pelos seguintes motivos:
+    \begin{itemize}
+        \item $N_1$ altera apenas uma posição por vez. Certas melhorias de
+        qualidade --- como reduzir o teor de $SiO_2$ e ao mesmo tempo
+        aumentar o de $Al_2O_3$ --- podem não ser alcançáveis com uma
+        única substituição sem piorar o \textit{fitness} no passo
+        intermediário. $N_3$ permite realizar esse tipo de ajuste combinado
+        em uma única etapa.
+        \item $N_2$ promove a redistribuição de minérios \emph{entre} pilhas,
+        preservando a massa das pilhas envolvidas e a quantidade global
+        utilizada de cada minério. Já $N_3$ altera diretamente a composição
+        de uma \emph{única} pilha por meio de duas substituições simultâneas,
+        possuindo lógica de movimento distinta das duas vizinhanças
+        anteriores, conforme exigido pelo enunciado.
+        \item Movimentos de maior amplitude permitem explorar regiões do
+        espaço de busca que $N_1$ isolado alcançaria apenas após múltiplos
+        passos, reduzindo o risco de estagnação em ótimos locais rasos.
+    \end{itemize}
 \end{itemize}
 
-Por questões de desempenho, $N_2$ e $N_3$ foram implementadas com
-amostragem aleatória em vez de enumeração exaustiva
-($N_2$: 40 tentativas; $N_3$: 50 tentativas).
+Por razões de desempenho computacional, $N_2$ e $N_3$ são implementadas
+por amostragem aleatória em vez de enumeração exaustiva ($N_2$: 40
+tentativas; $N_3$: 50 tentativas por pilha).
 
 
 \subsection{Perturbação (SHAKE)}
@@ -988,10 +1040,32 @@ se a solução resultante for estruturalmente viável.
 
 O VND percorre as vizinhanças $N_1 \to N_2 \to N_3$ em sequência.
 Em cada vizinhança aplica-se busca local com \textit{First Improvement}
-por amostragem ($\text{MAX\_AMOSTRAS} = 20$ vizinhos por chamada). Ao
-encontrar melhora, retorna à $N_1$; do contrário, avança para a próxima
-vizinhança. O número de reinícios é limitado a $5$ para controlar o
-tempo de processamento.
+por amostragem ($\text{MAX\_AMOSTRAS} = 20$ vizinhos por chamada).
+Ao encontrar melhoria, a solução é atualizada e o algoritmo retorna à $N_1$
+(reinício clássico do VND), desde que o limite de reinícios não tenha sido
+atingido ($\text{MAX\_RESTARTS\_VND} = 5$). Após atingir esse limite, o
+algoritmo continua avançando pelas vizinhanças sem reiniciar, controlando
+assim o tempo de CPU.
+
+
+\subsection{Critério de Aceitação}
+
+Em todas as etapas do algoritmo, o critério de aceitação é baseado em
+melhoria estrita da função \textit{fitness}:
+
+\begin{itemize}
+    \item \textbf{VND --- busca local}: um vizinho $x'$ substitui a
+    solução atual quando $\phi(x') < \phi(x_{\text{atual}})$. Empates
+    não são aceitos. Ao encontrar o primeiro vizinho com \textit{fitness}
+    menor (\textit{First Improvement}), a solução é atualizada imediatamente
+    sem examinar os demais vizinhos da amostra.
+
+    \item \textbf{Laço externo do GVNS}: a solução pós-VND $x''$ substitui
+    a incumbente $x^*$ quando $\phi(x'') < \phi^*$. Após uma melhoria,
+    $k$ é reiniciado para $1$ (retorno à perturbação mais fraca). Se $x''$
+    não melhora $x^*$ para nenhum $k \leq K_{\max}$, a iteração externa
+    encerra sem atualizar a incumbente.
+\end{itemize}
 
 
 \subsection{Laço externo do GVNS}
@@ -1035,18 +1109,48 @@ Os parâmetros do algoritmo estão resumidos na Tabela~\ref{tab:parametros}.
 \centering
 \caption{Parâmetros do GVNS}
 \label{tab:parametros}
-\begin{tabular}{lll}
+\small
+\begin{tabular}{@{}l r p{0.52\textwidth}@{}}
 \toprule
 Parâmetro & Valor & Descrição \\
 \midrule
-$\text{MAX\_ITER}$         & 200 & Iterações externas por execução \\
-$K_{\max}$                 & 3   & Intensidades de perturbação \\
-$\text{MAX\_AMOSTRAS}$     & 20  & Vizinhos amostrados por vizinhança (VND) \\
+$\text{MAX\_ITER}$         & 200 & Iterações externas por execução (critério de parada) \\
+$K_{\max}$                 & 3   & Intensidades de perturbação no SHAKE \\
+$\text{MAX\_AMOSTRAS}$     & 20  & Vizinhos amostrados por chamada de busca local (VND) \\
 $\text{MAX\_RESTARTS\_VND}$& 5   & Reinícios internos máximos do VND \\
-$\text{MAX\_SEM\_MELHORA}$ & 60  & Parada antecipada por convergência \\
+$\text{MAX\_SEM\_MELHORA}$ & 60  & Iterações sem melhora para parada antecipada \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+
+\subsection{Critérios de Parada}
+
+O algoritmo possui dois critérios de parada, aplicados por execução:
+
+\begin{enumerate}
+    \item \textbf{Número máximo de iterações} ($\text{MAX\_ITER} = 200$):
+    interrompe a execução após 200 iterações externas do GVNS,
+    independentemente de ter havido melhora recente.
+
+    \item \textbf{Parada antecipada por estagnação}
+    ($\text{MAX\_SEM\_MELHORA} = 60$): se $\phi^*$ não melhora por 60
+    iterações externas consecutivas, a execução é interrompida antes de
+    atingir $\text{MAX\_ITER}$. Os tempos registrados variaram entre
+    aproximadamente 16 e 29 s por execução. Como o motivo de término não
+    foi registrado separadamente nesta etapa, não é possível determinar
+    apenas pelo tempo qual dos dois critérios foi responsável pelo
+    encerramento de cada execução.
+\end{enumerate}
+
+Os demais parâmetros da Tabela~\ref{tab:parametros} controlam a extensão
+de cada etapa interna, sem constituir critérios de parada:
+$K_{\max}$ define o número de intensidades de perturbação disponíveis;
+$\text{MAX\_AMOSTRAS}$ controla o tempo de cada avaliação de vizinhança no
+VND; e $\text{MAX\_RESTARTS\_VND}$ limita o tempo de cada refinamento.
+Os valores adotados foram definidos como configuração de referência para
+os experimentos desta entrega; uma análise de sensibilidade paramétrica
+constitui extensão natural deste trabalho.
 
 
 % ============================================================
@@ -1055,48 +1159,88 @@ $\text{MAX\_SEM\_MELHORA}$ & 60  & Parada antecipada por convergência \\
 
 \section{Resultados Computacionais}
 
-O GVNS foi executado cinco vezes de forma independente para cada
-objetivo, utilizando sementes fixas ($42$, $123$, $456$, $789$, $1011$).
-A Tabela~\ref{tab:resultados} apresenta as estatísticas de cada
-objetivo. Todas as soluções reportadas são de qualidade viável.
+
+\subsection{Planejamento dos Experimentos}
+
+O GVNS é um algoritmo estocástico: os resultados dependem das escolhas
+aleatórias realizadas durante a busca. Para obter estimativas robustas
+do desempenho, cada função objetivo foi otimizada em cinco execuções
+independentes, totalizando $3 \times 5 = 15$ execuções.
+
+Em cada execução, o estado do gerador pseudoaleatório foi inicializado
+com uma semente fixa e distinta, garantindo reprodutibilidade completa.
+As sementes utilizadas foram $42$, $123$, $456$, $789$ e $1011$.
+Todos os demais parâmetros (Tabela~\ref{tab:parametros}) foram mantidos
+idênticos entre as execuções e entre os três objetivos.
+
+Para cada execução, foram registrados: o valor final de $f(\cdot)$ (sem
+penalidade) da melhor solução encontrada, o histórico de convergência
+(valor de $f(\cdot)$ ao final de cada iteração externa) e o tempo de CPU.
+As estatísticas resumo (mínimo, média, desvio-padrão amostral e máximo) foram
+calculadas a partir dos cinco valores finais de cada objetivo. O desvio-padrão
+amostral foi calculado com denominador $n-1$.
+O tempo médio de CPU foi de $16{,}7$ s para $f_1$, $20{,}4$ s para
+$f_2$ e $27{,}1$ s para $f_3$.
+
+A solução construtiva inicial produz $f_1 = 60{.}400{.}000$ R\$,
+$f_2 = 23{,}48$ e $f_3 = 14{,}91$, com 12 violações de qualidade, e
+serve como ponto de partida para todas as execuções.
+
+
+\subsection{Resultados por Objetivo}
+
+A Tabela~\ref{tab:resultados} apresenta os valores obtidos em cada
+execução e as estatísticas correspondentes. Todas as soluções reportadas
+são viáveis quanto à qualidade.
 
 \begin{table}[H]
 \centering
-\caption{Estatísticas das 5 execuções independentes do GVNS}
+\caption{Resultados das 5 execuções independentes do GVNS por objetivo}
 \label{tab:resultados}
-\begin{tabular}{lrrrr}
+\begin{tabular}{lrrr}
 \toprule
-Objetivo & Mínimo & Média & Desvio padrão & Máximo \\
+ & $f_1$ (R\$) & $f_2$ (adim.) & $f_3$ (adim.) \\
 \midrule
-$f_1$ (R\$)
-    & \num{60300000}
-    & \num{60512000}
-    & \num{159123}
-    & \num{60680000} \\
-$f_2$ (adim.)
-    & \num{2,372757}
-    & \num{2,373477}
-    & \num{0,000543}
-    & \num{2,373927} \\
-$f_3$ (adim.)
-    & \num{1,436169}
-    & \num{1,447180}
-    & \num{0,007289}
-    & \num{1,453254} \\
+Execução 1 (seed 42)   & \num{60680000} & \num{2,373029} & \num{1,453254} \\
+Execução 2 (seed 123)  & \num{60440000} & \num{2,373828} & \num{1,450865} \\
+Execução 3 (seed 456)  & \num{60660000} & \num{2,372757} & \num{1,452281} \\
+Execução 4 (seed 789)  & \num{60300000} & \num{2,373927} & \num{1,436169} \\
+Execução 5 (seed 1011) & \num{60480000} & \num{2,373844} & \num{1,443334} \\
+\midrule
+Mínimo        & \num{60300000} & \num{2,372757} & \num{1,436169} \\
+Média         & \num{60512000} & \num{2,373477} & \num{1,447180} \\
+Desvio-padrão & \num{159123}   & \num{0,000543} & \num{0,007289} \\
+Máximo        & \num{60680000} & \num{2,373927} & \num{1,453254} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+
+\subsection{Curvas de Convergência}
+
 As Figuras~\ref{fig:conv_f1}--\ref{fig:conv_f3} mostram as curvas de
 convergência do valor do objetivo ao longo das iterações externas do
-GVNS, para as cinco execuções de cada problema.
+GVNS, para as cinco execuções de cada problema. As curvas correspondem
+ao histórico registrado pela implementação durante a busca e permitem
+comparar a evolução das diferentes sementes. Como a solução construtiva
+inicial apresenta violações de qualidade, sua avaliação é tratada apenas
+como referência inicial e não deve ser interpretada como uma solução
+final viável.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{convergencia_f1.png}
-    \caption{Convergência — $f_1$ (custo total)}
+    \caption{Convergência — $f_1$ (custo total de aquisição)}
     \label{fig:conv_f1}
 \end{figure}
+
+Para $f_1$, as execuções convergem para valores entre
+$60{.}300{.}000$ e $60{.}680{.}000$ R\$. A amplitude entre mínimo e
+máximo corresponde a aproximadamente $0{,}63\%$ do menor valor obtido,
+indicando baixa dispersão relativa entre as soluções finais. As curvas
+também evidenciam que a maior parte das melhorias ocorre nas primeiras
+iterações, embora algumas execuções apresentem melhorias adicionais ao
+longo da busca.
 
 \begin{figure}[H]
     \centering
@@ -1105,6 +1249,14 @@ GVNS, para as cinco execuções de cada problema.
     \label{fig:conv_f2}
 \end{figure}
 
+Para $f_2$, o valor bruto da função objetivo é reduzido de $23{,}48$
+na solução construtiva inicial, que é inviável em qualidade, para cerca
+de $2{,}37$ nas melhores soluções finais viáveis, correspondendo a uma
+redução aproximada de $90\%$. Essa redução ocorre rapidamente nas
+primeiras iterações, e as curvas se estabilizam em valores muito próximos
+entre si. O desvio-padrão amostral de $0{,}000543$ representa aproximadamente
+$0{,}0229\%$ da média, indicando alta consistência entre as execuções.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{convergencia_f3.png}
@@ -1112,30 +1264,122 @@ GVNS, para as cinco execuções de cada problema.
     \label{fig:conv_f3}
 \end{figure}
 
-As Figuras~\ref{fig:sol_f1}--\ref{fig:sol_f3} apresentam a composição
-da melhor solução encontrada em cada objetivo, por meio de barras
-empilhadas, onde cada barra corresponde a uma pilha e cada segmento
-representa o número de caminhões de um determinado minério.
+Para $f_3$, a dinâmica é semelhante à de $f_2$: o valor bruto da função
+objetivo passa de $14{,}91$ na solução construtiva inicial, inviável em
+qualidade, para aproximadamente $1{,}44$ nas melhores soluções finais
+viáveis, também representando redução próxima de $90\%$. A variabilidade
+entre execuções é, entretanto, maior: o desvio-padrão é $0{,}007289$
+($0{,}50\%$ da média) e a amplitude entre mínimo e máximo é de
+aproximadamente $0{,}017$. Essa maior dispersão indica que a busca para
+$f_3$ foi mais sensível às escolhas estocásticas realizadas pelo GVNS
+nos experimentos conduzidos.
+
+
+\subsection{Melhor Solução por Objetivo}
+
+As Figuras~\ref{fig:sol_f1}--\ref{fig:sol_f3} apresentam, em barras
+empilhadas, a composição da melhor solução encontrada para cada objetivo.
+Cada barra representa uma pilha ($P_1$ a $P_{10}$); cada segmento
+corresponde a um tipo de minério, e a altura do segmento indica o
+número de caminhões de $2$ kt daquele minério alocados à pilha. A altura
+total de cada barra é o número total de caminhões da pilha, que varia de
+10 ($P_1$, 20 kt) a 19 ($P_{10}$, 38 kt), conforme os dados do problema.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{melhor_solucao_f1.png}
-    \caption{Melhor solução — $f_1 = \num{60300000}$ R\$}
+    \caption{Melhor solução — $f_1 = \num{60300000}$ R\$ (seed 789)}
     \label{fig:sol_f1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{melhor_solucao_f2.png}
-    \caption{Melhor solução — $f_2 = \num{2,372757}$}
+    \caption{Melhor solução — $f_2 = \num{2,372757}$ (seed 456)}
     \label{fig:sol_f2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{melhor_solucao_f3.png}
-    \caption{Melhor solução — $f_3 = \num{1,436169}$}
+    \caption{Melhor solução — $f_3 = \num{1,436169}$ (seed 789)}
     \label{fig:sol_f3}
 \end{figure}
+
+As composições diferem entre os três objetivos, o que era esperado: cada
+objetivo prioriza características químicas distintas e, portanto, induz
+diferentes combinações de minérios nas pilhas.
+
+
+\subsection{Análise dos Resultados}
+
+\subsubsection{$f_1$ — Custo total}
+
+A solução construtiva apresenta custo de $60{.}400{.}000$ R\$, porém
+viola restrições de qualidade e, portanto, não constitui uma alternativa
+final viável. O GVNS encontrou uma solução viável com custo mínimo de
+$60{.}300{.}000$ R\$. Assim, além de eliminar as violações de qualidade,
+foi possível reduzir em aproximadamente $0{,}17\%$ o custo bruto da
+composição inicial. Esse resultado é particularmente relevante porque a
+heurística construtiva já prioriza os minérios de menor custo disponíveis,
+enquanto o GVNS precisa simultaneamente ajustar a composição para atender
+aos limites de $SiO_2$ e $Al_2O_3$.
+
+A variabilidade entre as cinco execuções é pequena: o desvio-padrão de
+$159{.}123$ R\$ representa aproximadamente $0{,}26\%$ da média. Isso
+indica que, nos experimentos realizados, diferentes sementes conduziram
+a soluções finais de custo relativamente próximo, evidenciando baixa
+variabilidade do GVNS para esse objetivo.
+
+\subsubsection{$f_2$ — Desvio quadrático de $SiO_2$}
+
+O GVNS reduziu o valor bruto de $f_2$ de $23{,}48$ na solução
+construtiva inicial, que é inviável em qualidade, para $2{,}37$ na
+melhor solução final viável, uma redução de aproximadamente $90\%$,
+concomitante à obtenção de viabilidade. O desvio-padrão amostral de
+$0{,}000543$ é o menor entre os três objetivos tanto em valor absoluto
+quanto em relação à média ($\approx 0{,}0229\%$). As cinco execuções produziram
+resultados muito próximos, indicando alta estabilidade do GVNS para esse
+objetivo nas sementes avaliadas.
+
+\subsubsection{$f_3$ — Desvio quadrático de $Al_2O_3$}
+
+Para $f_3$, o valor bruto da função objetivo foi reduzido de $14{,}91$
+na solução construtiva inicial, inviável em qualidade, para $1{,}44$ na
+melhor solução final viável, também correspondendo a uma redução próxima
+de $90\%$ e acompanhada da obtenção de viabilidade. A variabilidade entre
+execuções foi maior que em $f_2$: o desvio-padrão foi de $0{,}007289$
+($0{,}50\%$ da média) e a amplitude entre mínimo e máximo foi de
+aproximadamente $0{,}017$. Essa maior dispersão sugere maior sensibilidade
+às escolhas estocásticas do GVNS para $f_3$, embora os experimentos
+realizados não permitam caracterizar formalmente a quantidade de ótimos
+locais do espaço de busca.
+
+\subsubsection{Comparação entre objetivos}
+
+Todas as execuções produziram soluções finais viáveis quanto à qualidade.
+Para $f_2$ e $f_3$, os valores brutos das funções objetivo apresentaram
+reduções próximas de $90\%$ em relação à solução construtiva inicial,
+que era inviável. Para $f_1$, além de restaurar a viabilidade, o GVNS
+obteve pequeno ganho de custo em relação à composição inicial.
+
+Em termos relativos à média, $f_2$ apresentou a menor variabilidade entre
+execuções, com desvio-padrão amostral de aproximadamente $0{,}0229\%$. Para $f_1$, o
+desvio-padrão correspondeu a aproximadamente $0{,}26\%$ da média,
+enquanto $f_3$ apresentou a maior dispersão relativa, de aproximadamente
+$0{,}50\%$. Assim, dentre os três experimentos, $f_2$ foi o mais estável
+e $f_3$ o mais sensível às diferentes sementes utilizadas.
+
+\section{Conclusão}
+
+Nesta primeira entrega, foram formuladas e resolvidas separadamente as três versões mono-objetivo do problema de formação de pilhas de minério, considerando a minimização do custo total de aquisição, do desvio quadrático de $SiO_2$ e do desvio quadrático de $Al_2O_3$.
+
+A solução foi representada por vetores de caminhões associados às pilhas, e a busca foi realizada por meio de uma metaheurística GVNS composta por três estruturas de vizinhança, perturbação SHAKE e refinamento por VND. As restrições estruturais foram preservadas por construção, enquanto as violações de qualidade foram tratadas por penalização.
+
+Os experimentos realizados em cinco execuções independentes para cada função objetivo mostraram que o método foi capaz de produzir soluções finais viáveis em todos os casos. Para $f_1$, foi obtido custo mínimo de R\$ 60.300.000, com baixa variabilidade entre as execuções. Para $f_2$ e $f_3$, foram observadas reduções próximas de 90\% nos valores brutos das funções objetivo em relação à solução construtiva inicial, acompanhadas da obtenção de viabilidade.
+
+Entre os três objetivos, $f_2$ apresentou a maior estabilidade entre as diferentes sementes, enquanto $f_3$ apresentou maior sensibilidade às escolhas estocásticas do algoritmo. De forma geral, os resultados indicam que a estrutura de GVNS proposta é capaz de explorar adequadamente o espaço de soluções do problema mono-objetivo, conciliando as restrições operacionais com a busca por soluções de melhor qualidade.
+
+Os resultados desta etapa fornecem também a base experimental necessária para as etapas posteriores do projeto, nas quais os diferentes objetivos poderão ser considerados de forma conjunta.
 
 \end{document}

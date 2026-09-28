@@ -581,10 +581,11 @@ def validar_estrutura(solucao):
 # 9. VALIDAÇÃO DA QUALIDADE
 # ============================================================
 
-def validar_qualidade(solucao):
+def validar_qualidade(solucao, tolerancia=1e-9):
     """
     Verifica se todas as pilhas respeitam os limites
-    de SiO2 e Al2O3.
+    de SiO2 e Al2O3, considerando uma pequena tolerância
+    para erros de representação em ponto flutuante.
 
     FeT não é usado como restrição ativa no case,
     pois seus limites são 0% e 100%.
@@ -609,9 +610,9 @@ def validar_qualidade(solucao):
         # ====================================================
 
         if not (
-            limites["sio2_min"]
+            limites["sio2_min"] - tolerancia
             <= sio2
-            <= limites["sio2_max"]
+            <= limites["sio2_max"] + tolerancia
         ):
 
             erros.append(
@@ -626,9 +627,9 @@ def validar_qualidade(solucao):
         # ====================================================
 
         if not (
-            limites["al2o3_min"]
+            limites["al2o3_min"] - tolerancia
             <= al2o3
-            <= limites["al2o3_max"]
+            <= limites["al2o3_max"] + tolerancia
         ):
 
             erros.append(

@@ -8,6 +8,7 @@ from sol_inicial import (
     gerar_solucao_inicial,
     minerios,
     pilhas,
+    validar_qualidade,
 )
 from vizinhancas import gerar_vizinho_n1, gerar_vizinho_n2, gerar_vizinho_n3
 
@@ -165,3 +166,37 @@ def test_reproducibilidade_com_mesma_semente():
     v6 = gerar_vizinho_n3(solucao, rng6)
 
     assert v5 == v6
+
+
+def _configurar_teores_m1(monkeypatch, al2o3):
+    """Mantém SiO2 válido e posiciona Al2O3 no valor do caso testado."""
+    monkeypatch.setitem(minerios["M1"], "sio2", 5.5)
+    monkeypatch.setitem(minerios["M1"], "al2o3", al2o3)
+
+
+def test_validar_qualidade_aceita_valor_exatamente_no_limite(monkeypatch):
+    _configurar_teores_m1(monkeypatch, 2.3)
+
+    valida, erros = validar_qualidade({1: ["M1"]})
+
+    assert valida
+    assert erros == []
+
+
+def test_validar_qualidade_aceita_valor_dentro_da_tolerancia(monkeypatch):
+    _configurar_teores_m1(monkeypatch, 2.3 + 5e-10)
+
+    valida, erros = validar_qualidade({1: ["M1"]}, tolerancia=1e-9)
+
+    assert valida
+    assert erros == []
+
+
+def test_validar_qualidade_rejeita_valor_fora_da_tolerancia(monkeypatch):
+    _configurar_teores_m1(monkeypatch, 2.3 + 2e-9)
+
+    valida, erros = validar_qualidade({1: ["M1"]}, tolerancia=1e-9)
+
+    assert not valida
+    assert len(erros) == 1
+    assert "Al2O3" in erros[0]
