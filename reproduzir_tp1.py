@@ -30,6 +30,11 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def sha256_codigo(path):
+    """Git pode converter CRLF/LF em outro checkout; o código é o mesmo."""
+    return hashlib.sha256(Path(path).read_text(encoding='utf-8').encode('utf-8')).hexdigest()
+
+
 def hash_dados():
     dados = {'minerios': minerios, 'pilhas': pilhas, 'sinters': sinters}
     return hashlib.sha256(json.dumps(dados, sort_keys=True).encode()).hexdigest()
@@ -49,7 +54,8 @@ def criar_manifesto(limites):
             'python': platform.python_version(), 'plataforma': platform.platform(),
             'dependencias': {p: importlib.metadata.version(p) for p in ('matplotlib', 'pytest', 'numpy')},
             'commit': git('rev-parse', 'HEAD'), 'git_status_inicial': git('status', '--short'),
-            'codigo_sha256': {nome: sha256(RAIZ/nome) for nome in CODIGO},
+            'codigo_sha256': {nome: sha256_codigo(RAIZ/nome) for nome in CODIGO},
+            'codigo_hash_normaliza_linhas': True,
             'dados_sha256': hash_dados(), 'configuracao_busca': asdict(limites),
             'lambdas': dict(LAMBDA), 'agenda': agenda, 'estado': 'em_execucao'}
 
@@ -126,9 +132,23 @@ def _referencia_documentada(d, registros, manifesto):
 def consolidar(diretorio, gerar_figuras=True):
     d = Path(diretorio)
     registros, manifesto = verificar_campanha(d)
+    if not manifesto.get('codigo_hash_normaliza_linhas'):
+        # Compatibilidade com a coleta iniciada antes da revisão do verificador.
+        # Apenas fontes de consolidação podem ter mudado; não reatribuir hashes
+        # atuais a um algoritmo de busca diferente daquele efetivamente executado.
+        permitidos = {'reproduzir_tp1.py', 'normalizacao.py'}
+        for nome, valor in manifesto['codigo_sha256'].items():
+            if nome not in permitidos and sha256(RAIZ/nome) != valor:
+                raise ValueError('Código de busca alterado desde a coleta: ' + nome)
+        manifesto['codigo_coleta_sha256_bytes'] = dict(manifesto['codigo_sha256'])
+        manifesto['codigo_sha256'] = {nome: sha256_codigo(RAIZ/nome)
+                                      for nome in manifesto['codigo_sha256']}
+        manifesto['codigo_hash_normaliza_linhas'] = True
     referencia = _referencia_documentada(d, registros, manifesto)
     # Só publicar referências depois de verificar as 15, nunca parcialmente.
     escrever_json(d/'referencias_tp1.json', referencia)
+    if d.resolve() == (RAIZ/'results/tp1_corrigido').resolve():
+        escrever_json(RAIZ/'results/referencias_tp1.json', referencia)
     linhas = gerar_resumo_csv(d)
     campos = ['run_id', 'objetivo', 'seed', 'f1', 'f2', 'f3']
     with (d/'objetivos_cruzados.csv').open('w', newline='', encoding='utf-8') as f:
@@ -155,9 +175,22 @@ def consolidar(diretorio, gerar_figuras=True):
               'referencia_id': referencia['id'], 'estatisticas': estatisticas,
               'matriz_payoff': matriz}
     escrever_json(d/'auditoria.json', resumo)
+    from relatorio_tp1 import gerar_fragmento
+    gerar_fragmento(d, resumo, referencia)
     manifesto['estado'] = 'concluida_validada'
     manifesto['referencia_id'] = referencia['id']
     manifesto['execucoes_sha256'] = referencia['fontes']
+    # Preserva os hashes da coleta original e registra separadamente a consolidação.
+    manifesto['codigo_consolidacao_sha256'] = {nome: sha256_codigo(RAIZ/nome)
+                                              for nome in ('reproduzir_tp1.py', 'normalizacao.py', 'relatorio_tp1.py')}
+    manifesto['figuras_geradas'] = gerar_figuras
+    produtos = ['resumo.csv', 'objetivos_cruzados.csv', 'matriz_payoff.csv', 'auditoria.json', 'resultados_tp1.tex']
+    produtos += [f'estatisticas_{obj}.json' for obj in ('f1', 'f2', 'f3')]
+    if gerar_figuras:
+        produtos += [f'{tipo}_{obj}.png' for obj in ('f1', 'f2', 'f3')
+                     for tipo in ('convergencia', 'melhor_solucao')]
+    manifesto['artefatos_sha256'] = {nome: sha256(d/nome) for nome in produtos}
+    manifesto['consolidado_utc'] = datetime.now(timezone.utc).isoformat()
     escrever_json(d/'manifesto.json', manifesto)
     return resumo
 
@@ -170,11 +203,34 @@ def verificar_artefatos(diretorio):
     # JSON converte tuplas em listas; comparação canônica preserva os números.
     if json.dumps(salvo, sort_keys=True) != json.dumps(esperado, sort_keys=True):
         raise ValueError('Referências ou hashes das fontes divergentes.')
+    if d.resolve() == (RAIZ/'results/tp1_corrigido').resolve():
+        canonico = RAIZ/'results/referencias_tp1.json'
+        if not canonico.is_file() or json.loads(canonico.read_text(encoding='utf-8')) != salvo:
+            raise ValueError('Referência canônica em results/referencias_tp1.json divergente.')
     if manifesto.get('estado') != 'concluida_validada':
         raise ValueError('Manifesto não concluído.')
+    obrigatorios = {'resumo.csv', 'objetivos_cruzados.csv', 'matriz_payoff.csv', 'auditoria.json', 'resultados_tp1.tex'}
+    obrigatorios.update(f'estatisticas_{obj}.json' for obj in ('f1', 'f2', 'f3'))
+    if manifesto.get('figuras_geradas'):
+        obrigatorios.update(f'{tipo}_{obj}.png' for obj in ('f1','f2','f3')
+                            for tipo in ('convergencia', 'melhor_solucao'))
+    hashes = manifesto.get('artefatos_sha256', {})
+    if set(hashes) != obrigatorios:
+        raise ValueError('Manifesto não contém todos os produtos esperados.')
+    for nome, identidade in hashes.items():
+        if not (d/nome).is_file() or sha256(d/nome) != identidade:
+            raise ValueError(f'Artefato ausente ou alterado: {nome}.')
+    for obj in ('f1', 'f2', 'f3'):
+        esperado_exp = carregar_experimento(d, obj)
+        salvo_exp = json.loads((d/f'estatisticas_{obj}.json').read_text(encoding='utf-8'))
+        if json.loads(json.dumps(esperado_exp)) != salvo_exp:
+            raise ValueError(f'Estatísticas divergem dos registros de {obj}.')
+    hashes_codigo = dict(manifesto['codigo_sha256'])
+    hashes_codigo.update(manifesto.get('codigo_consolidacao_sha256', {}))
     return {'n_execucoes': len(registros), 'n_viaveis': len(registros),
             'referencia_id': salvo['id'],
-            'codigo_atual_confere': all(sha256(RAIZ/n)==h for n,h in manifesto['codigo_sha256'].items())}
+            'codigo_atual_confere': all(sha256_codigo(RAIZ/n)==h for n,h in hashes_codigo.items()),
+            'artefatos_verificados': len(hashes), 'figuras_verificadas': 6 if manifesto.get('figuras_geradas') else 0}
 
 
 def main():

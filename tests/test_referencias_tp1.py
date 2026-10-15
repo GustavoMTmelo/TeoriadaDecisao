@@ -96,3 +96,40 @@ def test_campanha_nao_aceita_configuracao_alterada(campanha_pequena):
     p.write_text(json.dumps(dados), encoding='utf-8')
     with pytest.raises(ValueError, match='configuração'):
         consolidar(campanha_pequena, gerar_figuras=False)
+
+
+@pytest.mark.parametrize('arquivo', ['resumo.csv', 'objetivos_cruzados.csv',
+                                    'matriz_payoff.csv', 'estatisticas_f1.json'])
+def test_verificador_rejeita_saida_ausente_ou_adulterada(campanha_pequena, arquivo):
+    from reproduzir_tp1 import consolidar, verificar_artefatos
+    consolidar(campanha_pequena, gerar_figuras=False)
+    p = campanha_pequena/arquivo
+    p.write_text('adulterado', encoding='utf-8')
+    with pytest.raises(ValueError, match='Artefato ausente ou alterado'):
+        verificar_artefatos(campanha_pequena)
+
+
+def test_verificador_rejeita_figura_removida(campanha_pequena):
+    from reproduzir_tp1 import consolidar, verificar_artefatos
+    consolidar(campanha_pequena)
+    (campanha_pequena/'convergencia_f1.png').unlink()
+    with pytest.raises(ValueError, match='Artefato ausente ou alterado'):
+        verificar_artefatos(campanha_pequena)
+
+
+def test_verificador_aceita_campanha_integra(campanha_pequena):
+    from reproduzir_tp1 import consolidar, verificar_artefatos
+    consolidar(campanha_pequena, gerar_figuras=False)
+    resultado = verificar_artefatos(campanha_pequena)
+    assert resultado['n_viaveis'] == 15
+    assert resultado['codigo_atual_confere']
+    assert resultado['artefatos_verificados'] == 8
+
+
+def test_hash_de_codigo_independe_de_final_de_linha(tmp_path):
+    from reproduzir_tp1 import sha256_codigo
+    p = tmp_path/'fonte.py'
+    p.write_bytes(b'x = 1\r\n')
+    a = sha256_codigo(p)
+    p.write_bytes(b'x = 1\n')
+    assert sha256_codigo(p) == a

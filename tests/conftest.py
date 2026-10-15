@@ -1,4 +1,5 @@
 import pytest
+import sys
 
 
 @pytest.fixture
@@ -15,7 +16,10 @@ def modelo_pequeno(monkeypatch):
     piles = {1: {'sinter': 1, 'massa_kt': 4}}
     sinters = {1: dict(sio2_min=5., sio2_max=6., sio2_alvo=5.5,
                       al2o3_min=1., al2o3_max=2., al2o3_alvo=1.5)}
-    for mod in (s, a, v):
+    modulos = [s, a, v]
+    if 'reproduzir_tp1' in sys.modules:
+        modulos.append(sys.modules['reproduzir_tp1'])
+    for mod in modulos:
         for name, value in [('minerios', ores), ('pilhas', piles), ('sinters', sinters)]:
             if hasattr(mod, name):
                 monkeypatch.setattr(mod, name, value)
