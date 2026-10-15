@@ -37,7 +37,9 @@ from sol_inicial import (
     validar_estrutura,
     validar_qualidade,
 )
-from vizinhancas import gerar_vizinho_n1, gerar_vizinho_n2, gerar_vizinho_n3
+from vizinhancas import gerar_vizinho_n1
+from contratos import Candidato, ConfigBusca, ConfigEscalar, ResultadoBusca
+from avaliacao import avaliar, PESOS_PENALIDADE, calcular_penalidade
 
 
 # ============================================================
@@ -51,11 +53,7 @@ MAX_RESTARTS_VND = 5   # reinícios máximos dentro do VND
 MAX_SEM_MELHORA = 60   # parada antecipada: iterações sem melhora global
 
 # Pesos da penalidade por objetivo
-LAMBDA = {
-    "f1": 1e12,  # custo em R$; 1e12 garante que qualquer violação > 1e-4 %^2 domine f1 viável
-    "f2": 1e4,   # desvio quadrático de SiO2; penalidade >> f2 ótimo viável
-    "f3": 1e4,   # desvio quadrático de Al2O3; penalidade >> f3 ótimo viável
-}
+LAMBDA = PESOS_PENALIDADE  # pesos históricos; não são normalização ou garantia de viabilidade
 
 # Seeds fixas para as 5 execuções independentes
 SEMENTES = [42, 123, 456, 789, 1011]
@@ -70,33 +68,14 @@ def calcular_objetivo(solucao, objetivo):
         return calcular_f1(solucao)
     elif objetivo == "f2":
         return calcular_f2(solucao)
-    else:
+    elif objetivo == "f3":
         return calcular_f3(solucao)
+    raise ValueError("Objetivo deve ser f1, f2 ou f3.")
 
 
 # ============================================================
 # 3. PENALIDADE E FITNESS
 # ============================================================
-
-def calcular_penalidade(solucao):
-    """Soma das violações quadráticas de SiO2 e Al2O3 fora de [min, max]."""
-    total = 0.0
-    for p, composicao in solucao.items():
-        sinter = pilhas[p]["sinter"]
-        lim = sinters[sinter]
-        t = calcular_teores_pilha(composicao)
-        sio2 = t["sio2"]
-        al2o3 = t["al2o3"]
-        if sio2 < lim["sio2_min"]:
-            total += (lim["sio2_min"] - sio2) ** 2
-        elif sio2 > lim["sio2_max"]:
-            total += (sio2 - lim["sio2_max"]) ** 2
-        if al2o3 < lim["al2o3_min"]:
-            total += (lim["al2o3_min"] - al2o3) ** 2
-        elif al2o3 > lim["al2o3_max"]:
-            total += (al2o3 - lim["al2o3_max"]) ** 2
-    return total
-
 
 def calcular_fitness(solucao, objetivo):
     """fitness = f(x) + λ · penalidade(x)."""
@@ -194,7 +173,7 @@ def _gerar_vizinho_n3_rapido(solucao, rng, tentativas=50):
 _GERADORES_SHAKE = [gerar_vizinho_n1, _gerar_vizinho_n2_rapido, _gerar_vizinho_n3_rapido]
 
 
-def shake(solucao, k, rng):
+def shake(solucao, k, rng, acompanhamento=None):
     """Aplica k movimentos aleatórios mantendo viabilidade estrutural."""
     atual = copy.deepcopy(solucao)
     for _ in range(k):
@@ -204,7 +183,11 @@ def shake(solucao, k, rng):
             if candidato is None:
                 continue
             valido, _ = validar_estrutura(candidato)
+            if not valido and acompanhamento is not None:
+                acompanhamento.tentativas_invalidas += 1
             if valido:
+                if acompanhamento is not None:
+                    acompanhamento.avaliar(candidato)
                 atual = candidato
                 break
     return atual
@@ -217,22 +200,33 @@ def shake(solucao, k, rng):
 _GERADORES_VND = [gerar_vizinho_n1, _gerar_vizinho_n2_rapido, _gerar_vizinho_n3_rapido]
 
 
-def _busca_local_n(solucao, objetivo, gerador, rng):
-    """First Improvement por amostragem numa vizinhança."""
-    fitness_atual = calcular_fitness(solucao, objetivo)
-    for _ in range(MAX_AMOSTRAS):
+def _busca_local_n(solucao, objetivo, gerador, rng, acompanhamento=None):
+    """First Improvement; observa candidatos antes do filtro de fitness."""
+    if acompanhamento is None:
+        fitness_atual = calcular_fitness(solucao, objetivo)
+        max_amostras = MAX_AMOSTRAS
+    else:
+        fitness_atual = acompanhamento.avaliar(solucao).avaliacao.chave[0]
+        max_amostras = acompanhamento.limites.max_amostras
+    for _ in range(max_amostras):
         vizinho = gerador(solucao, rng)
         if vizinho is None:
             break
         valido, _ = validar_estrutura(vizinho)
         if not valido:
+            if acompanhamento is not None:
+                acompanhamento.tentativas_invalidas += 1
             continue
-        if calcular_fitness(vizinho, objetivo) < fitness_atual:
+        if acompanhamento is None:
+            fitness = calcular_fitness(vizinho, objetivo)
+        else:
+            fitness = acompanhamento.avaliar(vizinho).avaliacao.chave[0]
+        if fitness < fitness_atual:
             return vizinho, True
     return solucao, False
 
 
-def vnd(solucao, objetivo, rng, max_restarts=MAX_RESTARTS_VND):
+def vnd(solucao, objetivo, rng, max_restarts=MAX_RESTARTS_VND, acompanhamento=None):
     """Variable Neighborhood Descent com N1, N2, N3.
 
     O número de reinícios é limitado a max_restarts para controlar
@@ -242,7 +236,7 @@ def vnd(solucao, objetivo, rng, max_restarts=MAX_RESTARTS_VND):
     atual = solucao
     restarts = 0
     while l < len(_GERADORES_VND):
-        nova, melhorou = _busca_local_n(atual, objetivo, _GERADORES_VND[l], rng)
+        nova, melhorou = _busca_local_n(atual, objetivo, _GERADORES_VND[l], rng, acompanhamento)
         if melhorou:
             atual = nova
             if restarts < max_restarts:
@@ -258,47 +252,96 @@ def vnd(solucao, objetivo, rng, max_restarts=MAX_RESTARTS_VND):
 # 7. GVNS
 # ============================================================
 
-def gvns(objetivo, seed, max_iter=MAX_ITER, k_max=K_MAX):
-    """Executa o GVNS para um dado objetivo mono-objetivo.
+class _OrcamentoEsgotado(Exception):
+    pass
 
-    Retorna (melhor_solucao, melhor_valor_objetivo, historico).
-    O histórico registra o valor do objetivo (sem penalidade) da
-    melhor solução encontrada ao final de cada iteração externa.
+
+class _Acompanhamento:
+    """Uma avaliação conta uma chamada completa válida, inclusive repetidas."""
+
+    def __init__(self, objetivo, seed, limites, observar):
+        self.config = ConfigEscalar('mono', objetivo, objetivo=int(objetivo[1]))
+        self.seed = seed
+        self.limites = limites
+        self.observar = observar
+        self.avaliacoes = 0
+        self.tentativas_invalidas = 0
+        self.melhor_viavel = None
+
+    def avaliar(self, solucao):
+        if (self.limites.max_avaliacoes is not None
+                and self.avaliacoes >= self.limites.max_avaliacoes):
+            raise _OrcamentoEsgotado
+        av = avaliar(solucao, self.config)
+        if not av.estrutura_ok:
+            raise ValueError('Candidato estruturalmente inválido: ' + '; '.join(av.erros))
+        self.avaliacoes += 1
+        candidato = Candidato(solucao, av, [{'metodo': 'mono', 'configuracao': self.config.id,
+                                            'seed': self.seed, 'avaliacao': self.avaliacoes}])
+        if av.viavel and (self.melhor_viavel is None
+                         or av.escalar < self.melhor_viavel.avaliacao.escalar):
+            self.melhor_viavel = candidato
+        if self.observar is not None:
+            # O consumidor nunca recebe um alias da incumbente nem da trajetória.
+            self.observar(copy.deepcopy(candidato))
+        return candidato
+
+
+def gvns(objetivo, seed, max_iter=MAX_ITER, k_max=K_MAX, *, limites=None, observar=None):
+    """Retorna ResultadoBusca, com melhor viável separada da trajetória penalizada.
+
+    Observa candidatos válidos de SHAKE/VND mesmo quando rejeitados por fitness.
+    A configuração explícita `limites` prevalece sobre max_iter/k_max legados.
     """
+    if objetivo not in LAMBDA:
+        raise ValueError('Objetivo deve ser f1, f2 ou f3.')
+    limites = limites or ConfigBusca(max_iter=max_iter, k_max=k_max)
+    inicio = time.perf_counter()
+    acompanhamento = _Acompanhamento(objetivo, seed, limites, observar)
     rng = random.Random(seed)
-
-    solucao = gerar_solucao_inicial()
-    melhor = copy.deepcopy(solucao)
-    melhor_fitness = calcular_fitness(melhor, objetivo)
-
-    historico = [calcular_objetivo(melhor, objetivo)]
+    melhor = None
+    historico = []
     sem_melhora = 0
+    iteracoes = 0
+    motivo = 'max_iter'
 
-    for _ in range(max_iter):
-        melhorou = False
-        k = 1
-        while k <= k_max:
-            x_linha = shake(melhor, k, rng)
-            x_dois_linhas = vnd(x_linha, objetivo, rng)
-            f_novo = calcular_fitness(x_dois_linhas, objetivo)
-            if f_novo < melhor_fitness:
-                melhor = copy.deepcopy(x_dois_linhas)
-                melhor_fitness = f_novo
-                melhorou = True
-                k = 1  # aceita e reinicia na perturbação mais fraca
-            else:
-                k += 1  # tenta perturbação mais intensa
+    def registrar(iteracao):
+        viavel = acompanhamento.melhor_viavel
+        historico.append({'iteracao': iteracao, 'avaliacoes': acompanhamento.avaliacoes,
+                          'melhor_viavel': viavel.avaliacao.escalar if viavel else None,
+                          'objetivo_busca': melhor.avaliacao.escalar if melhor else None,
+                          'fitness_busca': melhor.avaliacao.chave[0] if melhor else None})
 
-        historico.append(calcular_objetivo(melhor, objetivo))
-
-        if melhorou:
-            sem_melhora = 0
-        else:
-            sem_melhora += 1
-            if sem_melhora >= MAX_SEM_MELHORA:
-                break  # parada antecipada por convergência
-
-    return melhor, calcular_objetivo(melhor, objetivo), historico
+    try:
+        melhor = acompanhamento.avaliar(gerar_solucao_inicial())
+        registrar(0)
+        for it in range(1, limites.max_iter + 1):
+            iteracoes = it
+            melhorou = False
+            k = 1
+            while k <= limites.k_max:
+                x_linha = shake(melhor.solucao, k, rng, acompanhamento)
+                x_dois_linhas = vnd(x_linha, objetivo, rng, limites.max_restarts, acompanhamento)
+                novo = acompanhamento.avaliar(x_dois_linhas)
+                if novo.avaliacao.chave < melhor.avaliacao.chave:
+                    melhor = novo
+                    melhorou = True
+                    k = 1
+                else:
+                    k += 1
+            registrar(it)
+            sem_melhora = 0 if melhorou else sem_melhora + 1
+            if sem_melhora >= limites.max_sem_melhora and not melhorou:
+                motivo = 'estagnacao'
+                break
+    except _OrcamentoEsgotado:
+        motivo = 'max_avaliacoes'
+        registrar(iteracoes)
+    viavel = acompanhamento.melhor_viavel
+    return ResultadoBusca('viavel' if viavel else 'sem_viavel_encontrada', viavel,
+                          melhor, historico, acompanhamento.avaliacoes, iteracoes,
+                          motivo, time.perf_counter() - inicio,
+                          acompanhamento.tentativas_invalidas)
 
 
 # ============================================================
@@ -319,7 +362,12 @@ def executar_experimento(objetivo, n_runs=5, max_iter=MAX_ITER):
         semente = SEMENTES[i]
         print(f"  Execução {i+1}/{n_runs}  (seed={semente}) ...", end=" ", flush=True)
         t0 = time.time()
-        sol, valor, hist = gvns(objetivo, seed=semente, max_iter=max_iter)
+        resultado = gvns(objetivo, seed=semente, max_iter=max_iter)
+        if resultado.melhor_viavel is None:
+            raise RuntimeError(f'Execução seed={semente} sem solução viável; não calcular estatísticas como sucesso.')
+        sol = resultado.melhor_viavel.solucao
+        valor = resultado.melhor_viavel.avaliacao.escalar
+        hist = [x['melhor_viavel'] for x in resultado.historico]
         dt = time.time() - t0
         print(f"valor = {valor:.6f}  ({dt:.1f}s)")
         resultados.append(valor)
