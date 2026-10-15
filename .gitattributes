@@ -1,0 +1,2 @@
+# Resultados auditados usam hashes de bytes; preservar em qualquer sistema.
+/results/** -text

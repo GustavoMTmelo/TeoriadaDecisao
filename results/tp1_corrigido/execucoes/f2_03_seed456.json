@@ -1,0 +1,1823 @@
+{
+  "schema_version": 1,
+  "metadados": {
+    "objetivo": "f2",
+    "seed": 456,
+    "repeticao": 3,
+    "run_id": "f2_03_seed456",
+    "configuracao_busca": {
+      "max_iter": 200,
+      "max_sem_melhora": 60,
+      "k_max": 3,
+      "max_amostras": 20,
+      "max_restarts": 5,
+      "max_avaliacoes": null
+    },
+    "lambda": 10000.0
+  },
+  "resultado": {
+    "status": "viavel",
+    "melhor_viavel": {
+      "solucao": {
+        "1": [
+          "M6",
+          "M11",
+          "M8",
+          "M9",
+          "M5",
+          "M10",
+          "M8",
+          "M1",
+          "M8",
+          "M7"
+        ],
+        "2": [
+          "M4",
+          "M10",
+          "M9",
+          "M12",
+          "M2",
+          "M12",
+          "M6",
+          "M11",
+          "M9",
+          "M9",
+          "M12"
+        ],
+        "3": [
+          "M11",
+          "M7",
+          "M5",
+          "M9",
+          "M9",
+          "M8",
+          "M12",
+          "M8",
+          "M8",
+          "M12",
+          "M10",
+          "M1"
+        ],
+        "4": [
+          "M4",
+          "M12",
+          "M5",
+          "M11",
+          "M10",
+          "M9",
+          "M10",
+          "M4",
+          "M10",
+          "M2",
+          "M2",
+          "M10",
+          "M11"
+        ],
+        "5": [
+          "M10",
+          "M9",
+          "M11",
+          "M8",
+          "M8",
+          "M4",
+          "M14",
+          "M10",
+          "M4",
+          "M10",
+          "M12",
+          "M2",
+          "M2",
+          "M12"
+        ],
+        "6": [
+          "M17",
+          "M18",
+          "M16",
+          "M4",
+          "M7",
+          "M18",
+          "M20",
+          "M4",
+          "M1",
+          "M5",
+          "M1",
+          "M15",
+          "M1",
+          "M2",
+          "M15"
+        ],
+        "7": [
+          "M20",
+          "M16",
+          "M17",
+          "M19",
+          "M5",
+          "M19",
+          "M5",
+          "M19",
+          "M16",
+          "M17",
+          "M20",
+          "M7",
+          "M7",
+          "M4",
+          "M14",
+          "M20"
+        ],
+        "8": [
+          "M16",
+          "M17",
+          "M5",
+          "M19",
+          "M16",
+          "M6",
+          "M4",
+          "M2",
+          "M6",
+          "M15",
+          "M6",
+          "M15",
+          "M5",
+          "M20",
+          "M7",
+          "M7",
+          "M16"
+        ],
+        "9": [
+          "M14",
+          "M14",
+          "M18",
+          "M18",
+          "M4",
+          "M18",
+          "M5",
+          "M18",
+          "M18",
+          "M19",
+          "M15",
+          "M15",
+          "M19",
+          "M20",
+          "M4",
+          "M20",
+          "M17",
+          "M5"
+        ],
+        "10": [
+          "M20",
+          "M6",
+          "M15",
+          "M14",
+          "M6",
+          "M17",
+          "M2",
+          "M4",
+          "M18",
+          "M7",
+          "M15",
+          "M1",
+          "M17",
+          "M6",
+          "M16",
+          "M14",
+          "M16",
+          "M19",
+          "M19"
+        ]
+      },
+      "avaliacao": {
+        "objetivos": [
+          63440000,
+          2.3727567955223003,
+          3.665271968973059
+        ],
+        "normalizados": null,
+        "estrutura_ok": true,
+        "qualidade_ok": true,
+        "epsilon_ok": true,
+        "violacao": 0.0,
+        "escalar": 2.3727567955223003,
+        "chave": [
+          2.3727567955223003
+        ],
+        "erros": []
+      },
+      "origens": [
+        {
+          "metodo": "mono",
+          "configuracao": "f2",
+          "seed": 456,
+          "avaliacao": 49091
+        }
+      ]
+    },
+    "melhor_busca": {
+      "solucao": {
+        "1": [
+          "M6",
+          "M11",
+          "M8",
+          "M9",
+          "M5",
+          "M10",
+          "M8",
+          "M1",
+          "M8",
+          "M7"
+        ],
+        "2": [
+          "M4",
+          "M10",
+          "M9",
+          "M12",
+          "M2",
+          "M12",
+          "M6",
+          "M11",
+          "M9",
+          "M9",
+          "M12"
+        ],
+        "3": [
+          "M11",
+          "M7",
+          "M5",
+          "M9",
+          "M9",
+          "M8",
+          "M12",
+          "M8",
+          "M8",
+          "M12",
+          "M10",
+          "M1"
+        ],
+        "4": [
+          "M4",
+          "M12",
+          "M5",
+          "M11",
+          "M10",
+          "M9",
+          "M10",
+          "M4",
+          "M10",
+          "M2",
+          "M2",
+          "M10",
+          "M11"
+        ],
+        "5": [
+          "M10",
+          "M9",
+          "M11",
+          "M8",
+          "M8",
+          "M4",
+          "M14",
+          "M10",
+          "M4",
+          "M10",
+          "M12",
+          "M2",
+          "M2",
+          "M12"
+        ],
+        "6": [
+          "M17",
+          "M18",
+          "M16",
+          "M4",
+          "M7",
+          "M18",
+          "M20",
+          "M4",
+          "M1",
+          "M5",
+          "M1",
+          "M15",
+          "M1",
+          "M2",
+          "M15"
+        ],
+        "7": [
+          "M20",
+          "M16",
+          "M17",
+          "M19",
+          "M5",
+          "M19",
+          "M5",
+          "M19",
+          "M16",
+          "M17",
+          "M20",
+          "M7",
+          "M7",
+          "M4",
+          "M14",
+          "M20"
+        ],
+        "8": [
+          "M16",
+          "M17",
+          "M5",
+          "M19",
+          "M16",
+          "M6",
+          "M4",
+          "M2",
+          "M6",
+          "M15",
+          "M6",
+          "M15",
+          "M5",
+          "M20",
+          "M7",
+          "M7",
+          "M16"
+        ],
+        "9": [
+          "M14",
+          "M14",
+          "M18",
+          "M18",
+          "M4",
+          "M18",
+          "M5",
+          "M18",
+          "M18",
+          "M19",
+          "M15",
+          "M15",
+          "M19",
+          "M20",
+          "M4",
+          "M20",
+          "M17",
+          "M5"
+        ],
+        "10": [
+          "M20",
+          "M6",
+          "M15",
+          "M14",
+          "M6",
+          "M17",
+          "M2",
+          "M4",
+          "M18",
+          "M7",
+          "M15",
+          "M1",
+          "M17",
+          "M6",
+          "M16",
+          "M14",
+          "M16",
+          "M19",
+          "M19"
+        ]
+      },
+      "avaliacao": {
+        "objetivos": [
+          63440000,
+          2.3727567955223003,
+          3.665271968973059
+        ],
+        "normalizados": null,
+        "estrutura_ok": true,
+        "qualidade_ok": true,
+        "epsilon_ok": true,
+        "violacao": 0.0,
+        "escalar": 2.3727567955223003,
+        "chave": [
+          2.3727567955223003
+        ],
+        "erros": []
+      },
+      "origens": [
+        {
+          "metodo": "mono",
+          "configuracao": "f2",
+          "seed": 456,
+          "avaliacao": 49115
+        }
+      ]
+    },
+    "historico": [
+      {
+        "iteracao": 0,
+        "avaliacoes": 1,
+        "melhor_viavel": null,
+        "objetivo_busca": 23.48105481043885,
+        "fitness_busca": 146275.62687831532
+      },
+      {
+        "iteracao": 1,
+        "avaliacoes": 4221,
+        "melhor_viavel": 2.6826479902081637,
+        "objetivo_busca": 2.6826479902081637,
+        "fitness_busca": 2.6826479902081637
+      },
+      {
+        "iteracao": 2,
+        "avaliacoes": 5441,
+        "melhor_viavel": 2.581008335487529,
+        "objetivo_busca": 2.581008335487529,
+        "fitness_busca": 2.581008335487529
+      },
+      {
+        "iteracao": 3,
+        "avaliacoes": 5822,
+        "melhor_viavel": 2.5778365252797553,
+        "objetivo_busca": 2.5778365252797553,
+        "fitness_busca": 2.5778365252797553
+      },
+      {
+        "iteracao": 4,
+        "avaliacoes": 6039,
+        "melhor_viavel": 2.5778365252797553,
+        "objetivo_busca": 2.5778365252797553,
+        "fitness_busca": 2.5778365252797553
+      },
+      {
+        "iteracao": 5,
+        "avaliacoes": 6302,
+        "melhor_viavel": 2.5777537474057954,
+        "objetivo_busca": 2.5778365252797553,
+        "fitness_busca": 2.5778365252797553
+      },
+      {
+        "iteracao": 6,
+        "avaliacoes": 6538,
+        "melhor_viavel": 2.5777537474057954,
+        "objetivo_busca": 2.5778365252797553,
+        "fitness_busca": 2.5778365252797553
+      },
+      {
+        "iteracao": 7,
+        "avaliacoes": 6872,
+        "melhor_viavel": 2.5777537474057954,
+        "objetivo_busca": 2.5778365252797553,
+        "fitness_busca": 2.5778365252797553
+      },
+      {
+        "iteracao": 8,
+        "avaliacoes": 8254,
+        "melhor_viavel": 2.4773607992549764,
+        "objetivo_busca": 2.4773607992549764,
+        "fitness_busca": 2.4773607992549764
+      },
+      {
+        "iteracao": 9,
+        "avaliacoes": 9509,
+        "melhor_viavel": 2.415902954071945,
+        "objetivo_busca": 2.415902954071945,
+        "fitness_busca": 2.415902954071945
+      },
+      {
+        "iteracao": 10,
+        "avaliacoes": 9760,
+        "melhor_viavel": 2.412852367517236,
+        "objetivo_busca": 2.412852367517236,
+        "fitness_busca": 2.412852367517236
+      },
+      {
+        "iteracao": 11,
+        "avaliacoes": 9980,
+        "melhor_viavel": 2.412852367517236,
+        "objetivo_busca": 2.412852367517236,
+        "fitness_busca": 2.412852367517236
+      },
+      {
+        "iteracao": 12,
+        "avaliacoes": 10231,
+        "melhor_viavel": 2.412852367517236,
+        "objetivo_busca": 2.412852367517236,
+        "fitness_busca": 2.412852367517236
+      },
+      {
+        "iteracao": 13,
+        "avaliacoes": 10602,
+        "melhor_viavel": 2.408896589564054,
+        "objetivo_busca": 2.408896589564054,
+        "fitness_busca": 2.408896589564054
+      },
+      {
+        "iteracao": 14,
+        "avaliacoes": 10839,
+        "melhor_viavel": 2.408896589564054,
+        "objetivo_busca": 2.408896589564054,
+        "fitness_busca": 2.408896589564054
+      },
+      {
+        "iteracao": 15,
+        "avaliacoes": 11150,
+        "melhor_viavel": 2.408896589564054,
+        "objetivo_busca": 2.408896589564054,
+        "fitness_busca": 2.408896589564054
+      },
+      {
+        "iteracao": 16,
+        "avaliacoes": 11437,
+        "melhor_viavel": 2.408896589564054,
+        "objetivo_busca": 2.408896589564054,
+        "fitness_busca": 2.408896589564054
+      },
+      {
+        "iteracao": 17,
+        "avaliacoes": 11742,
+        "melhor_viavel": 2.408896589564054,
+        "objetivo_busca": 2.408896589564054,
+        "fitness_busca": 2.408896589564054
+      },
+      {
+        "iteracao": 18,
+        "avaliacoes": 11977,
+        "melhor_viavel": 2.408896589564054,
+        "objetivo_busca": 2.408896589564054,
+        "fitness_busca": 2.408896589564054
+      },
+      {
+        "iteracao": 19,
+        "avaliacoes": 12309,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 20,
+        "avaliacoes": 12630,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 21,
+        "avaliacoes": 12962,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 22,
+        "avaliacoes": 13269,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 23,
+        "avaliacoes": 13659,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 24,
+        "avaliacoes": 13861,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 25,
+        "avaliacoes": 14049,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 26,
+        "avaliacoes": 14308,
+        "melhor_viavel": 2.408327145119609,
+        "objetivo_busca": 2.408327145119609,
+        "fitness_busca": 2.408327145119609
+      },
+      {
+        "iteracao": 27,
+        "avaliacoes": 14776,
+        "melhor_viavel": 2.4075733962088055,
+        "objetivo_busca": 2.4075733962088055,
+        "fitness_busca": 2.4075733962088055
+      },
+      {
+        "iteracao": 28,
+        "avaliacoes": 15285,
+        "melhor_viavel": 2.3748690365146627,
+        "objetivo_busca": 2.3748690365146627,
+        "fitness_busca": 2.3748690365146627
+      },
+      {
+        "iteracao": 29,
+        "avaliacoes": 15726,
+        "melhor_viavel": 2.3748690365146627,
+        "objetivo_busca": 2.3748690365146627,
+        "fitness_busca": 2.3748690365146627
+      },
+      {
+        "iteracao": 30,
+        "avaliacoes": 16017,
+        "melhor_viavel": 2.3748690365146627,
+        "objetivo_busca": 2.3748690365146627,
+        "fitness_busca": 2.3748690365146627
+      },
+      {
+        "iteracao": 31,
+        "avaliacoes": 16318,
+        "melhor_viavel": 2.3748690365146627,
+        "objetivo_busca": 2.3748690365146627,
+        "fitness_busca": 2.3748690365146627
+      },
+      {
+        "iteracao": 32,
+        "avaliacoes": 16505,
+        "melhor_viavel": 2.3748690365146627,
+        "objetivo_busca": 2.3748690365146627,
+        "fitness_busca": 2.3748690365146627
+      },
+      {
+        "iteracao": 33,
+        "avaliacoes": 16936,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 34,
+        "avaliacoes": 17222,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 35,
+        "avaliacoes": 17566,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 36,
+        "avaliacoes": 17846,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 37,
+        "avaliacoes": 18164,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 38,
+        "avaliacoes": 18341,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 39,
+        "avaliacoes": 18629,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 40,
+        "avaliacoes": 19068,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 41,
+        "avaliacoes": 19394,
+        "melhor_viavel": 2.373393841494087,
+        "objetivo_busca": 2.373393841494087,
+        "fitness_busca": 2.373393841494087
+      },
+      {
+        "iteracao": 42,
+        "avaliacoes": 19749,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 43,
+        "avaliacoes": 19983,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 44,
+        "avaliacoes": 20147,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 45,
+        "avaliacoes": 20379,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 46,
+        "avaliacoes": 20604,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 47,
+        "avaliacoes": 20769,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 48,
+        "avaliacoes": 20983,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 49,
+        "avaliacoes": 21436,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 50,
+        "avaliacoes": 21785,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 51,
+        "avaliacoes": 22078,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 52,
+        "avaliacoes": 22416,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 53,
+        "avaliacoes": 22896,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 54,
+        "avaliacoes": 23209,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 55,
+        "avaliacoes": 23591,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 56,
+        "avaliacoes": 23972,
+        "melhor_viavel": 2.373388670672296,
+        "objetivo_busca": 2.373388670672296,
+        "fitness_busca": 2.373388670672296
+      },
+      {
+        "iteracao": 57,
+        "avaliacoes": 24407,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 58,
+        "avaliacoes": 24580,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 59,
+        "avaliacoes": 24775,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 60,
+        "avaliacoes": 25017,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 61,
+        "avaliacoes": 25227,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 62,
+        "avaliacoes": 25402,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 63,
+        "avaliacoes": 25670,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 64,
+        "avaliacoes": 25917,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 65,
+        "avaliacoes": 26265,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 66,
+        "avaliacoes": 26675,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 67,
+        "avaliacoes": 26806,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 68,
+        "avaliacoes": 26988,
+        "melhor_viavel": 2.3732325234007643,
+        "objetivo_busca": 2.3732325234007643,
+        "fitness_busca": 2.3732325234007643
+      },
+      {
+        "iteracao": 69,
+        "avaliacoes": 27185,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 70,
+        "avaliacoes": 27433,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 71,
+        "avaliacoes": 27605,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 72,
+        "avaliacoes": 27930,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 73,
+        "avaliacoes": 28381,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 74,
+        "avaliacoes": 28627,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 75,
+        "avaliacoes": 28833,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 76,
+        "avaliacoes": 29163,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 77,
+        "avaliacoes": 29679,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 78,
+        "avaliacoes": 30039,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 79,
+        "avaliacoes": 30364,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 80,
+        "avaliacoes": 30825,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 81,
+        "avaliacoes": 31109,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 82,
+        "avaliacoes": 31330,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 83,
+        "avaliacoes": 31578,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 84,
+        "avaliacoes": 31987,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 85,
+        "avaliacoes": 32236,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 86,
+        "avaliacoes": 32437,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 87,
+        "avaliacoes": 32739,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 88,
+        "avaliacoes": 32907,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 89,
+        "avaliacoes": 33192,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 90,
+        "avaliacoes": 33402,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 91,
+        "avaliacoes": 33780,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 92,
+        "avaliacoes": 33968,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 93,
+        "avaliacoes": 34209,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 94,
+        "avaliacoes": 34381,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 95,
+        "avaliacoes": 34546,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 96,
+        "avaliacoes": 34829,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 97,
+        "avaliacoes": 35149,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 98,
+        "avaliacoes": 35416,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 99,
+        "avaliacoes": 35759,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 100,
+        "avaliacoes": 36067,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 101,
+        "avaliacoes": 36301,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 102,
+        "avaliacoes": 36556,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 103,
+        "avaliacoes": 36825,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 104,
+        "avaliacoes": 37047,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 105,
+        "avaliacoes": 37334,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 106,
+        "avaliacoes": 37536,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 107,
+        "avaliacoes": 37762,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 108,
+        "avaliacoes": 38088,
+        "melhor_viavel": 2.3730849134361325,
+        "objetivo_busca": 2.3730849134361325,
+        "fitness_busca": 2.3730849134361325
+      },
+      {
+        "iteracao": 109,
+        "avaliacoes": 38465,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 110,
+        "avaliacoes": 38794,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 111,
+        "avaliacoes": 38969,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 112,
+        "avaliacoes": 39170,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 113,
+        "avaliacoes": 39482,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 114,
+        "avaliacoes": 39726,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 115,
+        "avaliacoes": 40017,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 116,
+        "avaliacoes": 40385,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 117,
+        "avaliacoes": 40516,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 118,
+        "avaliacoes": 40824,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 119,
+        "avaliacoes": 41151,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 120,
+        "avaliacoes": 41472,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 121,
+        "avaliacoes": 41852,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 122,
+        "avaliacoes": 42017,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 123,
+        "avaliacoes": 42251,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 124,
+        "avaliacoes": 42631,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 125,
+        "avaliacoes": 42916,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 126,
+        "avaliacoes": 43367,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 127,
+        "avaliacoes": 43701,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 128,
+        "avaliacoes": 43925,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 129,
+        "avaliacoes": 44223,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 130,
+        "avaliacoes": 44393,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 131,
+        "avaliacoes": 44638,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 132,
+        "avaliacoes": 44896,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 133,
+        "avaliacoes": 45022,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 134,
+        "avaliacoes": 45472,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 135,
+        "avaliacoes": 45746,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 136,
+        "avaliacoes": 46172,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 137,
+        "avaliacoes": 46470,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 138,
+        "avaliacoes": 46675,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 139,
+        "avaliacoes": 46983,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 140,
+        "avaliacoes": 47243,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 141,
+        "avaliacoes": 47514,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 142,
+        "avaliacoes": 47753,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 143,
+        "avaliacoes": 48062,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 144,
+        "avaliacoes": 48203,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 145,
+        "avaliacoes": 48523,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 146,
+        "avaliacoes": 48726,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 147,
+        "avaliacoes": 48943,
+        "melhor_viavel": 2.373082617752019,
+        "objetivo_busca": 2.373082617752019,
+        "fitness_busca": 2.373082617752019
+      },
+      {
+        "iteracao": 148,
+        "avaliacoes": 49293,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 149,
+        "avaliacoes": 49694,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 150,
+        "avaliacoes": 49940,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 151,
+        "avaliacoes": 50300,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 152,
+        "avaliacoes": 50706,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 153,
+        "avaliacoes": 50979,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 154,
+        "avaliacoes": 51252,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 155,
+        "avaliacoes": 51536,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 156,
+        "avaliacoes": 51677,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 157,
+        "avaliacoes": 52028,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 158,
+        "avaliacoes": 52265,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 159,
+        "avaliacoes": 52415,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 160,
+        "avaliacoes": 52768,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 161,
+        "avaliacoes": 52962,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 162,
+        "avaliacoes": 53290,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 163,
+        "avaliacoes": 53682,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 164,
+        "avaliacoes": 53898,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 165,
+        "avaliacoes": 54164,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 166,
+        "avaliacoes": 54373,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 167,
+        "avaliacoes": 54662,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 168,
+        "avaliacoes": 54983,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 169,
+        "avaliacoes": 55344,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 170,
+        "avaliacoes": 55646,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 171,
+        "avaliacoes": 55936,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 172,
+        "avaliacoes": 56318,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 173,
+        "avaliacoes": 56613,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 174,
+        "avaliacoes": 56836,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 175,
+        "avaliacoes": 57164,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 176,
+        "avaliacoes": 57535,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 177,
+        "avaliacoes": 57810,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 178,
+        "avaliacoes": 58083,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 179,
+        "avaliacoes": 58365,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 180,
+        "avaliacoes": 58614,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 181,
+        "avaliacoes": 58840,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 182,
+        "avaliacoes": 59082,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 183,
+        "avaliacoes": 59469,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 184,
+        "avaliacoes": 59773,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 185,
+        "avaliacoes": 59986,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 186,
+        "avaliacoes": 60400,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 187,
+        "avaliacoes": 60694,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 188,
+        "avaliacoes": 61063,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 189,
+        "avaliacoes": 61323,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 190,
+        "avaliacoes": 61594,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 191,
+        "avaliacoes": 61890,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 192,
+        "avaliacoes": 62075,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 193,
+        "avaliacoes": 62355,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 194,
+        "avaliacoes": 62669,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 195,
+        "avaliacoes": 63071,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 196,
+        "avaliacoes": 63226,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 197,
+        "avaliacoes": 63566,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 198,
+        "avaliacoes": 63838,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 199,
+        "avaliacoes": 64088,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      },
+      {
+        "iteracao": 200,
+        "avaliacoes": 64260,
+        "melhor_viavel": 2.3727567955223003,
+        "objetivo_busca": 2.3727567955223003,
+        "fitness_busca": 2.3727567955223003
+      }
+    ],
+    "avaliacoes": 64260,
+    "iteracoes": 200,
+    "motivo_parada": "max_iter",
+    "tempo_s": 73.82389459999831,
+    "tentativas_invalidas": 58901
+  }
+}

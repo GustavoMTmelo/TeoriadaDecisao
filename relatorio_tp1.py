@@ -115,17 +115,11 @@ def gerar_fragmento(diretorio, resumo, referencia):
     for obj in exps:
         exp=exps[obj]
         cv=exp['desvio']/exp['media']*100
-        linhas.append('$f_'+obj[1]+'$: mínimo '+num(exp['minimo'],0 if obj=='f1' else 6)+
-                      ', máximo '+num(exp['maximo'],0 if obj=='f1' else 6)+
-                      r', coeficiente de variação amostral de '+num(cv,4)+r'\%.')
+        linhas.append('$f_'+obj[1]+r'$: coeficiente de variação amostral de '+num(cv,4)+r'\%.')
     linhas += [r'Com cinco sementes, essa comparação é descritiva e não comprova '
                r'superioridade estatística, otimalidade ou cobertura do espaço de soluções.',
                r'\section{Conclusão}',
-               r'A base mono-objetivo foi corrigida para separar fitness, qualidade e retorno '
-               r'viável. As três funções, a representação por caminhões, N1/N2/N3 e o fluxo '
-               r'de busca foram preservados. Todas as 15 soluções desta campanha passaram '
-               r'pela validação individual e pela auditoria independente. Os registros, '
-               r'as figuras e os extremos empíricos rastreáveis sustentam a implementação '
-               r'posterior de soma ponderada e $\varepsilon$-restrito; estes métodos ainda '
-               r'não fazem parte dos resultados apresentados nesta revisão.']
+               r'As 15 soluções finais foram validadas individualmente e por auditoria '
+               r'independente. A base mono-objetivo corrigida, com registros e referências '
+               r'empíricas rastreáveis, está pronta para a etapa multiobjetivo.']
     (d/'resultados_tp1.tex').write_text('\n\n'.join(linhas)+'\n', encoding='utf-8')

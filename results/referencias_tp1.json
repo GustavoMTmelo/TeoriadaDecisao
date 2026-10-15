@@ -1,0 +1,59 @@
+{
+  "minimo": [
+    60300000,
+    2.3727567955223003,
+    1.4361688772162504
+  ],
+  "maximo": [
+    65840000,
+    6.705745397999253,
+    5.995129496821073
+  ],
+  "id": "4eed030453911d878065db4ddcab092db28e085de25ec7b32dd6f52aa52e02f4",
+  "origens": {
+    "f1": {
+      "minimo": [
+        "f1_04_seed789"
+      ],
+      "maximo": [
+        "f3_05_seed1011"
+      ]
+    },
+    "f2": {
+      "minimo": [
+        "f2_03_seed456"
+      ],
+      "maximo": [
+        "f1_02_seed123"
+      ]
+    },
+    "f3": {
+      "minimo": [
+        "f3_04_seed789"
+      ],
+      "maximo": [
+        "f1_04_seed789"
+      ]
+    }
+  },
+  "schema_version": 1,
+  "tipo": "extremos_empiricos_15_finais_tp1",
+  "dados_sha256": "d7d94cd055af36b42e47592bda1ffede067dd5fc0014f6141a960d9329f0675d",
+  "fontes": {
+    "f1_01_seed42": "04824a7b1424c762b12d25d915aaadb85e134042c5dcf7ebabc18aa1df2eb692",
+    "f1_02_seed123": "5bc2473015ea4cb5cb0b9154a0bc9593b86046f215907ced195f45cbcf8c8ee7",
+    "f1_03_seed456": "46b64843e969cc21a9ecb9f71d6f39c035c19f7ec675e296392d17027f0d44a1",
+    "f1_04_seed789": "3916a647654917429356e7de9d263414eb0c6e985cf0905b1fe87ef6c7f3daec",
+    "f1_05_seed1011": "cc1f9afc81f09e6bbff3ba03c0f49532029b0d23b51473d38195346e9828bf07",
+    "f2_01_seed42": "01c23afa54306de24b5fce4f782ca15d7b58692757347bc328802109a2f4e873",
+    "f2_02_seed123": "ff07573cf31b05c17d4acf97bc265f0183111d0948aaff707674af1a20cfb94d",
+    "f2_03_seed456": "8f4c629642861c5a825ab757c96bc5ba87b179c2291d11cb4e26e85c33e81f47",
+    "f2_04_seed789": "5107525ecc6816beb7c1a7de755689829c1b98c21d592b42eb1f2009e09d4545",
+    "f2_05_seed1011": "46aacc84129bd0d7c4812c0e4bbde08da37bb68731cd2247140a743bb0a891a9",
+    "f3_01_seed42": "a0e905c66e4a7b4d089c48a177535552060d35fb163130ec5c09b726e7a13a42",
+    "f3_02_seed123": "7c690be0a9884d578f4eeb940e77dc3057008c3a313bae1e0b511753b861791d",
+    "f3_03_seed456": "3e7db515aa5c51d23b77fd95b03793d1ba488c3b384123362b6b6079d3f72590",
+    "f3_04_seed789": "6cc538ad5cd9abd18ff146c36ca58c5ea5b90d55305c9eecd83bd9ca46193dc9",
+    "f3_05_seed1011": "9e1c11370c0d5928c3d2f7859441d6f7a3210a30c5465c6981496e1404caae4f"
+  }
+}

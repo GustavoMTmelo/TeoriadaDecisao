@@ -1,5 +1,9 @@
 # Plano de implementação — Entrega 2 do Case Cassotis
 
+**Atualização de execução:** o usuário autorizou TP2-01 a TP2-06, concluídas
+com testes, campanha corrigida e referências verificadas. Evidências em
+[EXECUCAO_01_06.md](EXECUCAO_01_06.md). As tarefas seguintes continuam propostas.
+
 > Para execução por agentes: depois da aprovação do usuário, usar `superpowers:executing-plans` para implementar as tarefas em sequência; delegação somente se escolhida/autorizada. Este documento e o backlog são propostas para revisão, não autorização para iniciar o algoritmo.
 
 **Objetivo:** concluir a otimização multiobjetivo por soma ponderada e ε-restrito, corrigindo o TP1 e entregando código reproduzível e relatório cumulativo conforme o enunciado.

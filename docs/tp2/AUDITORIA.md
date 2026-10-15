@@ -1,5 +1,9 @@
 # Auditoria para a Entrega 2 — 15/10/2026
 
+Este documento registra o diagnóstico anterior às correções. A execução
+posterior de TP2-01 a TP2-06 está concluída e documentada em
+[EXECUCAO_01_06.md](EXECUCAO_01_06.md); os achados abaixo são preservados como histórico.
+
 ## Escopo e conclusão
 
 Auditoria do estado existente, sem alterar os algoritmos. O TP1 fornece dados, objetivos, construtiva, vizinhanças, GVNS e material de relatório reaproveitáveis. A Entrega 2 ainda não está implementada. Antes de produzir suas referências numéricas, é necessário corrigir o retorno viável e a validação por execução. O feedback da professora confirma a adequação da N3 atual; a recomendação antiga de substituí-la fica superada.

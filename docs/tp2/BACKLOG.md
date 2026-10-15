@@ -1,6 +1,25 @@
 # Backlog executável — Entrega 2
 
-Status: **rascunho local para revisão**, sem issues publicadas no GitHub. Este backlog implementa o [planejamento](PLANEJAMENTO.md) e usa os IDs da [matriz](MATRIZ_REQUISITOS.md). Ler os contratos do plano antes de assumir uma tarefa. Caminhos relativos à raiz Git, não à pasta `TD`.
+Status: **TP2-01 a TP2-06 autorizadas para execução**, sem issues publicadas no GitHub. Este backlog implementa o [planejamento](PLANEJAMENTO.md) e usa os IDs da [matriz](MATRIZ_REQUISITOS.md). Ler os contratos do plano antes de assumir uma tarefa. Caminhos relativos à raiz Git, não à pasta `TD`.
+
+## Acompanhamento da execução
+
+| Tarefa | Estado | Evidência |
+|---|---|---|
+| TP2-01 | Concluída | Commit `2dc9cc1`; 18 testes na suíte após a tarefa |
+| TP2-02 | Concluída | Commit `c06409d`; 30 testes na suíte após a tarefa |
+| TP2-03 | Concluída | Commit `8056f95`; 37 testes na suíte após a tarefa |
+| TP2-04 | Concluída | Commit `becaf2b`; 48 testes na suíte após a tarefa |
+| TP2-05 | Concluída | Commit `9ec0844`; 56 testes na suíte após a tarefa |
+| TP2-06 | Concluída | Infraestrutura `9b24a81`/`ba8844a`; 15/15 finais viáveis, referências verificadas, seis figuras e relatório corrigido |
+| TP2-07 a TP2-17 | Pendentes | Fora do escopo autorizado nesta rodada |
+
+Detalhes dos testes e decisões em [EXECUCAO_01_06.md](EXECUCAO_01_06.md).
+
+Validação final: 69 testes automatizados, auditoria independente de todas as
+composições e conferência dos 14 produtos consolidados. A referência canônica
+está em `results/referencias_tp1.json`; os registros e resultados completos,
+em `results/tp1_corrigido/`. Os resultados históricos da raiz foram preservados.
 
 Prioridades: P0 desbloqueia correção/modelo; P1 implementa entrega obrigatória; P2 consolida comunicação/pacote, sem significar opcional. Tamanho é relativo: pequeno = uma responsabilidade delimitada; médio = módulo e testes; grande = execução/integracão com várias verificações. Não é estimativa garantida em horas.
 
