@@ -11,7 +11,7 @@ Status: **TP2-01 a TP2-06 autorizadas para execução**, sem issues publicadas n
 | TP2-03 | Concluída | Commit `8056f95`; 37 testes na suíte após a tarefa |
 | TP2-04 | Concluída | Commit `becaf2b`; 48 testes na suíte após a tarefa |
 | TP2-05 | Concluída | Commit `9ec0844`; 56 testes na suíte após a tarefa |
-| TP2-06 | Concluída | Infraestrutura `9b24a81`/`ba8844a`; 15/15 finais viáveis, referências verificadas, seis figuras e relatório corrigido |
+| TP2-06 | Concluída | Infraestrutura `9b24a81`/`ba8844a`, resultados `1ea4e6c`; 15/15 finais viáveis, seis figuras e relatório corrigido |
 | TP2-07 a TP2-17 | Pendentes | Fora do escopo autorizado nesta rodada |
 
 Detalhes dos testes e decisões em [EXECUCAO_01_06.md](EXECUCAO_01_06.md).
