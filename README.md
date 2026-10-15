@@ -60,6 +60,15 @@ Para também salvar a saída completa em `resultados_vns.txt` no PowerShell:
 python vns.py | Tee-Object -FilePath resultados_vns.txt
 ```
 
+O retorno de `gvns(...)` agora é `ResultadoBusca`: use `melhor_viavel` apenas
+quando `status == "viavel"`. A trajetória por fitness fica em `melhor_busca`.
+Cada chamada de `executar_experimento` salva registros JSON v1 em
+`results/tp1_corrigido/execucoes/`, incluindo falhas explícitas, além de CSV e
+estatísticas dos retornos viáveis. A leitura em `registros.py` recalcula os
+objetivos e validações da composição. Curvas usam a melhor viável, com lacunas
+antes de encontrar viabilidade. Para escolher outra saída, use
+`python vns.py --output results/outra_campanha`.
+
 Em shells compatíveis com redirecionamento POSIX:
 
 ```bash

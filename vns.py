@@ -351,59 +351,31 @@ def gvns(objetivo, seed, max_iter=MAX_ITER, k_max=K_MAX, *, limites=None, observ
 # 8. EXPERIMENTO (5 EXECUÇÕES)
 # ============================================================
 
-def executar_experimento(objetivo, n_runs=5, max_iter=MAX_ITER):
-    """Roda n_runs execuções independentes e coleta estatísticas."""
-    resultados = []
-    historicos = []
-    melhores = []
+def executar_experimento(objetivo, n_runs=5, max_iter=MAX_ITER, *, output_dir=None, limites=None):
+    """Registra cada rodada, inclusive falhas; estatísticas usam apenas viáveis."""
+    from dataclasses import asdict
+    from pathlib import Path
+    from registros import salvar_resultado, resumir_experimento, gerar_resumo_csv, escrever_json
 
-    print(f"\n{'='*60}")
-    print(f"EXPERIMENTO — {objetivo.upper()}")
-    print(f"{'='*60}")
-
-    for i in range(n_runs):
-        semente = SEMENTES[i]
-        print(f"  Execução {i+1}/{n_runs}  (seed={semente}) ...", end=" ", flush=True)
-        t0 = time.time()
-        resultado = gvns(objetivo, seed=semente, max_iter=max_iter)
-        if resultado.melhor_viavel is None:
-            raise RuntimeError(f'Execução seed={semente} sem solução viável; não calcular estatísticas como sucesso.')
-        sol = resultado.melhor_viavel.solucao
-        valor = resultado.melhor_viavel.avaliacao.escalar
-        hist = [x['melhor_viavel'] for x in resultado.historico]
-        dt = time.time() - t0
-        print(f"valor = {valor:.6f}  ({dt:.1f}s)")
-        resultados.append(valor)
-        historicos.append(hist)
-        melhores.append(sol)
-
-    idx_melhor = resultados.index(min(resultados))
-
-    media = statistics.mean(resultados)
-    desvio = statistics.stdev(resultados) if len(resultados) > 1 else 0.0
-
-    print(f"\n  Estatísticas ({objetivo.upper()}):")
-    print(f"    Mínimo:        {min(resultados):.6f}")
-    print(f"    Média:         {media:.6f}")
-    print(f"    Desvio padrão: {desvio:.6f}")
-    print(f"    Máximo:        {max(resultados):.6f}")
-
-    _, erros_qual = validar_qualidade(melhores[idx_melhor])
-    print(f"    Qualidade viável: {len(erros_qual) == 0}")
-    if erros_qual:
-        for e in erros_qual:
-            print(f"      {e}")
-
-    return {
-        "objetivo": objetivo,
-        "resultados": resultados,
-        "historicos": historicos,
-        "melhor_solucao": melhores[idx_melhor],
-        "melhor_valor": min(resultados),
-        "media": media,
-        "desvio": desvio,
-        "maximo": max(resultados),
-    }
+    if objetivo not in LAMBDA or type(n_runs) is not int or not 1 <= n_runs <= len(SEMENTES):
+        raise ValueError('Objetivo válido e de uma a cinco execuções são necessários.')
+    output_dir = Path(output_dir or 'results/tp1_corrigido')
+    limites = limites or ConfigBusca(max_iter=max_iter)
+    execucoes = []
+    for i, seed in enumerate(SEMENTES[:n_runs], 1):
+        r = gvns(objetivo, seed=seed, limites=limites)
+        run_id = f'{objetivo}_{i:02}_seed{seed}'
+        meta = {'objetivo': objetivo, 'seed': seed, 'repeticao': i,
+                'run_id': run_id, 'configuracao_busca': asdict(limites),
+                'lambda': LAMBDA[objetivo]}
+        salvar_resultado(r, meta, output_dir/'execucoes'/f'{run_id}.json')
+        execucoes.append(r)
+        valor = r.melhor_viavel.avaliacao.escalar if r.melhor_viavel else None
+        print(f'{run_id}: {r.status}; valor={valor}; {r.tempo_s:.1f}s', flush=True)
+    exp = resumir_experimento(objetivo, execucoes)
+    escrever_json(output_dir/f'estatisticas_{objetivo}.json', exp)
+    gerar_resumo_csv(output_dir)
+    return exp
 
 
 # ============================================================
@@ -417,7 +389,7 @@ def plotar_convergencia(exp, caminho):
     for i, hist in enumerate(exp["historicos"]):
         plt.plot(hist, linewidth=1.3, alpha=0.8, label=f"Execução {i + 1}")
     plt.xlabel("Iteração externa do GVNS")
-    plt.ylabel(f"Valor de {obj}")
+    plt.ylabel(f"Melhor {obj} viável (R$)" if obj == "f1" else f"Melhor {obj} viável (p.p.²)")
     plt.title(f"Convergência — {obj.upper()}")
     plt.legend(fontsize=9)
     plt.grid(True, alpha=0.3)
@@ -431,8 +403,10 @@ def plotar_melhor_solucao(exp, caminho):
     """Barras empilhadas com a composição da melhor solução."""
     obj = exp["objetivo"]
     sol = exp["melhor_solucao"]
+    if sol is None:
+        raise ValueError('Não há solução viável para representar.')
     pilhas_lista = sorted(sol.keys())
-    todos_minerios = sorted(minerios.keys(), key=lambda m: int(m[1:]))
+    todos_minerios = list(minerios)
     cores = plt.cm.tab20.colors
 
     fig, ax = plt.subplots(figsize=(14, 6))
@@ -468,22 +442,14 @@ def plotar_melhor_solucao(exp, caminho):
 # ============================================================
 
 if __name__ == "__main__":
-    objetivos = ["f1", "f2", "f3"]
-    experimentos = {}
-
-    for obj in objetivos:
-        exp = executar_experimento(obj)
-        experimentos[obj] = exp
-        plotar_convergencia(exp, f"convergencia_{obj}.png")
-        plotar_melhor_solucao(exp, f"melhor_solucao_{obj}.png")
-
-    print("\n" + "=" * 60)
-    print("RESUMO FINAL")
-    print("=" * 60)
-    for obj, exp in experimentos.items():
-        print(
-            f"  {obj.upper()}  min={exp['melhor_valor']:.6f}"
-            f"  media={exp['media']:.6f}"
-            f"  dp={exp['desvio']:.6f}"
-            f"  max={exp['maximo']:.6f}"
-        )
+    import argparse
+    from pathlib import Path
+    parser = argparse.ArgumentParser(description='15 buscas TP1 com validação individual.')
+    parser.add_argument('--output', default='results/tp1_corrigido')
+    args = parser.parse_args()
+    saida = Path(args.output)
+    for obj in ('f1', 'f2', 'f3'):
+        exp = executar_experimento(obj, output_dir=saida)
+        plotar_convergencia(exp, saida/f'convergencia_{obj}.png')
+        if exp['melhor_solucao'] is not None:
+            plotar_melhor_solucao(exp, saida/f'melhor_solucao_{obj}.png')
