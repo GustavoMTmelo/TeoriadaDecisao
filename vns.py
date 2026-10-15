@@ -96,6 +96,8 @@ def _gerar_vizinho_n2_rapido(solucao, rng, tentativas=40):
     candidatos da implementação exaustiva de gerar_vizinho_n2.
     """
     pilhas_lista = list(solucao.keys())
+    if len(pilhas_lista) < 2:
+        return None
 
     for _ in range(tentativas):
         p1, p2 = rng.sample(pilhas_lista, 2)
@@ -229,8 +231,9 @@ def _busca_local_n(solucao, objetivo, gerador, rng, acompanhamento=None):
 def vnd(solucao, objetivo, rng, max_restarts=MAX_RESTARTS_VND, acompanhamento=None):
     """Variable Neighborhood Descent com N1, N2, N3.
 
-    O número de reinícios é limitado a max_restarts para controlar
-    o tempo de CPU em soluções muito distantes do ótimo.
+    Melhoria reinicia N1 até max_restarts. Depois, mantém a vizinhança
+    atual enquanto melhora. Somente ausência de melhoria avança N1/N2/N3.
+    O limite de reinícios não limita o número de avaliações.
     """
     l = 0
     atual = solucao
@@ -242,7 +245,7 @@ def vnd(solucao, objetivo, rng, max_restarts=MAX_RESTARTS_VND, acompanhamento=No
             if restarts < max_restarts:
                 l = 0
                 restarts += 1
-            # após max_restarts reinícios, avança normalmente na vizinhança
+            # Após o limite, melhoria mantém l; somente o else avança.
         else:
             l += 1
     return atual
