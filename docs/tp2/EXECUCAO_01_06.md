@@ -13,3 +13,4 @@ Escopo autorizado: TP2-01 a TP2-06, testes por tarefa, backlog atualizado e comm
 ## Evidências por tarefa
 
 - TP2-01 concluída: baseline 9 testes passaram; RED confirmou módulo `contratos` ausente; GREEN suíte completa com 18 testes. Ambiente instalado via `requirements.txt`, versões congeladas em `requirements-lock.txt`. Configuração negativa rejeitada, cópia defensiva e ausência explícita de sucesso testadas. Comando: `python -m pytest -q` (Python disponível via caminho absoluto; dependências temporárias via PYTHONPATH).
+- TP2-02 concluída: RED reproduziu pilha ausente aceita e exceções com IDs/formato inválidos; GREEN suíte completa 30/30. Avaliação física conjunta, mínimo/máximo, custo/teores manuais e regressão da construtiva cobertos. Corrigida a versão registrada do Python para 3.12.14 após consulta ao executável.

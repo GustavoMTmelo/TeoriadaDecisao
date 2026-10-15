@@ -1,4 +1,4 @@
-# Ambiente validado em Windows / CPython 3.12.10 (TP2-01).
+# Ambiente validado em Windows / CPython 3.12.14 (TP2-01).
 colorama==0.4.6
 contourpy==1.4.0
 cycler==0.12.1
