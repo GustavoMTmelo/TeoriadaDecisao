@@ -517,6 +517,21 @@ def validar_estrutura(solucao):
 
     erros = []
 
+    if not isinstance(solucao, dict):
+        return False, ['A solução deve ser um dicionário de pilhas.']
+    if set(solucao) != set(pilhas) or any(type(p) is not int for p in solucao):
+        erros.append('A solução deve conter exatamente as pilhas inteiras de 1 a 10.')
+    # Rejeitar formatos desconhecidos antes de contar ou indexar dados oficiais.
+    for p, composicao in solucao.items():
+        if type(p) is not int or p not in pilhas:
+            erros.append(f'Pilha desconhecida: {p!r}.')
+        if not isinstance(composicao, list):
+            erros.append(f'Pilha {p}: composição deve ser lista de minérios.')
+        elif any(not isinstance(m, str) or m not in minerios for m in composicao):
+            erros.append(f'Pilha {p}: composição contém minério desconhecido.')
+    if erros:
+        return False, erros
+
     uso_total = contar_uso_minerios(solucao)
 
     # ========================================================
