@@ -59,6 +59,12 @@ LAMBDA = PESOS_PENALIDADE  # pesos históricos; não são normalização ou gara
 SEMENTES = [42, 123, 456, 789, 1011]
 
 
+def resolver(config, referencia, seed, limites, observar=None):
+    """Entrada comum TP2; gvns legado permanece reproduzível para os registros TP1."""
+    from busca import resolver as resolver_comum
+    return resolver_comum(config, referencia, seed, limites, observar)
+
+
 # ============================================================
 # 2. FUNÇÕES OBJETIVO
 # ============================================================
