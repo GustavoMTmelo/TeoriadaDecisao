@@ -32,7 +32,7 @@ esta execução. Aprovações intermediárias dispensadas explicitamente pelo us
 - [x] 11: campanha — 160 IDs, seeds estáveis, manifesto, falhas e retomada.
 - [x] 12B: integração — ambos métodos, persistência/revalidação, Pareto,
   repetibilidade e retomada; campanha reduzida, suíte completa.
-- [ ] Auditoria dos critérios, documentação/backlog, publicação e PR.
+- [x] Auditoria dos critérios e documentação/backlog; publicação registrada abaixo.
 
 Cada implementação começa com teste falhando e termina com evidência e commit.
 O histórico Git e este registro permitem retomar após interrupção.
@@ -106,7 +106,7 @@ teto de 500 avaliações por subproblema, oito buscas reais, 4.000 avaliações.
 - 260 candidatos viáveis observados; arquivos ND por repetição: ponderada
   13/38, epsilon 21/21; união de método 49/37 composições distintas.
 - Seis arquivos de Pareto, 179 entradas exportadas somando ambos os níveis.
-- Retomada integral deve reutilizar 8/8, com solver proibido no verificador.
+- Retomada integral reutilizou 8/8, com solver configurado para lançar erro se chamado.
 - A campanha oficial de 160 buscas com teto 10.000 **não foi executada**;
   `configs/tp2.json` e `configs/tp2_agenda.json` deixam sua infraestrutura
   pronta. O piloto e a escolha final do teto pertencem a TP2-13.
@@ -127,4 +127,14 @@ teto de 500 avaliações por subproblema, oito buscas reais, 4.000 avaliações.
   conferidos com bytes atuais antes de salvar `auditoria.json`.
 - Checklist de aceitação das sete tarefas auditado acima. Falhas reais de
   revisão têm regressões e commits separados. TP2-13 permanece posterior.
-- Publicação/checkout limpo: evidência acrescentada após sua execução.
+- Checkout limpo destacado em `460064b`: **162 testes passaram em 31,61 s**;
+  auditor confirmou os 8 registros, 260 observados, seis arquivos e 179 pontos.
+  Os hashes brutos de todos os fontes/configuração/referência conferem também
+  nesse checkout. Cópia temporária da campanha retomou 8/8 com solver proibido,
+  sem alterar os artefatos versionados.
+- Gate final da revisão independente aprovado: correções de status e origens
+  confirmadas, 22 testes focais passaram, auditoria e retomada reais conferidas.
+- Checkout original permanece na branch anterior com exatamente as cinco
+  exclusões locais de PDFs, sem inclusão destas no histórico novo.
+- A branch nova deriva de #4 ainda aberto; o PR será encadeado à branch base
+  `tp2/01-06-base-viavel`, evitando misturar o diff anterior com as sete tarefas.

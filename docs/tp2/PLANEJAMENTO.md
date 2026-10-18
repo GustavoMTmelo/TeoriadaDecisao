@@ -213,7 +213,7 @@ Casos centrais: objetivo calculado manualmente; falta de pilha; disponibilidade 
 
 Antes de aceitar resultados: ler composições salvas e recalcular teores, massa, usos e objetivos em rotina de auditoria separada do arquivo já salvo. Comparar com registros em precisão completa (custo exato; tolerância numérica 1e-9 para teores e 1e-8 para objetivos quadráticos). Teste sintético pequeno de Pareto deve usar comparação manual ou enumeração, sem exigir prova global do case.
 
-Comandos propostos após implementação: `python -m pytest -q`; `python experimentos.py --config configs/tp2.json --output results/tp2`; `python figuras_tp2.py --input results/tp2 --output figures/tp2`. Acrescentar comandos reais de TP1, verificação e empacotamento ao README quando existirem. Esses comandos novos **ainda não estão implementados**.
+Comandos propostos após implementação: `python -m pytest -q`; `python experimentos.py --config configs/tp2.json --output results/tp2`; `python figuras_tp2.py --input results/tp2 --output figures/tp2`. Acrescentar comandos reais de TP1, verificação e empacotamento ao README quando existirem. A execução por `experimentos.py` e a auditoria por `verificar_tp2.py` estão implementadas; `figuras_tp2.py` permanece para TP2-14.
 
 ## 11. Trabalho paralelo e integração
 
