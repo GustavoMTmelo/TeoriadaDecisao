@@ -1,0 +1,9 @@
+{
+  "execucoes": 8,
+  "observados": 260,
+  "arquivos_pareto": 6,
+  "pontos_exportados": 179,
+  "status": "verificado",
+  "reutilizadas": 8,
+  "hashes_fontes_config_referencia_conferem": true
+}
