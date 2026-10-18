@@ -44,6 +44,8 @@ def validar_vetor(vetor, tamanho=3):
 
 
 def validar_referencia(referencia):
+    if not isinstance(referencia, Referencia):
+        raise ValueError('Referência congelada ausente ou inválida.')
     validar_vetor(referencia.minimo)
     validar_vetor(referencia.maximo)
     for a, b in zip(referencia.minimo, referencia.maximo):

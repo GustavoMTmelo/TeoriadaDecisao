@@ -47,3 +47,8 @@ def test_carrega_referencia_real_e_rejeita_adulteracao(tmp_path):
     destino.write_text(json.dumps(dados), encoding='utf-8')
     with pytest.raises(ValueError, match='[Hh]ash|identidade'):
         n.carregar_referencia(destino)
+
+
+def test_referencia_ausente_falha_com_diagnostico():
+    with pytest.raises(ValueError):
+        n.validar_referencia(None)
