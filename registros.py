@@ -117,6 +117,9 @@ def ler_resultado(path):
     if config.metodo != 'mono' and 'run_id' in meta:
         from pareto import chave_solucao
         observados = dados.get('observados', [])
+        if (bool(observados) != (r['melhor_viavel'] is not None)
+                or bool(observados) != (r['status'] == 'viavel')):
+            raise ValueError('Status, melhor viável e candidatos observados inconsistentes.')
         for observado in observados:
             esperado = {k: meta[k] for k in ('metodo', 'repeticao', 'seed', 'run_id')}
             esperado['config_id'] = config.id

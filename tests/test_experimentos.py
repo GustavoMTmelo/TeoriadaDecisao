@@ -191,3 +191,17 @@ def test_retomada_rejeita_origem_adulterada_antes_da_ultima(modelo_pequeno, tmp_
     registro.write_text(json.dumps(dados), encoding='utf-8')
     with pytest.raises(ValueError, match='Proveniência'):
         executar_campanha(path, output, solver=solver_para(modelo_pequeno[1]))
+
+
+def test_retomada_rejeita_falha_com_observados_viaveis(modelo_pequeno, tmp_path):
+    from experimentos import executar_campanha
+    path = preparar(tmp_path)
+    output = tmp_path / 'campanha'
+    executar_campanha(path, output, solver=solver_para(modelo_pequeno[1]))
+    registro = next((output / 'execucoes').glob('*.json'))
+    dados = json.loads(registro.read_text(encoding='utf-8'))
+    dados['resultado']['status'] = 'sem_viavel_encontrada'
+    dados['resultado']['melhor_viavel'] = None
+    registro.write_text(json.dumps(dados), encoding='utf-8')
+    with pytest.raises(ValueError, match='observados'):
+        executar_campanha(path, output, solver=solver_para(modelo_pequeno[1]))
