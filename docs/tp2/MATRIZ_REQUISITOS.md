@@ -2,6 +2,13 @@
 
 Fontes E/A5/A6/F/R definidas em [AUDITORIA.md](AUDITORIA.md). Situação em 15/10/2026, antes da implementação. `P` = pronto para reutilização no escopo indicado; `R` = parcialmente reutilizável; `A` = ausente. Uma linha pronta não certifica a entrega inteira. IDs de issues são locais, definidos em [BACKLOG.md](BACKLOG.md).
 
+**Atualização 18/10/2026:** os estados da tabela abaixo são o diagnóstico
+histórico. TP2-01 a TP2-12B foram implementadas; o estado atual por tarefa e
+suas evidências estão no [backlog](BACKLOG.md) e no
+[registro 07–12](EXECUCAO_07_12.md). E08–E11, D02–D06 e D08 têm infraestrutura
+implementada/testada; E12/E13 ainda exigem executar a campanha oficial TP2-13.
+Figuras, análise e relatório cumulativo TP2-14 a TP2-17 seguem pendentes.
+
 ## Exigências explícitas do enunciado e correções recebidas
 
 | ID | Requisito | Origem | Artefato/arquivos | Estado | Validação | Issues |

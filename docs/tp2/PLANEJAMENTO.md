@@ -1,8 +1,9 @@
 # Plano de implementação — Entrega 2 do Case Cassotis
 
-**Atualização de execução:** o usuário autorizou TP2-01 a TP2-06, concluídas
-com testes, campanha corrigida e referências verificadas. Evidências em
-[EXECUCAO_01_06.md](EXECUCAO_01_06.md). As tarefas seguintes continuam propostas.
+**Atualização de execução:** TP2-01 a TP2-06 concluídas, com evidências em
+[EXECUCAO_01_06.md](EXECUCAO_01_06.md). Em 18/10 o usuário autorizou também
+TP2-07,08,09,10,11,12A,12B; implementação e validação registradas em
+[EXECUCAO_07_12.md](EXECUCAO_07_12.md). TP2-13 a TP2-17 continuam posteriores.
 
 > Para execução por agentes: depois da aprovação do usuário, usar `superpowers:executing-plans` para implementar as tarefas em sequência; delegação somente se escolhida/autorizada. Este documento e o backlog são propostas para revisão, não autorização para iniciar o algoritmo.
 
