@@ -32,7 +32,7 @@ esta execução. Aprovações intermediárias dispensadas explicitamente pelo us
 - [x] 11: campanha — 160 IDs, seeds estáveis, manifesto, falhas e retomada.
 - [x] 12B: integração — ambos métodos, persistência/revalidação, Pareto,
   repetibilidade e retomada; campanha reduzida, suíte completa.
-- [x] Auditoria dos critérios e documentação/backlog; publicação registrada abaixo.
+- [x] Auditoria dos critérios, documentação/backlog, publicação e PR.
 
 Cada implementação começa com teste falhando e termina com evidência e commit.
 O histórico Git e este registro permitem retomar após interrupção.
@@ -136,5 +136,11 @@ teto de 500 avaliações por subproblema, oito buscas reais, 4.000 avaliações.
   confirmadas, 22 testes focais passaram, auditoria e retomada reais conferidas.
 - Checkout original permanece na branch anterior com exatamente as cinco
   exclusões locais de PDFs, sem inclusão destas no histórico novo.
-- A branch nova deriva de #4 ainda aberto; o PR será encadeado à branch base
+- A branch nova deriva de #4 ainda aberto; o PR foi encadeado à branch base
   `tp2/01-06-base-viavel`, evitando misturar o diff anterior com as sete tarefas.
+- Publicação: [PR #5](https://github.com/GustavoMTmelo/TeoriadaDecisao/pull/5),
+  branch `tp2/07-12-multiobjetivo`; anexado a este chat. Primeiro head publicado
+  `97c5c76dbebac62fa993278a53f141b8ce37138d` conferido por `ls-remote` e pelo
+  head do PR. O commit que registra esta publicação altera apenas este texto.
+  Fontes, configurações e resultados são idênticos aos do checkout limpo
+  verificado em `460064b`; conferência de igualdade repetida antes do encerramento.
