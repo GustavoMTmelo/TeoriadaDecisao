@@ -1,0 +1,18 @@
+{
+  "referencia": "../results/referencias_tp1.json",
+  "seeds_base": [90001, 90002],
+  "busca": {
+    "max_iter": 10,
+    "max_sem_melhora": 5,
+    "k_max": 3,
+    "max_amostras": 10,
+    "max_restarts": 5,
+    "max_avaliacoes": 500
+  },
+  "configuracoes": [
+    {"metodo": "ponderada", "id": "integracao_custo", "pesos": [1, 0, 0]},
+    {"metodo": "ponderada", "id": "integracao_centro", "pesos": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]},
+    {"metodo": "epsilon", "id": "integracao_livre", "epsilons": [1, 1]},
+    {"metodo": "epsilon", "id": "integracao_apertado", "epsilons": [0, 0]}
+  ]
+}
