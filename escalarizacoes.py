@@ -23,6 +23,10 @@ def validar_configuracao(config):
         validar_pesos(config.pesos)
         if config.objetivo is not None or config.epsilons is not None:
             raise ValueError('Soma ponderada contém parâmetros de outro método.')
+    elif config.metodo == 'epsilon':
+        validar_epsilons(config.epsilons)
+        if config.objetivo is not None or config.pesos is not None:
+            raise ValueError('Epsilon contém parâmetros de outro método.')
     else:
         raise ValueError('Método desconhecido.')
 
@@ -42,3 +46,24 @@ def configuracoes_ponderadas():
                for i in range(5) for j in range(5-i)]
     configs.append(ConfigEscalar('ponderada', 'pond_centro', pesos=(1/3,)*3))
     return configs
+
+
+def validar_epsilons(eps):
+    validar_vetor(eps, tamanho=2)
+    if min(eps) < 0:
+        raise ValueError('Limites epsilon devem ser não negativos.')
+
+
+def restricoes_epsilon(g, eps, tol=1e-9):
+    """Dois tetos independentes; retorna viabilidade e soma dos excessos positivos."""
+    validar_vetor(g)
+    validar_epsilons(eps)
+    if not isinstance(tol, (int, float)) or not math.isfinite(tol) or tol < 0:
+        raise ValueError('Tolerância epsilon inválida.')
+    excessos = [max(0., g[j+1]-eps[j]-tol) for j in range(2)]
+    return not any(excessos), sum(excessos)
+
+
+def configuracoes_epsilon():
+    return [ConfigEscalar('epsilon', f'eps_{i}{j}', epsilons=(i/3, j/3))
+            for i in range(4) for j in range(4)]
