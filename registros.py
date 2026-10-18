@@ -118,14 +118,16 @@ def ler_resultado(path):
         from pareto import chave_solucao
         observados = dados.get('observados', [])
         for observado in observados:
-            origem = observado['origens'][-1] if observado.get('origens') else {}
             esperado = {k: meta[k] for k in ('metodo', 'repeticao', 'seed', 'run_id')}
             esperado['config_id'] = config.id
-            if any(origem.get(k) != v for k, v in esperado.items()):
-                raise ValueError('Proveniência incompatível com execução.')
-            indice = origem.get('indice_avaliacao')
-            if type(indice) is not int or not 1 <= indice <= r['avaliacoes']:
-                raise ValueError('Índice de avaliação inválido na proveniência.')
+            if not isinstance(observado.get('origens'), list) or not observado['origens']:
+                raise ValueError('Proveniência ausente no candidato observado.')
+            for origem in observado['origens']:
+                if not isinstance(origem, dict) or any(origem.get(k) != v for k, v in esperado.items()):
+                    raise ValueError('Proveniência incompatível com execução.')
+                indice = origem.get('indice_avaliacao')
+                if type(indice) is not int or not 1 <= indice <= r['avaliacoes']:
+                    raise ValueError('Índice de avaliação inválido na proveniência.')
         if r['melhor_viavel'] is not None:
             melhor = {int(k): v for k, v in r['melhor_viavel']['solucao'].items()}
             chaves = {chave_solucao({int(k): v for k, v in c['solucao'].items()}) for c in observados}

@@ -177,3 +177,17 @@ def test_retomada_rejeita_proveniencia_e_contadores_adulterados(modelo_pequeno, 
     registro.write_text(json.dumps(dados), encoding='utf-8')
     with pytest.raises(ValueError):
         executar_campanha(path, output, solver=solver_para(modelo_pequeno[1]))
+
+
+def test_retomada_rejeita_origem_adulterada_antes_da_ultima(modelo_pequeno, tmp_path):
+    from experimentos import executar_campanha
+    path = preparar(tmp_path)
+    output = tmp_path / 'campanha'
+    executar_campanha(path, output, solver=solver_para(modelo_pequeno[1]))
+    registro = next((output / 'execucoes').glob('*.json'))
+    dados = json.loads(registro.read_text(encoding='utf-8'))
+    origens = dados['observados'][0]['origens']
+    origens.insert(0, {**origens[0], 'seed': 'adulterada'})
+    registro.write_text(json.dumps(dados), encoding='utf-8')
+    with pytest.raises(ValueError, match='Proveniência'):
+        executar_campanha(path, output, solver=solver_para(modelo_pequeno[1]))
