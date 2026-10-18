@@ -29,3 +29,56 @@ def construir_referencia(candidatos_viaveis):
     payload = {'minimo': minimo, 'maximo': maximo, 'origens': origens}
     identidade = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
     return Referencia(minimo, maximo, identidade, origens)
+
+
+def validar_vetor(vetor, tamanho=3):
+    """Rejeita dimensão incorreta e números não finitos nas APIs numéricas."""
+    try:
+        valido = (len(vetor) == tamanho and all(
+            not isinstance(x, bool) and isinstance(x, (int, float)) and math.isfinite(x)
+            for x in vetor))
+    except TypeError:
+        valido = False
+    if not valido:
+        raise ValueError(f'Esperado vetor com {tamanho} números finitos.')
+
+
+def validar_referencia(referencia):
+    validar_vetor(referencia.minimo)
+    validar_vetor(referencia.maximo)
+    for a, b in zip(referencia.minimo, referencia.maximo):
+        if not math.isfinite(b - a) or b - a <= 1e-12 * max(1, abs(a), abs(b)):
+            raise ValueError('Amplitude empírica degenerada ou inválida.')
+
+
+def normalizar(objetivos, referencia):
+    """Aplica extremos empíricos fixos; valores externos não são truncados."""
+    validar_referencia(referencia)
+    validar_vetor(objetivos)
+    resultado = tuple((x-a)/(b-a) for x, a, b in
+                      zip(objetivos, referencia.minimo, referencia.maximo))
+    validar_vetor(resultado)
+    return resultado
+
+
+def carregar_referencia(caminho):
+    """Carrega referência congelada, preservando origem e conferindo seu ID SHA256."""
+    from pathlib import Path
+    dados = json.loads(Path(caminho).read_text(encoding='utf-8'))
+    try:
+        ref = Referencia(tuple(dados['minimo']), tuple(dados['maximo']),
+                         dados['id'], dados['origens'])
+        validar_referencia(ref)
+        for j in range(1, 4):
+            for extremo in ('minimo', 'maximo'):
+                ids = ref.origens[f'f{j}'][extremo]
+                if not isinstance(ids, list) or not ids or any(
+                        not isinstance(run_id, str) or not run_id for run_id in ids):
+                    raise ValueError('Origem do extremo inválida.')
+    except (KeyError, TypeError) as erro:
+        raise ValueError('Referência incompleta ou inválida.') from erro
+    payload = {'minimo': ref.minimo, 'maximo': ref.maximo, 'origens': ref.origens}
+    esperado = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+    if ref.id != esperado:
+        raise ValueError('Hash de identidade da referência divergente.')
+    return ref
