@@ -1,7 +1,9 @@
 # Backlog executável — Entrega 2
 
-Status: **TP2-01 a TP2-12B autorizadas e implementadas**; TP2-13 a TP2-17
-permanecem posteriores. IDs são locais, sem issues publicadas no GitHub.
+Status: **TP2-01 a TP2-12B implementadas; continuidade TP2-13 a TP2-17
+autorizada pelo usuário**. Campanha oficial concluída e auditada com teto
+de 10.000 aprovado explicitamente. Fontes do relatório e análise integradas;
+compilação/revisão do PDF pendentes no outro computador. IDs são locais.
 Este backlog implementa o [planejamento](PLANEJAMENTO.md) e usa os IDs da
 [matriz](MATRIZ_REQUISITOS.md). Caminhos relativos à raiz Git, não à pasta `TD`.
 
@@ -22,7 +24,11 @@ Este backlog implementa o [planejamento](PLANEJAMENTO.md) e usa os IDs da
 | TP2-11 | Concluída | `3bf54db` e `241bd64`; agenda 160, manifesto, registros, retomada e proveniência |
 | TP2-12A | Concluída | `fa944d4`; 19 testes, arquivo 3D, deduplicação física e origens agregadas |
 | TP2-12B | Concluída | `003d9c4` e `8223522`; suíte 162/162, integração 8 runs/4.000 avaliações, auditoria independente e retomada 8/8 |
-| TP2-13 a TP2-17 | Pendentes | Fora do escopo autorizado; infraestrutura oficial pronta, campanha completa não executada |
+| TP2-13 | Concluída | 160/160 buscas, 1.600.000 avaliações; auditoria de 487.200 observações e 12 arquivos Pareto aprovada |
+| TP2-14 | Concluída | Seis projeções PNG/PDF e tabelas oficiais; nova auditoria aprovada e seis imagens finais inspecionadas |
+| TP2-15 | Fontes integradas | TP1 corrigido, metodologia TP2, resultados e discussão no relatório cumulativo; PDF pendente |
+| TP2-16 | Análise implementada e conferida | `analise.json`, extremos completos, cobertura 3D, variabilidade e discussão; revisão do grupo pendente |
+| TP2-17 | Pacote de fontes/resultados validado; PDF pendente | ZIP com 303 arquivos, CRC e manifesto; compilação/revisão do PDF e envio pendentes |
 
 Detalhes dos testes e decisões em [EXECUCAO_01_06.md](EXECUCAO_01_06.md).
 As evidências novas, critérios e publicação estão em

@@ -1,0 +1,21 @@
+{
+  "inicio_utc": "2026-10-18T23:25:25.461607+00:00",
+  "config": "configs/tp2.json",
+  "fase": "auditada_com_figuras",
+  "concluidas": 160,
+  "reutilizadas": 0,
+  "duracao_coleta_s": 2760.608449899999,
+  "duracao_buscas_registradas_s": 1837.1823096000517,
+  "avaliacoes": 1600000,
+  "ressalva": "Tempo desta invocação; em retomada, não é duração integral de todas as buscas.",
+  "auditoria": {
+    "execucoes": 160,
+    "observados": 487200,
+    "arquivos_pareto": 12,
+    "pontos_exportados": 17802,
+    "status": "verificado"
+  },
+  "duracao_auditoria_e_figuras_s": 797.2643384000039,
+  "duracao_total_s": 3557.8758304000003,
+  "produtos": 16
+}

@@ -88,3 +88,23 @@ def test_cli_auditoria(campanha, monkeypatch, capsys):
     monkeypatch.setattr('sys.argv', ['verificar_tp2.py', '--output', str(campanha)])
     main()
     assert json.loads(capsys.readouterr().out)['status'] == 'verificado'
+
+
+def test_auditoria_rejeita_mesma_origem_para_composicoes_diferentes(campanha, modelo_pequeno):
+    from avaliacao import avaliar
+    from contratos import ConfigEscalar
+    from registros import ler_resultado, salvar_resultado
+
+    path = next((campanha/'execucoes').glob('*.json'))
+    payload = json.loads(path.read_text(encoding='utf-8'))
+    resultado, meta = ler_resultado(path)
+    config = ConfigEscalar(**meta['config'])
+    dados_ref = meta['referencia']
+    ref = Referencia(tuple(dados_ref['minimo']), tuple(dados_ref['maximo']),
+                     dados_ref['id'], dados_ref['origens'])
+    origens = payload['observados'][0]['origens']
+    observados = [Candidato(sol, avaliar(sol, config, ref), origens)
+                  for sol in modelo_pequeno[1:]]
+    salvar_resultado(resultado, meta, path, observados)
+    with pytest.raises(ValueError, match='origem identifica composições'):
+        verificar(campanha)

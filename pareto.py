@@ -92,15 +92,50 @@ def consolidar_arquivo(candidatos: Iterable[Candidato], *, metodo=None,
     por repetição, pois um arquivo global já perdeu seus pontos dominados.
     Sem filtros, preserva inclusive candidatos sem metadados de origem.
     """
-    arquivo = []
+    # Agrupar primeiro evita copiar todo o arquivo a cada observação repetida.
+    # Composições iguais têm objetivos brutos iguais; a primeira avaliação
+    # (que pode conter outro escalar) continua sendo a avaliação preservada.
+    grupos = {}
     for candidato in candidatos:
+        origens = candidato.origens
         if metodo is not None or repeticao is not None:
             origens = [o for o in candidato.origens
                        if (metodo is None or o.get('metodo') == metodo)
                        and (repeticao is None or o.get('repeticao') == repeticao)]
             if not origens:
                 continue
-            candidato = Candidato(candidato.solucao,
-                                  deepcopy(candidato.avaliacao), origens)
-        arquivo = atualizar_arquivo(arquivo, candidato)
-    return arquivo
+        _validar_candidato(candidato)
+        chave = chave_solucao(candidato.solucao)
+        if chave not in grupos:
+            grupos[chave] = (candidato, [], set())
+        _, unidas, vistas = grupos[chave]
+        for origem in origens:
+            chave_origem = _chave_origem(origem)
+            if chave_origem not in vistas:
+                vistas.add(chave_origem)
+                unidas.append(origem)
+
+    # Em ordem lexicográfica dos três objetivos, um ponto posterior não
+    # domina um anterior. Vetores iguais de composições distintas permanecem.
+    frente = []
+    for chave, (candidato, origens, _) in sorted(
+            grupos.items(), key=lambda item: (tuple(item[1][0].avaliacao.objetivos), item[0])):
+        vetor = candidato.avaliacao.objetivos
+        if any(all(x <= y for x, y in zip(anterior.avaliacao.objetivos, vetor))
+               and any(x < y for x, y in zip(anterior.avaliacao.objetivos, vetor))
+               for _, anterior, _ in frente):
+            continue
+        frente.append((chave, candidato, origens))
+    return [Candidato(c.solucao, deepcopy(c.avaliacao), origens)
+            for _, c, origens in sorted(frente, key=lambda item: item[0])]
+
+
+def _chave_origem(valor):
+    """Chave hashable com igualdade de dict/list, inclusive 1 == 1.0."""
+    if isinstance(valor, dict):
+        return (dict, frozenset((k, _chave_origem(v)) for k, v in valor.items()))
+    if isinstance(valor, list):
+        return (list, tuple(_chave_origem(v) for v in valor))
+    if isinstance(valor, tuple):
+        return (tuple, tuple(_chave_origem(v) for v in valor))
+    return valor

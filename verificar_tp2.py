@@ -90,7 +90,8 @@ def _verificar(output):
     _exigir(manifesto['estado_runs'] == {i: 'concluido' for i in ids}, 'Agenda não concluída.')
     _exigir({p.stem for p in (output/'execucoes').glob('*.json')} == set(ids),
             'Registros diferem da agenda.')
-    runs, observados, linhas = {}, [], []
+    runs, arquivos, linhas = {}, {}, []
+    total_observados = 0
     ref_comum = None
     for run in agenda:
         rid = run['run_id']
@@ -118,19 +119,36 @@ def _verificar(output):
         for c in atuais:
             _fisica(c)
             _exigir(c.avaliacao.viavel, 'Observado inviável.')
-        runs[rid] = (config, referencia, atuais)
-        observados.extend(atuais)
+        # Índice compacto de cada origem -> composição física. Evita varrer
+        # milhares de candidatos novamente para cada origem exportada.
+        indice_origens = {}
+        for c in atuais:
+            identidade_fisica = hashlib.sha256(repr(chave_solucao(c.solucao)).encode()).digest()
+            for origem in c.origens:
+                identidade_origem = _json(origem)
+                _exigir(identidade_origem not in indice_origens
+                        or indice_origens[identidade_origem] == identidade_fisica,
+                        'Uma origem identifica composições físicas diferentes.')
+                indice_origens[identidade_origem] = identidade_fisica
+        runs[rid] = (config, referencia, indice_origens)
+        grupo = (run['metodo'], run['repeticao'])
+        arquivos[grupo] = consolidar_arquivo([*arquivos.get(grupo, []), *atuais])
+        total_observados += len(atuais)
         linhas.append(_linha(run, resultado))
 
     grupos = {(r['metodo'], r['repeticao']) for r in agenda}
     grupos |= {(r['metodo'], 'uniao') for r in agenda}
     nomes = []
     total_pontos = 0
+    origens_validadas = set()
     for metodo, repeticao in sorted(grupos, key=str):
         nome = f'pareto/{metodo}_{repeticao}.json'
         nomes.append(nome)
-        esperado = consolidar_arquivo(observados, metodo=metodo,
-                                      repeticao=None if repeticao == 'uniao' else repeticao)
+        if repeticao == 'uniao':
+            esperado = consolidar_arquivo(
+                c for (m, _), arquivo in arquivos.items() if m == metodo for c in arquivo)
+        else:
+            esperado = arquivos[metodo, repeticao]
         exportados = _ler(output/nome)
         candidatos = []
         for dados in exportados:
@@ -138,11 +156,16 @@ def _verificar(output):
             origens = dados['origens']
             _exigir(isinstance(origens, list) and bool(origens), 'Origem ausente no Pareto.')
             chave = chave_solucao(solucao)
+            identidade_fisica = hashlib.sha256(repr(chave).encode()).digest()
             for origem in origens:
                 config, referencia, fontes = runs[origem['run_id']]
-                _exigir(any(chave_solucao(c.solucao) == chave and origem in c.origens for c in fontes),
+                _exigir(fontes.get(_json(origem)) == identidade_fisica,
                         'Origem Pareto não corresponde a candidato observado.')
-                _exigir(avaliar(solucao, config, referencia).viavel, 'Ponto viola restrições da origem.')
+                identidade_validacao = (identidade_fisica, origem['run_id'])
+                if identidade_validacao not in origens_validadas:
+                    _exigir(avaliar(solucao, config, referencia).viavel,
+                            'Ponto viola restrições da origem.')
+                    origens_validadas.add(identidade_validacao)
             config, referencia, _ = runs[origens[0]['run_id']]
             av = avaliar(solucao, config, referencia)
             _exigir(_json(dados['avaliacao']) == _json(asdict(av)), 'Avaliação Pareto divergente.')
@@ -163,7 +186,7 @@ def _verificar(output):
         csv_salvo = list(csv.DictReader(arquivo))
     csv_esperado = [{k: '' if v is None else str(v) for k, v in linha.items()} for linha in linhas]
     _exigir(csv_salvo == csv_esperado, 'Resumo CSV divergente dos registros.')
-    return {'execucoes': len(agenda), 'observados': len(observados),
+    return {'execucoes': len(agenda), 'observados': total_observados,
             'arquivos_pareto': len(nomes), 'pontos_exportados': total_pontos,
             'status': 'verificado'}
 

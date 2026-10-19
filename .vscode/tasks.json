@@ -1,0 +1,94 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TP2: consolidar análise do relatório",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "relatorio_tp2.py"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: empacotar fontes e resultados",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "empacotar_tp2.py"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "Relatório: compilar com LaTeX instalado",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-File", "${workspaceFolder}/scripts/compilar_relatorio.ps1"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: executar piloto completo (64 buscas)",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "piloto_tp2.py"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"MPLBACKEND": "Agg"}},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: gerar figuras da campanha oficial",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "figuras_tp2.py"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "Projeto: testes",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "-m", "pytest", "-q"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"MPLBACKEND": "Agg"}},
+      "group": {"kind": "test", "isDefault": true},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP1: verificar resultados corrigidos",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "reproduzir_tp1.py", "--output", "results/tp1_corrigido", "--verificar"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"MPLBACKEND": "Agg"}},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: executar integração local",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "experimentos.py", "--config", "configs/tp2_integracao.json", "--output", "tmp/integracao_vscode"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"MPLBACKEND": "Agg"}},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: auditar integração local",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "verificar_tp2.py", "--output", "tmp/integracao_vscode"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: campanha oficial (160 buscas; após piloto)",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "executar_tp2.py"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"MPLBACKEND": "Agg"}},
+      "problemMatcher": []
+    },
+    {
+      "label": "TP2: auditar campanha oficial",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["-X", "utf8", "verificar_tp2.py", "--output", "results/tp2"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    }
+  ]
+}

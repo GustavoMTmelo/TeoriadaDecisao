@@ -108,3 +108,32 @@ def test_consolidacao_filtra_origens_antes_da_dominancia():
     selecionados = consolidar_arquivo(pontos, metodo='epsilon')
     assert selecionados[0].origens == [{'metodo': 'epsilon', 'repeticao': 2}]
     assert pontos == copia
+
+
+def test_consolidacao_em_lote_equivale_ao_incremental_em_ordens_aleatorias():
+    import random
+    rng = random.Random(811)
+    vetores = [tuple(rng.randrange(8) for _ in range(3)) for _ in range(30)]
+    pontos = [candidato(vetores[i % 30], {1: [f'M{i % 30}']},
+                        [{'seed': i % 5, 'config': {'pesos': [1, 0, 0]}}])
+              for i in range(150)]
+    for _ in range(5):
+        rng.shuffle(pontos)
+        esperado = []
+        for ponto in pontos:
+            esperado = atualizar_arquivo(esperado, ponto)
+        atual = consolidar_arquivo(pontos)
+        assert atual == esperado
+
+
+def test_lote_deduplica_origens_com_igualdade_numerica_e_nao_compartilha_dados():
+    a = candidato(origens=[{'seed': 1, 'config': [1, 0, 0]}])
+    b = candidato(origens=[{'config': [1., 0., 0.], 'seed': 1.}])
+    c = candidato(solucao={1: ['C']}, origens=[{'seed': 2}])
+    novo = consolidar_arquivo([a, b, c])
+    assert len(novo) == 2
+    assert len(novo[0].origens) == 1
+    novo[0].origens[0]['config'][0] = 9
+    novo[0].solucao[1].append('D')
+    assert a.origens[0]['config'] == [1, 0, 0]
+    assert a.solucao == {1: ['A', 'B']}

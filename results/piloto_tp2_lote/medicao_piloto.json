@@ -1,0 +1,304 @@
+{
+  "runs": 64,
+  "reutilizadas": 0,
+  "duracao_campanha_s": 1028.0897028446198,
+  "duracao_auditoria_s": 446.41638840000087,
+  "tamanho_campanha_bytes": 1871663488,
+  "por_metodo": {
+    "epsilon": {
+      "runs": 32,
+      "viaveis": 18,
+      "sem_viavel_encontrada": 14,
+      "fracao_viaveis": 0.5625,
+      "avaliacoes": 320000,
+      "tempo_buscas_s": 329.40247539997654,
+      "mediana_busca_s": 10.242502050001349,
+      "maximo_busca_s": 12.055235200001334
+    },
+    "ponderada": {
+      "runs": 32,
+      "viaveis": 32,
+      "sem_viavel_encontrada": 0,
+      "fracao_viaveis": 1.0,
+      "avaliacoes": 320000,
+      "tempo_buscas_s": 341.5609524999818,
+      "mediana_busca_s": 10.846656549998443,
+      "maximo_busca_s": 12.443634199997177
+    }
+  },
+  "por_configuracao": {
+    "epsilon/eps_00": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_01": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_02": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_03": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_10": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_11": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_12": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_13": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_20": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_21": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_22": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_23": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_30": {
+      "runs": 2,
+      "viaveis": 0,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_31": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_32": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "epsilon/eps_33": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_004": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_013": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_022": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_031": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_040": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_103": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_112": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_121": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_130": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_202": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_211": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_220": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_301": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_310": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_400": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    },
+    "ponderada/pond_centro": {
+      "runs": 2,
+      "viaveis": 2,
+      "avaliacoes": 20000,
+      "motivos_parada": [
+        "max_avaliacoes"
+      ]
+    }
+  },
+  "estimativa_160_runs_s": 2570.2242571115494,
+  "estimativa_160_runs_com_folga_50pct_s": 3855.336385667324,
+  "ressalva_estimativa": "Extrapolação de tempo total; consolidação Pareto e auditoria podem crescer mais que linearmente. Não é garantia de duração.",
+  "origem_duracao": "Aproximação por criação UTC do processo do piloto e mtime do resumo final; inclui inicialização.",
+  "inicio_processo_utc": "2026-10-18T22:53:46.277428Z",
+  "auditoria": {
+    "execucoes": 64,
+    "observados": 200496,
+    "arquivos_pareto": 6,
+    "pontos_exportados": 8752,
+    "status": "verificado",
+    "duracao_s": 446.41638840000087
+  },
+  "pareto_uniao": {
+    "epsilon": 870,
+    "ponderada": 2703
+  }
+}

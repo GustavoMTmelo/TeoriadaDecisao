@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "criado_utc": "2026-10-15T18:59:38.377784+00:00",
+  "python": "3.12.14",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "dependencias": {
+    "matplotlib": "3.11.2",
+    "pytest": "8.4.2",
+    "numpy": "2.5.4"
+  },
+  "commit": "9b24a8150f09d82cd74fa31df8d18103d955f31c",
+  "git_status_inicial": "D 01-Aula.pdf\n D 02-Aula.pdf\n D 04-Aula.pdf\n D 05-Aula.pdf\n D 06-Aula.pdf",
+  "codigo_sha256": {
+    "contratos.py": "705333d686e03a9ba5fc27e6a3a887dc510575664d2838dabb71c2230019fb36",
+    "sol_inicial.py": "1327bc7f63837a89779edfb5154304e02fd591ed9d2483e51751187991b48609",
+    "avaliacao.py": "9f337e592d431010e560628303fa6eb5a01be2105ca77d55ac3faf25c5af346b",
+    "vizinhancas.py": "93a262f9bc28f69cf1e3a778250992c9e3ab9b246d2112bce183aa2addc0b737",
+    "vns.py": "58dba03cbbdc303eff1455418314d9a43cd4c5dbb2a7b04db71df95e3dfebf01",
+    "registros.py": "448a10303051236987d0847e44fb32bf42cbad19a078afa747c926f32c84fda7",
+    "normalizacao.py": "c233e7b53563424b0ee8c3929e5dca03ee1dc13776290dab9bc75a181b01cab0",
+    "reproduzir_tp1.py": "7d67556e643b3101d0411f113acba1fb818315699331e4e187ae5d49cad3155f"
+  },
+  "dados_sha256": "d7d94cd055af36b42e47592bda1ffede067dd5fc0014f6141a960d9329f0675d",
+  "configuracao_busca": {
+    "max_iter": 200,
+    "max_sem_melhora": 60,
+    "k_max": 3,
+    "max_amostras": 20,
+    "max_restarts": 5,
+    "max_avaliacoes": null
+  },
+  "lambdas": {
+    "f1": 1000000000000.0,
+    "f2": 10000.0,
+    "f3": 10000.0
+  },
+  "agenda": [
+    {
+      "run_id": "f1_01_seed42",
+      "objetivo": "f1",
+      "repeticao": 1,
+      "seed": 42
+    },
+    {
+      "run_id": "f1_02_seed123",
+      "objetivo": "f1",
+      "repeticao": 2,
+      "seed": 123
+    },
+    {
+      "run_id": "f1_03_seed456",
+      "objetivo": "f1",
+      "repeticao": 3,
+      "seed": 456
+    },
+    {
+      "run_id": "f1_04_seed789",
+      "objetivo": "f1",
+      "repeticao": 4,
+      "seed": 789
+    },
+    {
+      "run_id": "f1_05_seed1011",
+      "objetivo": "f1",
+      "repeticao": 5,
+      "seed": 1011
+    },
+    {
+      "run_id": "f2_01_seed42",
+      "objetivo": "f2",
+      "repeticao": 1,
+      "seed": 42
+    },
+    {
+      "run_id": "f2_02_seed123",
+      "objetivo": "f2",
+      "repeticao": 2,
+      "seed": 123
+    },
+    {
+      "run_id": "f2_03_seed456",
+      "objetivo": "f2",
+      "repeticao": 3,
+      "seed": 456
+    },
+    {
+      "run_id": "f2_04_seed789",
+      "objetivo": "f2",
+      "repeticao": 4,
+      "seed": 789
+    },
+    {
+      "run_id": "f2_05_seed1011",
+      "objetivo": "f2",
+      "repeticao": 5,
+      "seed": 1011
+    },
+    {
+      "run_id": "f3_01_seed42",
+      "objetivo": "f3",
+      "repeticao": 1,
+      "seed": 42
+    },
+    {
+      "run_id": "f3_02_seed123",
+      "objetivo": "f3",
+      "repeticao": 2,
+      "seed": 123
+    },
+    {
+      "run_id": "f3_03_seed456",
+      "objetivo": "f3",
+      "repeticao": 3,
+      "seed": 456
+    },
+    {
+      "run_id": "f3_04_seed789",
+      "objetivo": "f3",
+      "repeticao": 4,
+      "seed": 789
+    },
+    {
+      "run_id": "f3_05_seed1011",
+      "objetivo": "f3",
+      "repeticao": 5,
+      "seed": 1011
+    }
+  ],
+  "estado": "concluida_validada",
+  "referencia_id": "4eed030453911d878065db4ddcab092db28e085de25ec7b32dd6f52aa52e02f4",
+  "execucoes_sha256": {
+    "f1_01_seed42": "04824a7b1424c762b12d25d915aaadb85e134042c5dcf7ebabc18aa1df2eb692",
+    "f1_02_seed123": "5bc2473015ea4cb5cb0b9154a0bc9593b86046f215907ced195f45cbcf8c8ee7",
+    "f1_03_seed456": "46b64843e969cc21a9ecb9f71d6f39c035c19f7ec675e296392d17027f0d44a1",
+    "f1_04_seed789": "3916a647654917429356e7de9d263414eb0c6e985cf0905b1fe87ef6c7f3daec",
+    "f1_05_seed1011": "cc1f9afc81f09e6bbff3ba03c0f49532029b0d23b51473d38195346e9828bf07",
+    "f2_01_seed42": "01c23afa54306de24b5fce4f782ca15d7b58692757347bc328802109a2f4e873",
+    "f2_02_seed123": "ff07573cf31b05c17d4acf97bc265f0183111d0948aaff707674af1a20cfb94d",
+    "f2_03_seed456": "8f4c629642861c5a825ab757c96bc5ba87b179c2291d11cb4e26e85c33e81f47",
+    "f2_04_seed789": "5107525ecc6816beb7c1a7de755689829c1b98c21d592b42eb1f2009e09d4545",
+    "f2_05_seed1011": "46aacc84129bd0d7c4812c0e4bbde08da37bb68731cd2247140a743bb0a891a9",
+    "f3_01_seed42": "a0e905c66e4a7b4d089c48a177535552060d35fb163130ec5c09b726e7a13a42",
+    "f3_02_seed123": "7c690be0a9884d578f4eeb940e77dc3057008c3a313bae1e0b511753b861791d",
+    "f3_03_seed456": "3e7db515aa5c51d23b77fd95b03793d1ba488c3b384123362b6b6079d3f72590",
+    "f3_04_seed789": "6cc538ad5cd9abd18ff146c36ca58c5ea5b90d55305c9eecd83bd9ca46193dc9",
+    "f3_05_seed1011": "9e1c11370c0d5928c3d2f7859441d6f7a3210a30c5465c6981496e1404caae4f"
+  },
+  "codigo_coleta_sha256_bytes": {
+    "contratos.py": "705333d686e03a9ba5fc27e6a3a887dc510575664d2838dabb71c2230019fb36",
+    "sol_inicial.py": "1327bc7f63837a89779edfb5154304e02fd591ed9d2483e51751187991b48609",
+    "avaliacao.py": "9f337e592d431010e560628303fa6eb5a01be2105ca77d55ac3faf25c5af346b",
+    "vizinhancas.py": "93a262f9bc28f69cf1e3a778250992c9e3ab9b246d2112bce183aa2addc0b737",
+    "vns.py": "bdeff3d252c741649fe7cd139f5c39a35449b94b8deb88d6cac58a23c600f92b",
+    "registros.py": "448a10303051236987d0847e44fb32bf42cbad19a078afa747c926f32c84fda7",
+    "normalizacao.py": "c233e7b53563424b0ee8c3929e5dca03ee1dc13776290dab9bc75a181b01cab0",
+    "reproduzir_tp1.py": "6b0a1d1156aa74ce47acc35a54d95e183f82b4835f7c4d245cd7173a4a288107"
+  },
+  "codigo_hash_normaliza_linhas": true,
+  "codigo_consolidacao_sha256": {
+    "reproduzir_tp1.py": "7d67556e643b3101d0411f113acba1fb818315699331e4e187ae5d49cad3155f",
+    "normalizacao.py": "c233e7b53563424b0ee8c3929e5dca03ee1dc13776290dab9bc75a181b01cab0",
+    "relatorio_tp1.py": "891c670de5de66a53de45b7c9365a36a69e27efccba859103b6cce5219d73ae3"
+  },
+  "figuras_geradas": true,
+  "artefatos_sha256": {
+    "resumo.csv": "2339d839d4bb93619f99d952b79cd9555a0992f6970c30a1f772f8575e7646e3",
+    "objetivos_cruzados.csv": "20a5fe91532c26de660426d281948f20e9992c6d6b43fc3e08dce401a1d33aee",
+    "matriz_payoff.csv": "3ec03e1970477ba0faf932d63840746fbb34e4f9a1f6449f26f4402107a7e7b1",
+    "auditoria.json": "5f318b50fd0e6088586cfb10a252c1592982c1f991aea90f52b547b5b6374d3c",
+    "resultados_tp1.tex": "090c62a1a791abfd463656dc3360d2ce1aec31a1e7a0dd1f3fb004c6e75c0582",
+    "estatisticas_f1.json": "2771bf91537e93b78ef7aafb0d42b30c3895da3d0677f390bf6f003f2618dc22",
+    "estatisticas_f2.json": "81853635dd99399b4bc4b4ca4d9e0118bb2769f569b7fb528a841da0fd9da9f2",
+    "estatisticas_f3.json": "f22345ac3aaf2f1fbe86a92f311b98ab648f751a36da12003235992219afe1ca",
+    "convergencia_f1.png": "ad24556e5a0498ae9458c3f01203b1f36307f8e1420a85440b6a780387bfc18d",
+    "melhor_solucao_f1.png": "3aa661a17228fc54ed58675afe332fb2a26cbade316c58f002f196fdcd6b02a9",
+    "convergencia_f2.png": "dc40c3a0f2683f81c66094ef0384f36d0bdd84fc56d406e968f6524ef0e7914d",
+    "melhor_solucao_f2.png": "3673b1c85e4c67d74b57adda13546001e46079febfc0054983c0745d76717a8b",
+    "convergencia_f3.png": "1817497e57e111e2479589a9c4d633a0da1c96914834e8dbf035beb8564eff12",
+    "melhor_solucao_f3.png": "878fb34784aa5ab3efdee17b43bceb9e516f07511270cefaeccc501f7234d006"
+  },
+  "consolidado_utc": "2026-10-15T19:17:20.216206+00:00"
+}

@@ -1,0 +1,20 @@
+.claude/
+.venv/
+tmp/
+build/
+dist/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+*.py[cod]
+
+# Arquivos auxiliares do LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc

@@ -1,0 +1,42 @@
+{
+  "ponderada": {
+    "runs": 80,
+    "viaveis": 80,
+    "sem_viavel_encontrada": 0,
+    "avaliacoes": 800000,
+    "tempo_buscas_s": 955.320627200017,
+    "composicoes_uniao_nd_3d": 3961,
+    "vetores_distintos_uniao": 3830,
+    "minimos_uniao": [
+      60740000,
+      2.406656358241783,
+      1.4520434627788161
+    ],
+    "maximos_uniao": [
+      65680000,
+      6.872458813717583,
+      5.442415270318468
+    ],
+    "ressalva": "Extremos marginais podem vir de composições diferentes; cardinalidade não prova superioridade."
+  },
+  "epsilon": {
+    "runs": 80,
+    "viaveis": 45,
+    "sem_viavel_encontrada": 35,
+    "avaliacoes": 800000,
+    "tempo_buscas_s": 881.8616824000346,
+    "composicoes_uniao_nd_3d": 1206,
+    "vetores_distintos_uniao": 1182,
+    "minimos_uniao": [
+      60460000,
+      3.039321761642474,
+      2.3246028036530744
+    ],
+    "maximos_uniao": [
+      64520000,
+      6.615716654866639,
+      5.8217737799749845
+    ],
+    "ressalva": "Extremos marginais podem vir de composições diferentes; cardinalidade não prova superioridade."
+  }
+}

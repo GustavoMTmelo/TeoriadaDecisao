@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "TP2: integração local (8 buscas)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/experimentos.py",
+      "args": ["--config", "configs/tp2_integracao.json", "--output", "tmp/integracao_vscode"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {"PYTHONUTF8": "1", "MPLBACKEND": "Agg"},
+      "justMyCode": true
+    },
+    {
+      "name": "TP2: verificar integração salva",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/verificar_tp2.py",
+      "args": ["--output", "results/integracao_tp2_final"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {"PYTHONUTF8": "1", "MPLBACKEND": "Agg"}
+    },
+    {
+      "name": "Testes: suíte completa",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "module": "pytest",
+      "args": ["-q"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {"PYTHONUTF8": "1", "MPLBACKEND": "Agg"},
+      "justMyCode": false
+    }
+  ]
+}

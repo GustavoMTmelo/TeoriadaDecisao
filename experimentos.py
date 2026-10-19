@@ -78,7 +78,7 @@ def executar_campanha(config_path, output_dir, *, solver=None):
     Configurações e seeds explícitas permitem piloto e integração fora da campanha oficial.
     """
     from normalizacao import carregar_referencia
-    from pareto import atualizar_arquivo
+    from pareto import consolidar_arquivo
     if solver is None:
         from busca import resolver
         solver = resolver
@@ -153,9 +153,7 @@ def executar_campanha(config_path, output_dir, *, solver=None):
         escrever_json(manifest_path, {**manifesto, 'estado_runs': estado_runs})
         grupo = (run['metodo'], run['repeticao'])
         arquivo = arquivos.setdefault(grupo, [])
-        for candidato in observados:
-            arquivo = atualizar_arquivo(arquivo, candidato)
-        arquivos[grupo] = arquivo
+        arquivos[grupo] = consolidar_arquivo([*arquivo, *observados])
         melhor = resultado.melhor_viavel
         av = melhor.avaliacao if melhor else None
         linhas.append({**{k: run[k] for k in ('run_id', 'metodo', 'repeticao', 'seed')},
@@ -176,9 +174,7 @@ def executar_campanha(config_path, output_dir, *, solver=None):
     conjuntos = dict(arquivos)
     for (metodo, _), arquivo in arquivos.items():
         unido = conjuntos.setdefault((metodo, 'uniao'), [])
-        for candidato in arquivo:
-            unido = atualizar_arquivo(unido, candidato)
-        conjuntos[(metodo, 'uniao')] = unido
+        conjuntos[(metodo, 'uniao')] = consolidar_arquivo([*unido, *arquivo])
     for (metodo, repeticao), arquivo in sorted(conjuntos.items(), key=lambda item: str(item[0])):
         nome = f'pareto/{metodo}_{repeticao}.json'
         escrever_json(output / nome, [asdict(c) for c in arquivo])

@@ -1,4 +1,8 @@
 .claude/
+.venv/
+tmp/
+build/
+dist/
 __pycache__/
 .pytest_cache/
 pytest-cache-files-*/
