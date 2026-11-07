@@ -1,8 +1,9 @@
 # Plano de implementação — Entrega 2 do Case Cassotis
 
-**Atualização de execução:** o usuário autorizou TP2-01 a TP2-06, concluídas
-com testes, campanha corrigida e referências verificadas. Evidências em
-[EXECUCAO_01_06.md](EXECUCAO_01_06.md). As tarefas seguintes continuam propostas.
+**Atualização de execução:** TP2-01 a TP2-06 concluídas, com evidências em
+[EXECUCAO_01_06.md](EXECUCAO_01_06.md). Em 18/10 o usuário autorizou também
+TP2-07,08,09,10,11,12A,12B; implementação e validação registradas em
+[EXECUCAO_07_12.md](EXECUCAO_07_12.md). TP2-13 a TP2-17 continuam posteriores.
 
 > Para execução por agentes: depois da aprovação do usuário, usar `superpowers:executing-plans` para implementar as tarefas em sequência; delegação somente se escolhida/autorizada. Este documento e o backlog são propostas para revisão, não autorização para iniciar o algoritmo.
 
@@ -212,7 +213,7 @@ Casos centrais: objetivo calculado manualmente; falta de pilha; disponibilidade 
 
 Antes de aceitar resultados: ler composições salvas e recalcular teores, massa, usos e objetivos em rotina de auditoria separada do arquivo já salvo. Comparar com registros em precisão completa (custo exato; tolerância numérica 1e-9 para teores e 1e-8 para objetivos quadráticos). Teste sintético pequeno de Pareto deve usar comparação manual ou enumeração, sem exigir prova global do case.
 
-Comandos propostos após implementação: `python -m pytest -q`; `python experimentos.py --config configs/tp2.json --output results/tp2`; `python figuras_tp2.py --input results/tp2 --output figures/tp2`. Acrescentar comandos reais de TP1, verificação e empacotamento ao README quando existirem. Esses comandos novos **ainda não estão implementados**.
+Comandos propostos após implementação: `python -m pytest -q`; `python experimentos.py --config configs/tp2.json --output results/tp2`; `python figuras_tp2.py --input results/tp2 --output figures/tp2`. Acrescentar comandos reais de TP1, verificação e empacotamento ao README quando existirem. A execução por `experimentos.py` e a auditoria por `verificar_tp2.py` estão implementadas; `figuras_tp2.py` permanece para TP2-14.
 
 ## 11. Trabalho paralelo e integração
 

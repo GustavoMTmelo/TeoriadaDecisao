@@ -1,0 +1,12 @@
+{
+  "referencia": "../results/referencias_tp1.json",
+  "seeds_base": [42, 123, 456, 789, 1011],
+  "busca": {
+    "max_iter": 200,
+    "max_sem_melhora": 60,
+    "k_max": 3,
+    "max_amostras": 20,
+    "max_restarts": 5,
+    "max_avaliacoes": 10000
+  }
+}

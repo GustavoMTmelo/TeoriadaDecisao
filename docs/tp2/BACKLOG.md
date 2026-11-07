@@ -1,6 +1,9 @@
 # Backlog executável — Entrega 2
 
-Status: **TP2-01 a TP2-06 autorizadas para execução**, sem issues publicadas no GitHub. Este backlog implementa o [planejamento](PLANEJAMENTO.md) e usa os IDs da [matriz](MATRIZ_REQUISITOS.md). Ler os contratos do plano antes de assumir uma tarefa. Caminhos relativos à raiz Git, não à pasta `TD`.
+Status: **TP2-01 a TP2-12B autorizadas e implementadas**; TP2-13 a TP2-17
+permanecem posteriores. IDs são locais, sem issues publicadas no GitHub.
+Este backlog implementa o [planejamento](PLANEJAMENTO.md) e usa os IDs da
+[matriz](MATRIZ_REQUISITOS.md). Caminhos relativos à raiz Git, não à pasta `TD`.
 
 ## Acompanhamento da execução
 
@@ -12,11 +15,20 @@ Status: **TP2-01 a TP2-06 autorizadas para execução**, sem issues publicadas n
 | TP2-04 | Concluída | Commit `becaf2b`; 48 testes na suíte após a tarefa |
 | TP2-05 | Concluída | Commit `9ec0844`; 56 testes na suíte após a tarefa |
 | TP2-06 | Concluída | Infraestrutura `9b24a81`/`ba8844a`, resultados `1ea4e6c`; 15/15 finais viáveis, seis figuras e relatório corrigido |
-| TP2-07 a TP2-17 | Pendentes | Fora do escopo autorizado nesta rodada |
+| TP2-07 | Concluída | `b55f371` e `dc48ace`; normalização, referências/hash, degeneração e valores externos |
+| TP2-08 | Concluída | `124a54b`; 12 testes focais, orçamento interno, observação, mono e ambos métodos TP2 |
+| TP2-09 | Concluída | `c4bb7f7`; nove testes, 16 pesos validados e prioridade de viabilidade |
+| TP2-10 | Concluída | `ae5f0f3`; tetos independentes, malha 4×4, química e excessos auditáveis |
+| TP2-11 | Concluída | `3bf54db` e `241bd64`; agenda 160, manifesto, registros, retomada e proveniência |
+| TP2-12A | Concluída | `fa944d4`; 19 testes, arquivo 3D, deduplicação física e origens agregadas |
+| TP2-12B | Concluída | `003d9c4` e `8223522`; suíte 162/162, integração 8 runs/4.000 avaliações, auditoria independente e retomada 8/8 |
+| TP2-13 a TP2-17 | Pendentes | Fora do escopo autorizado; infraestrutura oficial pronta, campanha completa não executada |
 
 Detalhes dos testes e decisões em [EXECUCAO_01_06.md](EXECUCAO_01_06.md).
+As evidências novas, critérios e publicação estão em
+[EXECUCAO_07_12.md](EXECUCAO_07_12.md).
 
-Validação final: 69 testes automatizados, auditoria independente de todas as
+Validação da etapa 01–06: 69 testes automatizados, auditoria independente de todas as
 composições e conferência dos 14 produtos consolidados. A referência canônica
 está em `results/referencias_tp1.json`; os registros e resultados completos,
 em `results/tp1_corrigido/`. Os resultados históricos da raiz foram preservados.
