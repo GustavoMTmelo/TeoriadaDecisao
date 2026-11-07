@@ -1,0 +1,1823 @@
+{
+  "schema_version": 1,
+  "metadados": {
+    "objetivo": "f1",
+    "seed": 42,
+    "repeticao": 1,
+    "run_id": "f1_01_seed42",
+    "configuracao_busca": {
+      "max_iter": 200,
+      "max_sem_melhora": 60,
+      "k_max": 3,
+      "max_amostras": 20,
+      "max_restarts": 5,
+      "max_avaliacoes": null
+    },
+    "lambda": 1000000000000.0
+  },
+  "resultado": {
+    "status": "viavel",
+    "melhor_viavel": {
+      "solucao": {
+        "1": [
+          "M2",
+          "M10",
+          "M10",
+          "M8",
+          "M8",
+          "M9",
+          "M14",
+          "M8",
+          "M9",
+          "M10"
+        ],
+        "2": [
+          "M2",
+          "M11",
+          "M15",
+          "M7",
+          "M11",
+          "M14",
+          "M10",
+          "M10",
+          "M15",
+          "M4",
+          "M8"
+        ],
+        "3": [
+          "M5",
+          "M11",
+          "M12",
+          "M10",
+          "M13",
+          "M15",
+          "M4",
+          "M9",
+          "M2",
+          "M10",
+          "M2",
+          "M14"
+        ],
+        "4": [
+          "M11",
+          "M1",
+          "M9",
+          "M8",
+          "M11",
+          "M15",
+          "M2",
+          "M8",
+          "M9",
+          "M9",
+          "M10",
+          "M13",
+          "M10"
+        ],
+        "5": [
+          "M4",
+          "M12",
+          "M12",
+          "M7",
+          "M12",
+          "M12",
+          "M12",
+          "M12",
+          "M12",
+          "M10",
+          "M11",
+          "M15",
+          "M9",
+          "M9"
+        ],
+        "6": [
+          "M20",
+          "M18",
+          "M17",
+          "M20",
+          "M7",
+          "M5",
+          "M16",
+          "M16",
+          "M7",
+          "M5",
+          "M17",
+          "M18",
+          "M3",
+          "M17",
+          "M13"
+        ],
+        "7": [
+          "M18",
+          "M17",
+          "M17",
+          "M4",
+          "M17",
+          "M5",
+          "M19",
+          "M19",
+          "M1",
+          "M19",
+          "M19",
+          "M5",
+          "M16",
+          "M15",
+          "M2",
+          "M16"
+        ],
+        "8": [
+          "M14",
+          "M19",
+          "M17",
+          "M5",
+          "M20",
+          "M4",
+          "M5",
+          "M14",
+          "M14",
+          "M15",
+          "M13",
+          "M5",
+          "M16",
+          "M20",
+          "M13",
+          "M7",
+          "M7"
+        ],
+        "9": [
+          "M20",
+          "M7",
+          "M4",
+          "M18",
+          "M18",
+          "M4",
+          "M4",
+          "M19",
+          "M18",
+          "M7",
+          "M20",
+          "M15",
+          "M18",
+          "M4",
+          "M19",
+          "M3",
+          "M17",
+          "M20"
+        ],
+        "10": [
+          "M3",
+          "M5",
+          "M17",
+          "M18",
+          "M2",
+          "M2",
+          "M4",
+          "M5",
+          "M13",
+          "M16",
+          "M4",
+          "M19",
+          "M6",
+          "M13",
+          "M6",
+          "M13",
+          "M16",
+          "M20",
+          "M16"
+        ]
+      },
+      "avaliacao": {
+        "objetivos": [
+          60680000,
+          6.108352803623785,
+          5.336754236712638
+        ],
+        "normalizados": null,
+        "estrutura_ok": true,
+        "qualidade_ok": true,
+        "epsilon_ok": true,
+        "violacao": 0.0,
+        "escalar": 60680000,
+        "chave": [
+          60680000.0
+        ],
+        "erros": []
+      },
+      "origens": [
+        {
+          "metodo": "mono",
+          "configuracao": "f1",
+          "seed": 42,
+          "avaliacao": 50987
+        }
+      ]
+    },
+    "melhor_busca": {
+      "solucao": {
+        "1": [
+          "M2",
+          "M10",
+          "M10",
+          "M8",
+          "M8",
+          "M9",
+          "M14",
+          "M8",
+          "M9",
+          "M10"
+        ],
+        "2": [
+          "M2",
+          "M11",
+          "M15",
+          "M7",
+          "M11",
+          "M14",
+          "M10",
+          "M10",
+          "M15",
+          "M4",
+          "M8"
+        ],
+        "3": [
+          "M5",
+          "M11",
+          "M12",
+          "M10",
+          "M13",
+          "M15",
+          "M4",
+          "M9",
+          "M2",
+          "M10",
+          "M2",
+          "M14"
+        ],
+        "4": [
+          "M11",
+          "M1",
+          "M9",
+          "M8",
+          "M11",
+          "M15",
+          "M2",
+          "M8",
+          "M9",
+          "M9",
+          "M10",
+          "M13",
+          "M10"
+        ],
+        "5": [
+          "M4",
+          "M12",
+          "M12",
+          "M7",
+          "M12",
+          "M12",
+          "M12",
+          "M12",
+          "M12",
+          "M10",
+          "M11",
+          "M15",
+          "M9",
+          "M9"
+        ],
+        "6": [
+          "M20",
+          "M18",
+          "M17",
+          "M20",
+          "M7",
+          "M5",
+          "M16",
+          "M16",
+          "M7",
+          "M5",
+          "M17",
+          "M18",
+          "M3",
+          "M17",
+          "M13"
+        ],
+        "7": [
+          "M18",
+          "M17",
+          "M17",
+          "M4",
+          "M17",
+          "M5",
+          "M19",
+          "M19",
+          "M1",
+          "M19",
+          "M19",
+          "M5",
+          "M16",
+          "M15",
+          "M2",
+          "M16"
+        ],
+        "8": [
+          "M14",
+          "M19",
+          "M17",
+          "M5",
+          "M20",
+          "M4",
+          "M5",
+          "M14",
+          "M14",
+          "M15",
+          "M13",
+          "M5",
+          "M16",
+          "M20",
+          "M13",
+          "M7",
+          "M7"
+        ],
+        "9": [
+          "M20",
+          "M7",
+          "M4",
+          "M18",
+          "M18",
+          "M4",
+          "M4",
+          "M19",
+          "M18",
+          "M7",
+          "M20",
+          "M15",
+          "M18",
+          "M4",
+          "M19",
+          "M3",
+          "M17",
+          "M20"
+        ],
+        "10": [
+          "M3",
+          "M5",
+          "M17",
+          "M18",
+          "M2",
+          "M2",
+          "M4",
+          "M5",
+          "M13",
+          "M16",
+          "M4",
+          "M19",
+          "M6",
+          "M13",
+          "M6",
+          "M13",
+          "M16",
+          "M20",
+          "M16"
+        ]
+      },
+      "avaliacao": {
+        "objetivos": [
+          60680000,
+          6.108352803623785,
+          5.336754236712638
+        ],
+        "normalizados": null,
+        "estrutura_ok": true,
+        "qualidade_ok": true,
+        "epsilon_ok": true,
+        "violacao": 0.0,
+        "escalar": 60680000,
+        "chave": [
+          60680000.0
+        ],
+        "erros": []
+      },
+      "origens": [
+        {
+          "metodo": "mono",
+          "configuracao": "f1",
+          "seed": 42,
+          "avaliacao": 51022
+        }
+      ]
+    },
+    "historico": [
+      {
+        "iteracao": 0,
+        "avaliacoes": 1,
+        "melhor_viavel": null,
+        "objetivo_busca": 60400000,
+        "fitness_busca": 14625274982350.49
+      },
+      {
+        "iteracao": 1,
+        "avaliacoes": 939,
+        "melhor_viavel": 62720000,
+        "objetivo_busca": 62720000,
+        "fitness_busca": 62720000.0
+      },
+      {
+        "iteracao": 2,
+        "avaliacoes": 1185,
+        "melhor_viavel": 62720000,
+        "objetivo_busca": 62720000,
+        "fitness_busca": 62720000.0
+      },
+      {
+        "iteracao": 3,
+        "avaliacoes": 1419,
+        "melhor_viavel": 62720000,
+        "objetivo_busca": 62720000,
+        "fitness_busca": 62720000.0
+      },
+      {
+        "iteracao": 4,
+        "avaliacoes": 1754,
+        "melhor_viavel": 62560000,
+        "objetivo_busca": 62560000,
+        "fitness_busca": 62560000.0
+      },
+      {
+        "iteracao": 5,
+        "avaliacoes": 2028,
+        "melhor_viavel": 62560000,
+        "objetivo_busca": 62560000,
+        "fitness_busca": 62560000.0
+      },
+      {
+        "iteracao": 6,
+        "avaliacoes": 2579,
+        "melhor_viavel": 62240000,
+        "objetivo_busca": 62240000,
+        "fitness_busca": 62240000.0
+      },
+      {
+        "iteracao": 7,
+        "avaliacoes": 3475,
+        "melhor_viavel": 61520000,
+        "objetivo_busca": 61520000,
+        "fitness_busca": 61520000.0
+      },
+      {
+        "iteracao": 8,
+        "avaliacoes": 3693,
+        "melhor_viavel": 61520000,
+        "objetivo_busca": 61520000,
+        "fitness_busca": 61520000.0
+      },
+      {
+        "iteracao": 9,
+        "avaliacoes": 3951,
+        "melhor_viavel": 61520000,
+        "objetivo_busca": 61520000,
+        "fitness_busca": 61520000.0
+      },
+      {
+        "iteracao": 10,
+        "avaliacoes": 4316,
+        "melhor_viavel": 61520000,
+        "objetivo_busca": 61520000,
+        "fitness_busca": 61520000.0
+      },
+      {
+        "iteracao": 11,
+        "avaliacoes": 4626,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 12,
+        "avaliacoes": 4905,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 13,
+        "avaliacoes": 5174,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 14,
+        "avaliacoes": 5463,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 15,
+        "avaliacoes": 5670,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 16,
+        "avaliacoes": 5886,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 17,
+        "avaliacoes": 6054,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 18,
+        "avaliacoes": 6247,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 19,
+        "avaliacoes": 6613,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 20,
+        "avaliacoes": 6786,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 21,
+        "avaliacoes": 7065,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 22,
+        "avaliacoes": 7409,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 23,
+        "avaliacoes": 7828,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 24,
+        "avaliacoes": 8083,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 25,
+        "avaliacoes": 8305,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 26,
+        "avaliacoes": 8559,
+        "melhor_viavel": 61320000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 27,
+        "avaliacoes": 8823,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 28,
+        "avaliacoes": 9127,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 29,
+        "avaliacoes": 9266,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 30,
+        "avaliacoes": 9562,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 31,
+        "avaliacoes": 9754,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 32,
+        "avaliacoes": 10222,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 33,
+        "avaliacoes": 10477,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 34,
+        "avaliacoes": 10813,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 35,
+        "avaliacoes": 11014,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 36,
+        "avaliacoes": 11210,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 37,
+        "avaliacoes": 11531,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 38,
+        "avaliacoes": 11784,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 39,
+        "avaliacoes": 11965,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 40,
+        "avaliacoes": 12218,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 41,
+        "avaliacoes": 12544,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 42,
+        "avaliacoes": 12768,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 43,
+        "avaliacoes": 12891,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 44,
+        "avaliacoes": 13136,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 45,
+        "avaliacoes": 13303,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 46,
+        "avaliacoes": 13636,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 47,
+        "avaliacoes": 13830,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 48,
+        "avaliacoes": 14041,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 49,
+        "avaliacoes": 14325,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 50,
+        "avaliacoes": 14550,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 51,
+        "avaliacoes": 14882,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 52,
+        "avaliacoes": 15205,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 53,
+        "avaliacoes": 15570,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 54,
+        "avaliacoes": 15936,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 55,
+        "avaliacoes": 16195,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 56,
+        "avaliacoes": 16491,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 57,
+        "avaliacoes": 16759,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 58,
+        "avaliacoes": 17032,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 59,
+        "avaliacoes": 17185,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 60,
+        "avaliacoes": 17404,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 61,
+        "avaliacoes": 17619,
+        "melhor_viavel": 61280000,
+        "objetivo_busca": 61320000,
+        "fitness_busca": 61320000.0
+      },
+      {
+        "iteracao": 62,
+        "avaliacoes": 17983,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 63,
+        "avaliacoes": 18180,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 64,
+        "avaliacoes": 18346,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 65,
+        "avaliacoes": 18576,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 66,
+        "avaliacoes": 18797,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 67,
+        "avaliacoes": 19057,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 68,
+        "avaliacoes": 19377,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 69,
+        "avaliacoes": 19629,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 70,
+        "avaliacoes": 19922,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 71,
+        "avaliacoes": 20243,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 72,
+        "avaliacoes": 20480,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 73,
+        "avaliacoes": 20818,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 74,
+        "avaliacoes": 21070,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 75,
+        "avaliacoes": 21214,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 76,
+        "avaliacoes": 21528,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 77,
+        "avaliacoes": 21715,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 78,
+        "avaliacoes": 21933,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 79,
+        "avaliacoes": 22137,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 80,
+        "avaliacoes": 22415,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 81,
+        "avaliacoes": 22640,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 82,
+        "avaliacoes": 22969,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 83,
+        "avaliacoes": 23135,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 84,
+        "avaliacoes": 23446,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 85,
+        "avaliacoes": 23733,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 86,
+        "avaliacoes": 23971,
+        "melhor_viavel": 61060000,
+        "objetivo_busca": 61060000,
+        "fitness_busca": 61060000.0
+      },
+      {
+        "iteracao": 87,
+        "avaliacoes": 24219,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 88,
+        "avaliacoes": 24568,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 89,
+        "avaliacoes": 24776,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 90,
+        "avaliacoes": 25060,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 91,
+        "avaliacoes": 25309,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 92,
+        "avaliacoes": 25596,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 93,
+        "avaliacoes": 25878,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 94,
+        "avaliacoes": 26056,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 95,
+        "avaliacoes": 26377,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 96,
+        "avaliacoes": 26520,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 97,
+        "avaliacoes": 26795,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 98,
+        "avaliacoes": 27053,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 99,
+        "avaliacoes": 27358,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 100,
+        "avaliacoes": 27545,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 101,
+        "avaliacoes": 27738,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 102,
+        "avaliacoes": 27910,
+        "melhor_viavel": 61020000,
+        "objetivo_busca": 61020000,
+        "fitness_busca": 61020000.0
+      },
+      {
+        "iteracao": 103,
+        "avaliacoes": 28280,
+        "melhor_viavel": 60980000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 104,
+        "avaliacoes": 28518,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 105,
+        "avaliacoes": 28701,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 106,
+        "avaliacoes": 28951,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 107,
+        "avaliacoes": 29196,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 108,
+        "avaliacoes": 29482,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 109,
+        "avaliacoes": 29670,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 110,
+        "avaliacoes": 29894,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 111,
+        "avaliacoes": 30122,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 112,
+        "avaliacoes": 30354,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 113,
+        "avaliacoes": 30532,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 114,
+        "avaliacoes": 30821,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 115,
+        "avaliacoes": 31093,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 116,
+        "avaliacoes": 31249,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 117,
+        "avaliacoes": 31636,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 118,
+        "avaliacoes": 31890,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 119,
+        "avaliacoes": 32167,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 120,
+        "avaliacoes": 32552,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 121,
+        "avaliacoes": 32726,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 122,
+        "avaliacoes": 33026,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 123,
+        "avaliacoes": 33257,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 124,
+        "avaliacoes": 33490,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 125,
+        "avaliacoes": 33656,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 126,
+        "avaliacoes": 33808,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 127,
+        "avaliacoes": 33971,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 128,
+        "avaliacoes": 34192,
+        "melhor_viavel": 60940000,
+        "objetivo_busca": 60980000,
+        "fitness_busca": 60980000.0
+      },
+      {
+        "iteracao": 129,
+        "avaliacoes": 34766,
+        "melhor_viavel": 60860000,
+        "objetivo_busca": 60860000,
+        "fitness_busca": 60860000.0
+      },
+      {
+        "iteracao": 130,
+        "avaliacoes": 34907,
+        "melhor_viavel": 60860000,
+        "objetivo_busca": 60860000,
+        "fitness_busca": 60860000.0
+      },
+      {
+        "iteracao": 131,
+        "avaliacoes": 35134,
+        "melhor_viavel": 60860000,
+        "objetivo_busca": 60860000,
+        "fitness_busca": 60860000.0
+      },
+      {
+        "iteracao": 132,
+        "avaliacoes": 35385,
+        "melhor_viavel": 60860000,
+        "objetivo_busca": 60860000,
+        "fitness_busca": 60860000.0
+      },
+      {
+        "iteracao": 133,
+        "avaliacoes": 35561,
+        "melhor_viavel": 60860000,
+        "objetivo_busca": 60860000,
+        "fitness_busca": 60860000.0
+      },
+      {
+        "iteracao": 134,
+        "avaliacoes": 35712,
+        "melhor_viavel": 60860000,
+        "objetivo_busca": 60860000,
+        "fitness_busca": 60860000.0
+      },
+      {
+        "iteracao": 135,
+        "avaliacoes": 36007,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 136,
+        "avaliacoes": 36224,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 137,
+        "avaliacoes": 36436,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 138,
+        "avaliacoes": 36655,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 139,
+        "avaliacoes": 36917,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 140,
+        "avaliacoes": 37192,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 141,
+        "avaliacoes": 37378,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 142,
+        "avaliacoes": 37638,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 143,
+        "avaliacoes": 37872,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 144,
+        "avaliacoes": 38116,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 145,
+        "avaliacoes": 38414,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 146,
+        "avaliacoes": 38648,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 147,
+        "avaliacoes": 38892,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 148,
+        "avaliacoes": 39192,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 149,
+        "avaliacoes": 39419,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 150,
+        "avaliacoes": 39623,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 151,
+        "avaliacoes": 39907,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 152,
+        "avaliacoes": 40097,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 153,
+        "avaliacoes": 40265,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 154,
+        "avaliacoes": 40451,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 155,
+        "avaliacoes": 40676,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 156,
+        "avaliacoes": 40902,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 157,
+        "avaliacoes": 41149,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 158,
+        "avaliacoes": 41329,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 159,
+        "avaliacoes": 41700,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 160,
+        "avaliacoes": 41884,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 161,
+        "avaliacoes": 42124,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 162,
+        "avaliacoes": 42408,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 163,
+        "avaliacoes": 42680,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 164,
+        "avaliacoes": 43033,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 165,
+        "avaliacoes": 43268,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 166,
+        "avaliacoes": 43550,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 167,
+        "avaliacoes": 43748,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 168,
+        "avaliacoes": 44098,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 169,
+        "avaliacoes": 44318,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 170,
+        "avaliacoes": 44583,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 171,
+        "avaliacoes": 44803,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 172,
+        "avaliacoes": 45072,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 173,
+        "avaliacoes": 45354,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 174,
+        "avaliacoes": 45639,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 175,
+        "avaliacoes": 45826,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 176,
+        "avaliacoes": 46040,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 177,
+        "avaliacoes": 46244,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 178,
+        "avaliacoes": 46383,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 179,
+        "avaliacoes": 46656,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 180,
+        "avaliacoes": 46869,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 181,
+        "avaliacoes": 47072,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 182,
+        "avaliacoes": 47381,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 183,
+        "avaliacoes": 47668,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 184,
+        "avaliacoes": 47852,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 185,
+        "avaliacoes": 48193,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 186,
+        "avaliacoes": 48343,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 187,
+        "avaliacoes": 48553,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 188,
+        "avaliacoes": 48849,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 189,
+        "avaliacoes": 48993,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 190,
+        "avaliacoes": 49229,
+        "melhor_viavel": 60780000,
+        "objetivo_busca": 60780000,
+        "fitness_busca": 60780000.0
+      },
+      {
+        "iteracao": 191,
+        "avaliacoes": 49671,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 192,
+        "avaliacoes": 49931,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 193,
+        "avaliacoes": 50123,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 194,
+        "avaliacoes": 50307,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 195,
+        "avaliacoes": 50474,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 196,
+        "avaliacoes": 50719,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 197,
+        "avaliacoes": 50968,
+        "melhor_viavel": 60700000,
+        "objetivo_busca": 60700000,
+        "fitness_busca": 60700000.0
+      },
+      {
+        "iteracao": 198,
+        "avaliacoes": 51288,
+        "melhor_viavel": 60680000,
+        "objetivo_busca": 60680000,
+        "fitness_busca": 60680000.0
+      },
+      {
+        "iteracao": 199,
+        "avaliacoes": 51527,
+        "melhor_viavel": 60680000,
+        "objetivo_busca": 60680000,
+        "fitness_busca": 60680000.0
+      },
+      {
+        "iteracao": 200,
+        "avaliacoes": 51851,
+        "melhor_viavel": 60680000,
+        "objetivo_busca": 60680000,
+        "fitness_busca": 60680000.0
+      }
+    ],
+    "avaliacoes": 51851,
+    "iteracoes": 200,
+    "motivo_parada": "max_iter",
+    "tempo_s": 59.178489300000365,
+    "tentativas_invalidas": 33710
+  }
+}
