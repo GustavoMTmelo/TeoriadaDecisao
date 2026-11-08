@@ -1,0 +1,886 @@
+{
+  "schema_version": 1,
+  "metadados": {
+    "run_id": "epsilon_1011_cf5977314a48a3f870192e5aabd34c58a46acc7f3cf5a5b325907f80ce7aa739",
+    "metodo": "epsilon",
+    "repeticao": 1011,
+    "config": {
+      "metodo": "epsilon",
+      "id": "eps_03",
+      "objetivo": null,
+      "pesos": null,
+      "epsilons": [
+        0.0,
+        1.0
+      ]
+    },
+    "seed": 14941104292361708536,
+    "referencia": {
+      "minimo": [
+        60300000,
+        2.3727567955223003,
+        1.4361688772162504
+      ],
+      "maximo": [
+        65840000,
+        6.705745397999253,
+        5.995129496821073
+      ],
+      "id": "4eed030453911d878065db4ddcab092db28e085de25ec7b32dd6f52aa52e02f4",
+      "origens": {
+        "f1": {
+          "minimo": [
+            "f1_04_seed789"
+          ],
+          "maximo": [
+            "f3_05_seed1011"
+          ]
+        },
+        "f2": {
+          "minimo": [
+            "f2_03_seed456"
+          ],
+          "maximo": [
+            "f1_02_seed123"
+          ]
+        },
+        "f3": {
+          "minimo": [
+            "f3_04_seed789"
+          ],
+          "maximo": [
+            "f1_04_seed789"
+          ]
+        }
+      }
+    },
+    "limites": {
+      "max_iter": 200,
+      "max_sem_melhora": 60,
+      "k_max": 3,
+      "max_amostras": 20,
+      "max_restarts": 5,
+      "max_avaliacoes": 10000
+    }
+  },
+  "resultado": {
+    "status": "sem_viavel_encontrada",
+    "melhor_viavel": null,
+    "melhor_busca": {
+      "solucao": {
+        "1": [
+          "M6",
+          "M10",
+          "M10",
+          "M11",
+          "M9",
+          "M8",
+          "M11",
+          "M10",
+          "M1",
+          "M1"
+        ],
+        "2": [
+          "M8",
+          "M7",
+          "M10",
+          "M2",
+          "M8",
+          "M11",
+          "M15",
+          "M12",
+          "M12",
+          "M9",
+          "M8"
+        ],
+        "3": [
+          "M10",
+          "M10",
+          "M10",
+          "M1",
+          "M12",
+          "M11",
+          "M12",
+          "M9",
+          "M11",
+          "M1",
+          "M8",
+          "M9"
+        ],
+        "4": [
+          "M9",
+          "M8",
+          "M9",
+          "M15",
+          "M1",
+          "M10",
+          "M14",
+          "M12",
+          "M7",
+          "M12",
+          "M9",
+          "M2",
+          "M12"
+        ],
+        "5": [
+          "M12",
+          "M10",
+          "M11",
+          "M9",
+          "M7",
+          "M10",
+          "M7",
+          "M8",
+          "M7",
+          "M6",
+          "M15",
+          "M2",
+          "M8",
+          "M15"
+        ],
+        "6": [
+          "M5",
+          "M20",
+          "M1",
+          "M17",
+          "M2",
+          "M16",
+          "M19",
+          "M2",
+          "M19",
+          "M4",
+          "M19",
+          "M16",
+          "M4",
+          "M14",
+          "M4"
+        ],
+        "7": [
+          "M17",
+          "M17",
+          "M5",
+          "M20",
+          "M19",
+          "M4",
+          "M19",
+          "M14",
+          "M2",
+          "M18",
+          "M6",
+          "M16",
+          "M19",
+          "M2",
+          "M17",
+          "M6"
+        ],
+        "8": [
+          "M6",
+          "M20",
+          "M4",
+          "M18",
+          "M4",
+          "M4",
+          "M14",
+          "M5",
+          "M4",
+          "M4",
+          "M6",
+          "M19",
+          "M20",
+          "M16",
+          "M14",
+          "M5",
+          "M20"
+        ],
+        "9": [
+          "M20",
+          "M7",
+          "M6",
+          "M18",
+          "M4",
+          "M20",
+          "M5",
+          "M16",
+          "M7",
+          "M16",
+          "M15",
+          "M5",
+          "M15",
+          "M7",
+          "M4",
+          "M17",
+          "M18",
+          "M5"
+        ],
+        "10": [
+          "M16",
+          "M16",
+          "M15",
+          "M2",
+          "M18",
+          "M17",
+          "M19",
+          "M17",
+          "M5",
+          "M18",
+          "M15",
+          "M6",
+          "M5",
+          "M18",
+          "M5",
+          "M18",
+          "M14",
+          "M4",
+          "M20"
+        ]
+      },
+      "avaliacao": {
+        "objetivos": [
+          63440000,
+          2.378076572506227,
+          3.410853373337216
+        ],
+        "normalizados": [
+          0.5667870036101083,
+          0.0012277385130636056,
+          0.43314357391666486
+        ],
+        "estrutura_ok": true,
+        "qualidade_ok": false,
+        "epsilon_ok": false,
+        "violacao": 0.001254864240494158,
+        "escalar": 0.5667870036101083,
+        "chave": [
+          1,
+          0.001254864240494158,
+          0.5667870036101083,
+          [
+            0.4343713124297285,
+            0.0012277385130636056,
+            0.43314357391666486
+          ]
+        ],
+        "erros": [
+          "Pilha 7: Al2O3 = 2.2062% fora de [1.0, 2.2]",
+          "Limites epsilon excedidos."
+        ]
+      },
+      "origens": [
+        {
+          "metodo": "epsilon",
+          "configuracao": "eps_03",
+          "seed": 14941104292361708536,
+          "avaliacao": 9860
+        }
+      ],
+      "auditoria": {
+        "qualidade": [
+          {
+            "pilha": 1,
+            "indicador": "sio2",
+            "teor": 5.86,
+            "minimo": 5.0,
+            "maximo": 6.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 1,
+            "indicador": "al2o3",
+            "teor": 1.55,
+            "minimo": 1.0,
+            "maximo": 2.3,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 2,
+            "indicador": "sio2",
+            "teor": 5.9,
+            "minimo": 5.0,
+            "maximo": 6.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 2,
+            "indicador": "al2o3",
+            "teor": 1.8363636363636362,
+            "minimo": 1.0,
+            "maximo": 2.3,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 3,
+            "indicador": "sio2",
+            "teor": 5.933333333333334,
+            "minimo": 5.0,
+            "maximo": 6.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 3,
+            "indicador": "al2o3",
+            "teor": 1.575,
+            "minimo": 1.0,
+            "maximo": 2.3,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 4,
+            "indicador": "sio2",
+            "teor": 5.9692307692307685,
+            "minimo": 5.0,
+            "maximo": 6.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 4,
+            "indicador": "al2o3",
+            "teor": 1.8153846153846156,
+            "minimo": 1.0,
+            "maximo": 2.3,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 5,
+            "indicador": "sio2",
+            "teor": 6.028571428571429,
+            "minimo": 5.0,
+            "maximo": 6.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 5,
+            "indicador": "al2o3",
+            "teor": 1.9000000000000001,
+            "minimo": 1.0,
+            "maximo": 2.3,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 6,
+            "indicador": "sio2",
+            "teor": 6.013333333333334,
+            "minimo": 5.0,
+            "maximo": 6.5,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 6,
+            "indicador": "al2o3",
+            "teor": 2.1866666666666665,
+            "minimo": 1.0,
+            "maximo": 2.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 7,
+            "indicador": "sio2",
+            "teor": 6.0125,
+            "minimo": 5.0,
+            "maximo": 6.5,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 7,
+            "indicador": "al2o3",
+            "teor": 2.20625,
+            "minimo": 1.0,
+            "maximo": 2.2,
+            "excesso_bruto": 0.006249999999999645,
+            "excesso_relativo": 0.005208332499999634
+          },
+          {
+            "pilha": 8,
+            "indicador": "sio2",
+            "teor": 6.1000000000000005,
+            "minimo": 5.0,
+            "maximo": 6.5,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 8,
+            "indicador": "al2o3",
+            "teor": 2.1941176470588233,
+            "minimo": 1.0,
+            "maximo": 2.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 9,
+            "indicador": "sio2",
+            "teor": 6.116666666666666,
+            "minimo": 5.0,
+            "maximo": 6.5,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 9,
+            "indicador": "al2o3",
+            "teor": 2.0999999999999996,
+            "minimo": 1.0,
+            "maximo": 2.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 10,
+            "indicador": "sio2",
+            "teor": 6.084210526315789,
+            "minimo": 5.0,
+            "maximo": 6.5,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          },
+          {
+            "pilha": 10,
+            "indicador": "al2o3",
+            "teor": 2.0631578947368423,
+            "minimo": 1.0,
+            "maximo": 2.2,
+            "excesso_bruto": 0.0,
+            "excesso_relativo": 0.0
+          }
+        ],
+        "epsilon": [
+          {
+            "objetivo": 2,
+            "limite": 0.0,
+            "valor": 0.0012277385130636056,
+            "excesso_bruto": 0.0012277385130636056,
+            "excesso_tolerado": 0.0012277375130636057
+          },
+          {
+            "objetivo": 3,
+            "limite": 1.0,
+            "valor": 0.43314357391666486,
+            "excesso_bruto": 0.0,
+            "excesso_tolerado": 0.0
+          }
+        ]
+      }
+    },
+    "historico": [
+      {
+        "iteracao": 0,
+        "avaliacoes": 1,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.018050541516245487,
+        "chave_busca": [
+          1,
+          16.820192010129098,
+          0.018050541516245487,
+          [
+            7.826969753748614,
+            4.871533242171464,
+            2.9554365115771506
+          ]
+        ]
+      },
+      {
+        "iteracao": 1,
+        "avaliacoes": 2410,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.628158844765343,
+        "chave_busca": [
+          1,
+          0.02486237178495228,
+          0.628158844765343,
+          [
+            0.3884869116893493,
+            0.024646109833683552,
+            0.36384080185566575
+          ]
+        ]
+      },
+      {
+        "iteracao": 2,
+        "avaliacoes": 3073,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5812274368231047,
+        "chave_busca": [
+          1,
+          0.02067267493091248,
+          0.5812274368231047,
+          [
+            0.44022023437874236,
+            0.01937178745948057,
+            0.42084844691926176
+          ]
+        ]
+      },
+      {
+        "iteracao": 3,
+        "avaliacoes": 3342,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5812274368231047,
+        "chave_busca": [
+          1,
+          0.019326088297183915,
+          0.5812274368231047,
+          [
+            0.4416355173281177,
+            0.01860190207815492,
+            0.42303361524996275
+          ]
+        ]
+      },
+      {
+        "iteracao": 4,
+        "avaliacoes": 3951,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5812274368231047,
+        "chave_busca": [
+          1,
+          0.01587824916156489,
+          0.5812274368231047,
+          [
+            0.5175298456688728,
+            0.015754793389959956,
+            0.5017750522789128
+          ]
+        ]
+      },
+      {
+        "iteracao": 5,
+        "avaliacoes": 4130,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5812274368231047,
+        "chave_busca": [
+          1,
+          0.01587824916156489,
+          0.5812274368231047,
+          [
+            0.5175298456688728,
+            0.015754793389959956,
+            0.5017750522789128
+          ]
+        ]
+      },
+      {
+        "iteracao": 6,
+        "avaliacoes": 4510,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008885683149382503,
+          0.5740072202166066,
+          [
+            0.43943002760850003,
+            0.008017962395623275,
+            0.4314120652128767
+          ]
+        ]
+      },
+      {
+        "iteracao": 7,
+        "avaliacoes": 4633,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008885683149382503,
+          0.5740072202166066,
+          [
+            0.43943002760850003,
+            0.008017962395623275,
+            0.4314120652128767
+          ]
+        ]
+      },
+      {
+        "iteracao": 8,
+        "avaliacoes": 4840,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008885683149382503,
+          0.5740072202166066,
+          [
+            0.43943002760850003,
+            0.008017962395623275,
+            0.4314120652128767
+          ]
+        ]
+      },
+      {
+        "iteracao": 9,
+        "avaliacoes": 5142,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008885683149382503,
+          0.5740072202166066,
+          [
+            0.43943002760850003,
+            0.008017962395623275,
+            0.4314120652128767
+          ]
+        ]
+      },
+      {
+        "iteracao": 10,
+        "avaliacoes": 5906,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008700216149949638,
+          0.5740072202166066,
+          [
+            0.4412182235913068,
+            0.007928612257974338,
+            0.43328961133333244
+          ]
+        ]
+      },
+      {
+        "iteracao": 11,
+        "avaliacoes": 6292,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008700216149949638,
+          0.5740072202166066,
+          [
+            0.4412182235913068,
+            0.007928612257974338,
+            0.43328961133333244
+          ]
+        ]
+      },
+      {
+        "iteracao": 12,
+        "avaliacoes": 6577,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008700216149949638,
+          0.5740072202166066,
+          [
+            0.4412182235913068,
+            0.007928612257974338,
+            0.43328961133333244
+          ]
+        ]
+      },
+      {
+        "iteracao": 13,
+        "avaliacoes": 6859,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008700216149949638,
+          0.5740072202166066,
+          [
+            0.4412182235913068,
+            0.007928612257974338,
+            0.43328961133333244
+          ]
+        ]
+      },
+      {
+        "iteracao": 14,
+        "avaliacoes": 7126,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008700216149949638,
+          0.5740072202166066,
+          [
+            0.4412182235913068,
+            0.007928612257974338,
+            0.43328961133333244
+          ]
+        ]
+      },
+      {
+        "iteracao": 15,
+        "avaliacoes": 7457,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008222967407479973,
+          0.5740072202166066,
+          [
+            0.4330148853196011,
+            0.008222968407479972,
+            0.4247919169121211
+          ]
+        ]
+      },
+      {
+        "iteracao": 16,
+        "avaliacoes": 7742,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008222967407479973,
+          0.5740072202166066,
+          [
+            0.4330148853196011,
+            0.008222968407479972,
+            0.4247919169121211
+          ]
+        ]
+      },
+      {
+        "iteracao": 17,
+        "avaliacoes": 8137,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008222967407479973,
+          0.5740072202166066,
+          [
+            0.4330148853196011,
+            0.008222968407479972,
+            0.4247919169121211
+          ]
+        ]
+      },
+      {
+        "iteracao": 18,
+        "avaliacoes": 8283,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008222967407479973,
+          0.5740072202166066,
+          [
+            0.4330148853196011,
+            0.008222968407479972,
+            0.4247919169121211
+          ]
+        ]
+      },
+      {
+        "iteracao": 19,
+        "avaliacoes": 8550,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008222967407479973,
+          0.5740072202166066,
+          [
+            0.4330148853196011,
+            0.008222968407479972,
+            0.4247919169121211
+          ]
+        ]
+      },
+      {
+        "iteracao": 20,
+        "avaliacoes": 9009,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008127848492752335,
+          0.5740072202166066,
+          [
+            0.43230169944260927,
+            0.008127849492752335,
+            0.4241738499498569
+          ]
+        ]
+      },
+      {
+        "iteracao": 21,
+        "avaliacoes": 9271,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008127848492752335,
+          0.5740072202166066,
+          [
+            0.43230169944260927,
+            0.008127849492752335,
+            0.4241738499498569
+          ]
+        ]
+      },
+      {
+        "iteracao": 22,
+        "avaliacoes": 9616,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008127848492752335,
+          0.5740072202166066,
+          [
+            0.43230169944260927,
+            0.008127849492752335,
+            0.4241738499498569
+          ]
+        ]
+      },
+      {
+        "iteracao": 23,
+        "avaliacoes": 9815,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5740072202166066,
+        "chave_busca": [
+          1,
+          0.008127848492752335,
+          0.5740072202166066,
+          [
+            0.43230169944260927,
+            0.008127849492752335,
+            0.4241738499498569
+          ]
+        ]
+      },
+      {
+        "iteracao": 24,
+        "avaliacoes": 10000,
+        "melhor_viavel": null,
+        "objetivo_busca": 0.5667870036101083,
+        "chave_busca": [
+          1,
+          0.001254864240494158,
+          0.5667870036101083,
+          [
+            0.4343713124297285,
+            0.0012277385130636056,
+            0.43314357391666486
+          ]
+        ]
+      }
+    ],
+    "avaliacoes": 10000,
+    "iteracoes": 24,
+    "motivo_parada": "max_avaliacoes",
+    "tempo_s": 12.410804999999527,
+    "tentativas_invalidas": 10353
+  },
+  "observados": []
+}

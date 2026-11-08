@@ -1,0 +1,95 @@
+{
+  "entrada": "results_tp3_oficial\\pareto_4d.csv",
+  "total_alternativas": 4327,
+  "criterios": [
+    "custo_rs",
+    "desvio_sio2_pp2",
+    "desvio_al2o3_pp2",
+    "variacao_receita"
+  ],
+  "pesos": {
+    "custo_rs": 0.25,
+    "desvio_sio2_pp2": 0.25,
+    "desvio_al2o3_pp2": 0.25,
+    "variacao_receita": 0.25
+  },
+  "matriz_ahp": [
+    [
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "razao_consistencia_ahp": 0.0,
+  "ahp_escala_alternativas": "modo ideal, prioridade local = 5 ** (-valor_normalizado)",
+  "razao_extremos_ahp": 5.0,
+  "limiares_promethee_q_p_normalizados": {
+    "custo_rs": [
+      0.05,
+      0.25
+    ],
+    "desvio_sio2_pp2": [
+      0.05,
+      0.25
+    ],
+    "desvio_al2o3_pp2": [
+      0.05,
+      0.25
+    ],
+    "variacao_receita": [
+      0.05,
+      0.25
+    ]
+  },
+  "faixas_observadas": {
+    "custo_rs": {
+      "minimo": 60460000.0,
+      "maximo": 65680000.0,
+      "q_original": 261000.0,
+      "p_original": 1305000.0
+    },
+    "desvio_sio2_pp2": {
+      "minimo": 2.406656358241783,
+      "maximo": 6.872458813717583,
+      "q_original": 0.22329012277379,
+      "p_original": 1.11645061386895
+    },
+    "desvio_al2o3_pp2": {
+      "minimo": 1.4520434627788161,
+      "maximo": 5.8217737799749845,
+      "q_original": 0.21848651585980844,
+      "p_original": 1.0924325792990421
+    },
+    "variacao_receita": {
+      "minimo": 0.24311314029967282,
+      "maximo": 0.4335613367540612,
+      "q_original": 0.009522409822719421,
+      "p_original": 0.0476120491135971
+    }
+  },
+  "primeiros_ahp": [
+    "b47e00d37e63e5a7"
+  ],
+  "primeiros_promethee_ii": [
+    "b47e00d37e63e5a7"
+  ]
+}

@@ -1,0 +1,1157 @@
+{
+  "schema_version": 1,
+  "git_commit_informativo": "2787cebe51014a4d03c644464be63fc75e3f3ae9",
+  "config_sha256": "739e751ce5883f242f0146049fd434a299efab754f38cedf0a627116121d4a52",
+  "referencia_sha256": "f42dc5464bf0c1c504ecee5c2179fa264d09a122ab5bb137942b22bbc002d8c0",
+  "dados_sha256": "d7d94cd055af36b42e47592bda1ffede067dd5fc0014f6141a960d9329f0675d",
+  "codigo_sha256": {
+    "avaliacao.py": "942188c502cf6375b4fb2466b36f86a914f309b177e640aceae8ed32a7f3d17c",
+    "busca.py": "9c993a4ea5f0ccdd504ef7adc73f658e41837978b317a549e219fe167ed10a6c",
+    "contratos.py": "705333d686e03a9ba5fc27e6a3a887dc510575664d2838dabb71c2230019fb36",
+    "escalarizacoes.py": "d0bcb7c768feeeb258321fa7825ca7f3c38bc3ce5d55c7d0cd4c189f26ccd396",
+    "experimentos.py": "efcb1eadb1f09fd42d9e08b4ef0e18e6d222a430154ad038d7cc5e01f1b3a6b0",
+    "normalizacao.py": "6a33c00adeef47a82a83ca936403881684a9922a5868a94833880867cb45d623",
+    "pareto.py": "a55dcf8c88ede30246e1e06438ef435ce9c5ddba0c050c458861b3469a4a99c8",
+    "registros.py": "3176e939f33096de9aef753c26dd543cd2538c98648b62c8437b023e00c3539a",
+    "sol_inicial.py": "1327bc7f63837a89779edfb5154304e02fd591ed9d2483e51751187991b48609",
+    "vizinhancas.py": "643bbfa20086391348af5e92e8774f63f63c3c0941eafc19f975ff3199371695",
+    "vns.py": "bd35a74408b4c476b40d089a9053593a400d22a79fed37aedad69d2feeb7e721"
+  },
+  "versoes": {
+    "python": "3.13.5",
+    "pytest": "8.4.2",
+    "matplotlib": "3.11.2"
+  },
+  "limites": {
+    "max_iter": 200,
+    "max_sem_melhora": 60,
+    "k_max": 3,
+    "max_amostras": 20,
+    "max_restarts": 5,
+    "max_avaliacoes": 10000
+  },
+  "agenda": [
+    {
+      "run_id": "ponderada_90001_ab3985adaebf929cf4bb304c15269b6f819c2961e5e8b4be8b00b4ed06592bd3",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_004",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "epsilons": null
+      },
+      "seed": 12338039635165811356
+    },
+    {
+      "run_id": "ponderada_90001_9722342bc41e423171a625dad800630535e061cc8c41df7bee9b5086fb682971",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_013",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.25,
+          0.75
+        ],
+        "epsilons": null
+      },
+      "seed": 10890324211513836081
+    },
+    {
+      "run_id": "ponderada_90001_34bfab78f862ada2bf9cc5b79b7405dd8d14e0525ee079faba3f071b46c31aa8",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_022",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.5,
+          0.5
+        ],
+        "epsilons": null
+      },
+      "seed": 3800945146575629730
+    },
+    {
+      "run_id": "ponderada_90001_c7214dbbcf2cfc244a0295e6d33809b3ec23220a7656eae46c6bc9cce311ae94",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_031",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.75,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 14348835356809165860
+    },
+    {
+      "run_id": "ponderada_90001_4523bc7294a5412102653c265c766f33d3d94fcb24f47bbb08ad020dbf51d45d",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_040",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 4982032813108052257
+    },
+    {
+      "run_id": "ponderada_90001_2934728c4f059d228f27fcbd67f9950612b9eb6ac407d67907846e785e51073d",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_103",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.0,
+          0.75
+        ],
+        "epsilons": null
+      },
+      "seed": 2969124001290755362
+    },
+    {
+      "run_id": "ponderada_90001_ebfcc4a6ee88f383c6228336115074cdb5a1b7c31a67829c7f633e0fc458be27",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_112",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.25,
+          0.5
+        ],
+        "epsilons": null
+      },
+      "seed": 17004682514289718147
+    },
+    {
+      "run_id": "ponderada_90001_a0bd69128e7f258063d01274c3e7d908643b11554e3ac3d4c8b734083eb57455",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_121",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 11582529345087808896
+    },
+    {
+      "run_id": "ponderada_90001_c26d6395c25e948cdb115c8f95c9a46a6f32187ad73d74c26298ae5e1d02f96c",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_130",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.75,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 14009963510681736332
+    },
+    {
+      "run_id": "ponderada_90001_47b7cfb906adc62b0d4b55468c6fc07127f8383a5147521a1678df4e625cca05",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_202",
+        "objetivo": null,
+        "pesos": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "epsilons": null
+      },
+      "seed": 5167827491018884651
+    },
+    {
+      "run_id": "ponderada_90001_a14f436ae2ed9826df4f5019f034d722e64315dc55a5d77fa539fb10e52df78e",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_211",
+        "objetivo": null,
+        "pesos": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 11623583289619355686
+    },
+    {
+      "run_id": "ponderada_90001_dc1e00f71bd6caf513bf3f96be05528ab95031116e0b71776d993483ab2b9f74",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_220",
+        "objetivo": null,
+        "pesos": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 15861115998969449205
+    },
+    {
+      "run_id": "ponderada_90001_1d8b0a39a54c3a1b1a5651f517ed72580cb4b59708db11dff8974ae19f4692c3",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_301",
+        "objetivo": null,
+        "pesos": [
+          0.75,
+          0.0,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 2128806491565341211
+    },
+    {
+      "run_id": "ponderada_90001_e7cc7501f3fe669d719107245915a68495d400ee0dc3447e60ff13e6ecdcd878",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_310",
+        "objetivo": null,
+        "pesos": [
+          0.75,
+          0.25,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 16702853769259280029
+    },
+    {
+      "run_id": "ponderada_90001_c89ac1094c9714c674bd18a4b9362cac21d662459dcf084564f49f6192bef7fb",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_400",
+        "objetivo": null,
+        "pesos": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 14455078199682864326
+    },
+    {
+      "run_id": "ponderada_90001_bdaacda39d26887c264949b8af24e33ab7180a47a26ce721ed321942d17a0da2",
+      "metodo": "ponderada",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_centro",
+        "objetivo": null,
+        "pesos": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "epsilons": null
+      },
+      "seed": 13666962121809102972
+    },
+    {
+      "run_id": "epsilon_90001_3663e268d74d0d77fdd476062638c517c763f3c793af38638ffeaf8961ab75ef",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_00",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          0.0
+        ]
+      },
+      "seed": 3919225040659090807
+    },
+    {
+      "run_id": "epsilon_90001_dccb27dbe9e61f29fe6c84a9fd90499d499ebdb5ce852a9fb8eea39fe241801f",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_01",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          0.3333333333333333
+        ]
+      },
+      "seed": 15909853934091902761
+    },
+    {
+      "run_id": "epsilon_90001_44e68e15db0a9b37ca54ae92debcefd529ecdd4c15f939a0d2dde6f46d47206b",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_02",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          0.6666666666666666
+        ]
+      },
+      "seed": 4964811863742913335
+    },
+    {
+      "run_id": "epsilon_90001_b40c138df8fd6c5da1d5e290bd2b081fcbf349ad56a83e5abefc732180b9a9e5",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_03",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          1.0
+        ]
+      },
+      "seed": 12973766127036230749
+    },
+    {
+      "run_id": "epsilon_90001_91675c0df4498419acaea9b81f84396b595b65f28693c42814e77f0468f182d8",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_10",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          0.0
+        ]
+      },
+      "seed": 10477444273103537177
+    },
+    {
+      "run_id": "epsilon_90001_6d8ec7e3a60b3a55cf4461305ab9a805942ddc2384ce65845e591d8e968c1ce8",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_11",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          0.3333333333333333
+        ]
+      },
+      "seed": 7894466977384315477
+    },
+    {
+      "run_id": "epsilon_90001_a80fa75e07a5d88dc9ad3a2547fbfc8f92748b7b94dcc93f686cddb558852eda",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_12",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          0.6666666666666666
+        ]
+      },
+      "seed": 12110081945319626893
+    },
+    {
+      "run_id": "epsilon_90001_f9274b10c962f89dc50293e9d4d9a88f7d46e0870aa1400110d9e21f907635eb",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_13",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          1.0
+        ]
+      },
+      "seed": 17953400975006038173
+    },
+    {
+      "run_id": "epsilon_90001_ff3b2488205aff12e07a0549633909c2166f22c8c0176d94a193235498ff8df8",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_20",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "seed": 18391333670374539026
+    },
+    {
+      "run_id": "epsilon_90001_c240ea29d37722f19fb1503db635b6df6bf9e921b6ede25e04f179f111db829c",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_21",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          0.3333333333333333
+        ]
+      },
+      "seed": 13997445107229860593
+    },
+    {
+      "run_id": "epsilon_90001_90f2f8fdafcbfa393e9ad051d460f9a5dd839dffca75b1d38a1cfc0f790e1c50",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_22",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          0.6666666666666666
+        ]
+      },
+      "seed": 10444684254285396537
+    },
+    {
+      "run_id": "epsilon_90001_c4a3a4b06a35eace532a625d87e49019c363314edaffa9de78d5d0109fd9b6f6",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_23",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          1.0
+        ]
+      },
+      "seed": 14169349930240830158
+    },
+    {
+      "run_id": "epsilon_90001_9726d48c8c3a7d0c3caa91dbc894bf3c5e73003e71994e2ab4ab8824231455fa",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_30",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          0.0
+        ]
+      },
+      "seed": 10891626448955276556
+    },
+    {
+      "run_id": "epsilon_90001_80ab208cf93fec93284c3ec88282313826636f44b9b27d12bb6620e828b0ef45",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_31",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          0.3333333333333333
+        ]
+      },
+      "seed": 9271540047721524371
+    },
+    {
+      "run_id": "epsilon_90001_b7c7adb08576d05a82d2aae8a757da023b7a5efbdb87d3e2566921d5b5c8f3c0",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_32",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          0.6666666666666666
+        ]
+      },
+      "seed": 13242744202971238490
+    },
+    {
+      "run_id": "epsilon_90001_4fc8cc79721bb222e95a4db81b5fa77a404df6ccea1fad0ccacd645f893d93ae",
+      "metodo": "epsilon",
+      "repeticao": 90001,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_33",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          1.0
+        ]
+      },
+      "seed": 5749069746315964962
+    },
+    {
+      "run_id": "ponderada_90002_51016fbed0e1e74f4d3f473abd5e082dcea11bfd9695f1528c74d73650860794",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_004",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "epsilons": null
+      },
+      "seed": 5837069457387808591
+    },
+    {
+      "run_id": "ponderada_90002_24227c4f0ce1995b1bd6e5730e634a88d91538957032eeb607a5196385afef11",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_013",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.25,
+          0.75
+        ],
+        "epsilons": null
+      },
+      "seed": 2603780213533940059
+    },
+    {
+      "run_id": "ponderada_90002_c396c8e1619fa4fdc877b2fe7cf9c898cac9cf9380ff6340ec4fa0cfdc604a5e",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_022",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.5,
+          0.5
+        ],
+        "epsilons": null
+      },
+      "seed": 14093672954233595133
+    },
+    {
+      "run_id": "ponderada_90002_e696742818a9139c6047589ce08888d6e4ecd514fb0ac3f307a9ebe426c05f7e",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_031",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          0.75,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 16615595590791271324
+    },
+    {
+      "run_id": "ponderada_90002_e16e6b8ce356a2cc825c4964f1c5a6a4adbda225a255e886eca617bc8784efc6",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_040",
+        "objetivo": null,
+        "pesos": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 16244039158825657036
+    },
+    {
+      "run_id": "ponderada_90002_2eecfd78875f1ad1f0e580a1191cc5825e81774ff0a9e9a925403ff8bc80834b",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_103",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.0,
+          0.75
+        ],
+        "epsilons": null
+      },
+      "seed": 3381356114357459665
+    },
+    {
+      "run_id": "ponderada_90002_32656eedb2e13b35c3be52338abf732ae67aaabbd270d5c2a0c118dc41640e8a",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_112",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.25,
+          0.5
+        ],
+        "epsilons": null
+      },
+      "seed": 3631430641731582773
+    },
+    {
+      "run_id": "ponderada_90002_d5b1fdb9676d45843b66dd3dbb0f5fd70fa1bb910b2a63c67e60e592f8cd6dc4",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_121",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 15398367573702428036
+    },
+    {
+      "run_id": "ponderada_90002_1ebccf097ca89bb627d7c607b98041878da7f7ffa0b18d8cf0e51083a0874441",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_130",
+        "objetivo": null,
+        "pesos": [
+          0.25,
+          0.75,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 2214872756412521398
+    },
+    {
+      "run_id": "ponderada_90002_0a973f3f178847055078cf8099d4786764893710677cc695a0e187b280a21625",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_202",
+        "objetivo": null,
+        "pesos": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "epsilons": null
+      },
+      "seed": 763148202072884997
+    },
+    {
+      "run_id": "ponderada_90002_66cc5a9f36da46901e08c93fe2d37ca771f599fc8d7ae51a0e6054a4dfac6b9a",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_211",
+        "objetivo": null,
+        "pesos": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 7407395126984197776
+    },
+    {
+      "run_id": "ponderada_90002_7282c017bd955d3ec1a0d3f4a37fc572a5b770394fe319a4e02118ad68bc19ff",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_220",
+        "objetivo": null,
+        "pesos": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 8251368675493633342
+    },
+    {
+      "run_id": "ponderada_90002_255608f40a0baeebf028ca10d751eb77ec357c505261875d71ba6ab64ce18342",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_301",
+        "objetivo": null,
+        "pesos": [
+          0.75,
+          0.0,
+          0.25
+        ],
+        "epsilons": null
+      },
+      "seed": 2690347671634030315
+    },
+    {
+      "run_id": "ponderada_90002_37851a01c1b8d508055bcbb7fcffcc31b1a3e83e93cbaba21cf412505578acde",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_310",
+        "objetivo": null,
+        "pesos": [
+          0.75,
+          0.25,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 4000632438835959048
+    },
+    {
+      "run_id": "ponderada_90002_165212647cc811ea4df9eea4691614b7180425548338e849db738e7edb8e9a14",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_400",
+        "objetivo": null,
+        "pesos": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "epsilons": null
+      },
+      "seed": 1608368239724204522
+    },
+    {
+      "run_id": "ponderada_90002_8baf749e354b2abb4a6dd5545cb57ee22107f789818b70f58aefc2b45640ad0f",
+      "metodo": "ponderada",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "ponderada",
+        "id": "pond_centro",
+        "objetivo": null,
+        "pesos": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "epsilons": null
+      },
+      "seed": 10065391915044121275
+    },
+    {
+      "run_id": "epsilon_90002_e554198e425b74ce6505b0ae5c4fdb3b98749a451e0d4c71a01fed28cff93f4a",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_00",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          0.0
+        ]
+      },
+      "seed": 16524861031518532814
+    },
+    {
+      "run_id": "epsilon_90002_459232606c93001fa4ee389ac17cda084cfad9fb98e03043f270879e61355d6f",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_01",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          0.3333333333333333
+        ]
+      },
+      "seed": 5013124724936605727
+    },
+    {
+      "run_id": "epsilon_90002_42a554f9018494b0dd6b285ff88865e91ada94f5f0f41c9548ab1761b619383c",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_02",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          0.6666666666666666
+        ]
+      },
+      "seed": 4802338006109557936
+    },
+    {
+      "run_id": "epsilon_90002_3c78224721e6a9f23a9929e248fd8e7c9eeb99b1c7b1653d7280fa48f7a38796",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_03",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.0,
+          1.0
+        ]
+      },
+      "seed": 4357270328387742194
+    },
+    {
+      "run_id": "epsilon_90002_037d7e599f36d5a95f9b0c98c7073754edbf179eebbb136697c610881af04fb5",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_10",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          0.0
+        ]
+      },
+      "seed": 251496077590975913
+    },
+    {
+      "run_id": "epsilon_90002_9833761ee47bfccf2b08abfc3162ae4b43d2ddff5287d1adf0dbdcc5421f7197",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_11",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          0.3333333333333333
+        ]
+      },
+      "seed": 10967239392631717071
+    },
+    {
+      "run_id": "epsilon_90002_15045998e4b02b2dbc1ec0f954b711adcb348b59c9a56e8cfffec6935d0570b6",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_12",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          0.6666666666666666
+        ]
+      },
+      "seed": 1514433887909980973
+    },
+    {
+      "run_id": "epsilon_90002_061b354eea8cb48c251ff5f2aaaf35fc2e39e18960ebd3c0fb541bd022a0f704",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_13",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.3333333333333333,
+          1.0
+        ]
+      },
+      "seed": 440004001657566348
+    },
+    {
+      "run_id": "epsilon_90002_7721f8cb00e8d6d677ebc6eeb3c16e89be6e31f89ff1458e90c083a78f703dcf",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_20",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "seed": 8584415915522184918
+    },
+    {
+      "run_id": "epsilon_90002_75900984fb4e1d138c0dc21f208361c88912a0f7615385abe4aae0c603613451",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_21",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          0.3333333333333333
+        ]
+      },
+      "seed": 8471281365840436499
+    },
+    {
+      "run_id": "epsilon_90002_5e5a3470c5ccf9a3e78bfa45cabf8ac76d074dcbb35937a3f64c9c45c9763a2e",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_22",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          0.6666666666666666
+        ]
+      },
+      "seed": 6798804246428711331
+    },
+    {
+      "run_id": "epsilon_90002_2c086ed16bc313158206330ca0406e6bbb516277256748e12ea2056f0eb01202",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_23",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          0.6666666666666666,
+          1.0
+        ]
+      },
+      "seed": 3172907783217681173
+    },
+    {
+      "run_id": "epsilon_90002_19b95596968e7558ebe69243409fbe0bd5a364817d9bdbd94324eefaf1187a57",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_30",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          0.0
+        ]
+      },
+      "seed": 1853606826899043672
+    },
+    {
+      "run_id": "epsilon_90002_9150b2a6c950bc9403641db72862cb4e2d2d776c19746dd7a5766db069f740bb",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_31",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          0.3333333333333333
+        ]
+      },
+      "seed": 10471065563048230036
+    },
+    {
+      "run_id": "epsilon_90002_b3069222f038e8067074915de45de65cd4087b1b61c8b0beb39836696806f69e",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_32",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          0.6666666666666666
+        ]
+      },
+      "seed": 12900158861406169094
+    },
+    {
+      "run_id": "epsilon_90002_3faec50fe8fa3445a2f98679b55b8395d6815b02d27158fec12da18aa11f33eb",
+      "metodo": "epsilon",
+      "repeticao": 90002,
+      "config": {
+        "metodo": "epsilon",
+        "id": "eps_33",
+        "objetivo": null,
+        "pesos": null,
+        "epsilons": [
+          1.0,
+          1.0
+        ]
+      },
+      "seed": 4588821742461006917
+    }
+  ],
+  "estado_runs": {
+    "ponderada_90001_ab3985adaebf929cf4bb304c15269b6f819c2961e5e8b4be8b00b4ed06592bd3": "concluido",
+    "ponderada_90001_9722342bc41e423171a625dad800630535e061cc8c41df7bee9b5086fb682971": "concluido",
+    "ponderada_90001_34bfab78f862ada2bf9cc5b79b7405dd8d14e0525ee079faba3f071b46c31aa8": "concluido",
+    "ponderada_90001_c7214dbbcf2cfc244a0295e6d33809b3ec23220a7656eae46c6bc9cce311ae94": "concluido",
+    "ponderada_90001_4523bc7294a5412102653c265c766f33d3d94fcb24f47bbb08ad020dbf51d45d": "concluido",
+    "ponderada_90001_2934728c4f059d228f27fcbd67f9950612b9eb6ac407d67907846e785e51073d": "concluido",
+    "ponderada_90001_ebfcc4a6ee88f383c6228336115074cdb5a1b7c31a67829c7f633e0fc458be27": "concluido",
+    "ponderada_90001_a0bd69128e7f258063d01274c3e7d908643b11554e3ac3d4c8b734083eb57455": "concluido",
+    "ponderada_90001_c26d6395c25e948cdb115c8f95c9a46a6f32187ad73d74c26298ae5e1d02f96c": "concluido",
+    "ponderada_90001_47b7cfb906adc62b0d4b55468c6fc07127f8383a5147521a1678df4e625cca05": "concluido",
+    "ponderada_90001_a14f436ae2ed9826df4f5019f034d722e64315dc55a5d77fa539fb10e52df78e": "concluido",
+    "ponderada_90001_dc1e00f71bd6caf513bf3f96be05528ab95031116e0b71776d993483ab2b9f74": "concluido",
+    "ponderada_90001_1d8b0a39a54c3a1b1a5651f517ed72580cb4b59708db11dff8974ae19f4692c3": "concluido",
+    "ponderada_90001_e7cc7501f3fe669d719107245915a68495d400ee0dc3447e60ff13e6ecdcd878": "concluido",
+    "ponderada_90001_c89ac1094c9714c674bd18a4b9362cac21d662459dcf084564f49f6192bef7fb": "concluido",
+    "ponderada_90001_bdaacda39d26887c264949b8af24e33ab7180a47a26ce721ed321942d17a0da2": "concluido",
+    "epsilon_90001_3663e268d74d0d77fdd476062638c517c763f3c793af38638ffeaf8961ab75ef": "concluido",
+    "epsilon_90001_dccb27dbe9e61f29fe6c84a9fd90499d499ebdb5ce852a9fb8eea39fe241801f": "concluido",
+    "epsilon_90001_44e68e15db0a9b37ca54ae92debcefd529ecdd4c15f939a0d2dde6f46d47206b": "concluido",
+    "epsilon_90001_b40c138df8fd6c5da1d5e290bd2b081fcbf349ad56a83e5abefc732180b9a9e5": "concluido",
+    "epsilon_90001_91675c0df4498419acaea9b81f84396b595b65f28693c42814e77f0468f182d8": "concluido",
+    "epsilon_90001_6d8ec7e3a60b3a55cf4461305ab9a805942ddc2384ce65845e591d8e968c1ce8": "concluido",
+    "epsilon_90001_a80fa75e07a5d88dc9ad3a2547fbfc8f92748b7b94dcc93f686cddb558852eda": "concluido",
+    "epsilon_90001_f9274b10c962f89dc50293e9d4d9a88f7d46e0870aa1400110d9e21f907635eb": "concluido",
+    "epsilon_90001_ff3b2488205aff12e07a0549633909c2166f22c8c0176d94a193235498ff8df8": "concluido",
+    "epsilon_90001_c240ea29d37722f19fb1503db635b6df6bf9e921b6ede25e04f179f111db829c": "concluido",
+    "epsilon_90001_90f2f8fdafcbfa393e9ad051d460f9a5dd839dffca75b1d38a1cfc0f790e1c50": "concluido",
+    "epsilon_90001_c4a3a4b06a35eace532a625d87e49019c363314edaffa9de78d5d0109fd9b6f6": "concluido",
+    "epsilon_90001_9726d48c8c3a7d0c3caa91dbc894bf3c5e73003e71994e2ab4ab8824231455fa": "concluido",
+    "epsilon_90001_80ab208cf93fec93284c3ec88282313826636f44b9b27d12bb6620e828b0ef45": "concluido",
+    "epsilon_90001_b7c7adb08576d05a82d2aae8a757da023b7a5efbdb87d3e2566921d5b5c8f3c0": "concluido",
+    "epsilon_90001_4fc8cc79721bb222e95a4db81b5fa77a404df6ccea1fad0ccacd645f893d93ae": "concluido",
+    "ponderada_90002_51016fbed0e1e74f4d3f473abd5e082dcea11bfd9695f1528c74d73650860794": "concluido",
+    "ponderada_90002_24227c4f0ce1995b1bd6e5730e634a88d91538957032eeb607a5196385afef11": "concluido",
+    "ponderada_90002_c396c8e1619fa4fdc877b2fe7cf9c898cac9cf9380ff6340ec4fa0cfdc604a5e": "concluido",
+    "ponderada_90002_e696742818a9139c6047589ce08888d6e4ecd514fb0ac3f307a9ebe426c05f7e": "concluido",
+    "ponderada_90002_e16e6b8ce356a2cc825c4964f1c5a6a4adbda225a255e886eca617bc8784efc6": "concluido",
+    "ponderada_90002_2eecfd78875f1ad1f0e580a1191cc5825e81774ff0a9e9a925403ff8bc80834b": "concluido",
+    "ponderada_90002_32656eedb2e13b35c3be52338abf732ae67aaabbd270d5c2a0c118dc41640e8a": "concluido",
+    "ponderada_90002_d5b1fdb9676d45843b66dd3dbb0f5fd70fa1bb910b2a63c67e60e592f8cd6dc4": "concluido",
+    "ponderada_90002_1ebccf097ca89bb627d7c607b98041878da7f7ffa0b18d8cf0e51083a0874441": "concluido",
+    "ponderada_90002_0a973f3f178847055078cf8099d4786764893710677cc695a0e187b280a21625": "concluido",
+    "ponderada_90002_66cc5a9f36da46901e08c93fe2d37ca771f599fc8d7ae51a0e6054a4dfac6b9a": "concluido",
+    "ponderada_90002_7282c017bd955d3ec1a0d3f4a37fc572a5b770394fe319a4e02118ad68bc19ff": "concluido",
+    "ponderada_90002_255608f40a0baeebf028ca10d751eb77ec357c505261875d71ba6ab64ce18342": "concluido",
+    "ponderada_90002_37851a01c1b8d508055bcbb7fcffcc31b1a3e83e93cbaba21cf412505578acde": "concluido",
+    "ponderada_90002_165212647cc811ea4df9eea4691614b7180425548338e849db738e7edb8e9a14": "concluido",
+    "ponderada_90002_8baf749e354b2abb4a6dd5545cb57ee22107f789818b70f58aefc2b45640ad0f": "concluido",
+    "epsilon_90002_e554198e425b74ce6505b0ae5c4fdb3b98749a451e0d4c71a01fed28cff93f4a": "concluido",
+    "epsilon_90002_459232606c93001fa4ee389ac17cda084cfad9fb98e03043f270879e61355d6f": "concluido",
+    "epsilon_90002_42a554f9018494b0dd6b285ff88865e91ada94f5f0f41c9548ab1761b619383c": "concluido",
+    "epsilon_90002_3c78224721e6a9f23a9929e248fd8e7c9eeb99b1c7b1653d7280fa48f7a38796": "concluido",
+    "epsilon_90002_037d7e599f36d5a95f9b0c98c7073754edbf179eebbb136697c610881af04fb5": "concluido",
+    "epsilon_90002_9833761ee47bfccf2b08abfc3162ae4b43d2ddff5287d1adf0dbdcc5421f7197": "concluido",
+    "epsilon_90002_15045998e4b02b2dbc1ec0f954b711adcb348b59c9a56e8cfffec6935d0570b6": "concluido",
+    "epsilon_90002_061b354eea8cb48c251ff5f2aaaf35fc2e39e18960ebd3c0fb541bd022a0f704": "concluido",
+    "epsilon_90002_7721f8cb00e8d6d677ebc6eeb3c16e89be6e31f89ff1458e90c083a78f703dcf": "concluido",
+    "epsilon_90002_75900984fb4e1d138c0dc21f208361c88912a0f7615385abe4aae0c603613451": "concluido",
+    "epsilon_90002_5e5a3470c5ccf9a3e78bfa45cabf8ac76d074dcbb35937a3f64c9c45c9763a2e": "concluido",
+    "epsilon_90002_2c086ed16bc313158206330ca0406e6bbb516277256748e12ea2056f0eb01202": "concluido",
+    "epsilon_90002_19b95596968e7558ebe69243409fbe0bd5a364817d9bdbd94324eefaf1187a57": "concluido",
+    "epsilon_90002_9150b2a6c950bc9403641db72862cb4e2d2d776c19746dd7a5766db069f740bb": "concluido",
+    "epsilon_90002_b3069222f038e8067074915de45de65cd4087b1b61c8b0beb39836696806f69e": "concluido",
+    "epsilon_90002_3faec50fe8fa3445a2f98679b55b8395d6815b02d27158fec12da18aa11f33eb": "concluido"
+  }
+}

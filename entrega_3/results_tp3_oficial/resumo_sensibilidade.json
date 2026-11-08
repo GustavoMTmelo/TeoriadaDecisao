@@ -1,0 +1,1657 @@
+{
+  "entrada": "results_tp3_oficial\\pareto_4d.csv",
+  "total_alternativas": 4327,
+  "total_cenarios": 20,
+  "vencedoras_base": {
+    "ahp": [
+      "b47e00d37e63e5a7"
+    ],
+    "promethee_ii": [
+      "b47e00d37e63e5a7"
+    ]
+  },
+  "estabilidade_sem_cenario_base": {
+    "ahp": {
+      "pesos": {
+        "total": 9,
+        "com_vencedora_base_no_topo": 7
+      },
+      "limiares": {
+        "total": 10,
+        "com_vencedora_base_no_topo": 10
+      }
+    },
+    "promethee_ii": {
+      "pesos": {
+        "total": 9,
+        "com_vencedora_base_no_topo": 4
+      },
+      "limiares": {
+        "total": 10,
+        "com_vencedora_base_no_topo": 3
+      }
+    }
+  },
+  "cenarios": [
+    {
+      "cenario": "base",
+      "grupo": "base",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.347996557323
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "peso_custo_40",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.4,
+        "desvio_sio2_pp2": 0.19999999999999996,
+        "desvio_al2o3_pp2": 0.19999999999999996,
+        "variacao_receita": 0.19999999999999996
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.643037395673
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "5941e6243e7e796d",
+              "custo_rs": 62280000.0,
+              "desvio_sio2_pp2": 3.47515175713924,
+              "desvio_al2o3_pp2": 4.274206568428923,
+              "variacao_receita": 0.26130984289188625,
+              "pontuacao": 0.274407401567
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 629
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "peso_custo_55",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.55,
+        "desvio_sio2_pp2": 0.15,
+        "desvio_al2o3_pp2": 0.15,
+        "variacao_receita": 0.15
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "c131c7c9c53c5ad4",
+              "custo_rs": 60460000.0,
+              "desvio_sio2_pp2": 6.343138848326843,
+              "desvio_al2o3_pp2": 5.7058539769322705,
+              "variacao_receita": 0.34174132755789105,
+              "pontuacao": 0.682793513424
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 938
+          },
+          "alguma_vencedora_base_no_topo": false
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "fc32e80fa175f6df",
+              "custo_rs": 61560000.0,
+              "desvio_sio2_pp2": 5.066843647474643,
+              "desvio_al2o3_pp2": 4.227479209627737,
+              "variacao_receita": 0.262163019471069,
+              "pontuacao": 0.389495228657
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 3065
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "peso_silica_40",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.19999999999999996,
+        "desvio_sio2_pp2": 0.4,
+        "desvio_al2o3_pp2": 0.19999999999999996,
+        "variacao_receita": 0.19999999999999996
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.773616598888
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.38672817523
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "peso_silica_55",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.15,
+        "desvio_sio2_pp2": 0.55,
+        "desvio_al2o3_pp2": 0.15,
+        "variacao_receita": 0.15
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.800349124446
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "f85f294dc3abfacd",
+              "custo_rs": 65140000.0,
+              "desvio_sio2_pp2": 2.6851745277521077,
+              "desvio_al2o3_pp2": 1.926247632521088,
+              "variacao_receita": 0.25382900080655496,
+              "pontuacao": 0.429463075287
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 3
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "peso_alumina_40",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.19999999999999996,
+        "desvio_sio2_pp2": 0.19999999999999996,
+        "desvio_al2o3_pp2": 0.4,
+        "variacao_receita": 0.19999999999999996
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.773375040093
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.416349170001
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "peso_alumina_55",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.15,
+        "desvio_sio2_pp2": 0.15,
+        "desvio_al2o3_pp2": 0.55,
+        "variacao_receita": 0.15
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "d50023ef81ccd6e4",
+              "custo_rs": 65420000.0,
+              "desvio_sio2_pp2": 2.826332967336456,
+              "desvio_al2o3_pp2": 1.6617555723826836,
+              "variacao_receita": 0.25927635419276285,
+              "pontuacao": 0.801415165635
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 2
+          },
+          "alguma_vencedora_base_no_topo": false
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "d50023ef81ccd6e4",
+              "custo_rs": 65420000.0,
+              "desvio_sio2_pp2": 2.826332967336456,
+              "desvio_al2o3_pp2": 1.6617555723826836,
+              "variacao_receita": 0.25927635419276285,
+              "pontuacao": 0.494058215642
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 10
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "peso_receita_40",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.19999999999999996,
+        "desvio_sio2_pp2": 0.19999999999999996,
+        "desvio_al2o3_pp2": 0.19999999999999996,
+        "variacao_receita": 0.4
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.797507258663
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.474678583856
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "peso_receita_55",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.15,
+        "desvio_sio2_pp2": 0.15,
+        "desvio_al2o3_pp2": 0.15,
+        "variacao_receita": 0.55
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.848130443998
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.601360610389
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "peso_qualidade_70",
+      "grupo": "pesos",
+      "pesos": {
+        "custo_rs": 0.15000000000000002,
+        "desvio_sio2_pp2": 0.35,
+        "desvio_al2o3_pp2": 0.35,
+        "variacao_receita": 0.15000000000000002
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.800107565651
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "d63557033bc83f00",
+              "custo_rs": 65400000.0,
+              "desvio_sio2_pp2": 2.7176217126724618,
+              "desvio_al2o3_pp2": 1.7397083509108826,
+              "variacao_receita": 0.2540772808203149,
+              "pontuacao": 0.458644873463
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 4
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_menores_todos",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.02,
+          0.15
+        ],
+        "desvio_sio2_pp2": [
+          0.02,
+          0.15
+        ],
+        "desvio_al2o3_pp2": [
+          0.02,
+          0.15
+        ],
+        "variacao_receita": [
+          0.02,
+          0.15
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 104400.0,
+          "p": 783000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.089316049109516,
+          "p": 0.66987036832137
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.08739460634392338,
+          "p": 0.6554595475794253
+        },
+        "variacao_receita": {
+          "q": 0.003808963929087768,
+          "p": 0.028567229468158258
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "d63557033bc83f00",
+              "custo_rs": 65400000.0,
+              "desvio_sio2_pp2": 2.7176217126724618,
+              "desvio_al2o3_pp2": 1.7397083509108826,
+              "variacao_receita": 0.2540772808203149,
+              "pontuacao": 0.376386474306
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 4
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_menores_custo",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.02,
+          0.15
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 104400.0,
+          "p": 783000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "00d66afb5bff1877",
+              "custo_rs": 64960000.0,
+              "desvio_sio2_pp2": 2.8048366106295783,
+              "desvio_al2o3_pp2": 1.90510498719478,
+              "variacao_receita": 0.2489704280927191,
+              "pontuacao": 0.335409362032
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 2
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_menores_silica",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.02,
+          0.15
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.089316049109516,
+          "p": 0.66987036832137
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.363454224147
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "limiares_menores_alumina",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.02,
+          0.15
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.08739460634392338,
+          "p": 0.6554595475794253
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.368119513909
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    },
+    {
+      "cenario": "limiares_menores_receita",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.02,
+          0.15
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.003808963929087768,
+          "p": 0.028567229468158258
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "00d66afb5bff1877",
+              "custo_rs": 64960000.0,
+              "desvio_sio2_pp2": 2.8048366106295783,
+              "desvio_al2o3_pp2": 1.90510498719478,
+              "variacao_receita": 0.2489704280927191,
+              "pontuacao": 0.353997191984
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 2
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_maiores_todos",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.1,
+          0.4
+        ],
+        "desvio_sio2_pp2": [
+          0.1,
+          0.4
+        ],
+        "desvio_al2o3_pp2": [
+          0.1,
+          0.4
+        ],
+        "variacao_receita": [
+          0.1,
+          0.4
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 522000.0,
+          "p": 2088000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.44658024554758,
+          "p": 1.78632098219032
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.4369730317196169,
+          "p": 1.7478921268784675
+        },
+        "variacao_receita": {
+          "q": 0.019044819645438842,
+          "p": 0.07617927858175537
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "0113d1874f1c18e4",
+              "custo_rs": 64860000.0,
+              "desvio_sio2_pp2": 2.8448643114606034,
+              "desvio_al2o3_pp2": 1.9622795024302366,
+              "variacao_receita": 0.24668783435346903,
+              "pontuacao": 0.296129316461
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 2
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_maiores_custo",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.1,
+          0.4
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 522000.0,
+          "p": 2088000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "00d66afb5bff1877",
+              "custo_rs": 64960000.0,
+              "desvio_sio2_pp2": 2.8048366106295783,
+              "desvio_al2o3_pp2": 1.90510498719478,
+              "variacao_receita": 0.2489704280927191,
+              "pontuacao": 0.378530489686
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 3
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_maiores_silica",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.1,
+          0.4
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.44658024554758,
+          "p": 1.78632098219032
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "0113d1874f1c18e4",
+              "custo_rs": 64860000.0,
+              "desvio_sio2_pp2": 2.8448643114606034,
+              "desvio_al2o3_pp2": 1.9622795024302366,
+              "variacao_receita": 0.24668783435346903,
+              "pontuacao": 0.331264236242
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 3
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_maiores_alumina",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.1,
+          0.4
+        ],
+        "variacao_receita": [
+          0.05,
+          0.25
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.4369730317196169,
+          "p": 1.7478921268784675
+        },
+        "variacao_receita": {
+          "q": 0.009522409822719421,
+          "p": 0.0476120491135971
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "9be3e41e1a21bca8",
+              "custo_rs": 62860000.0,
+              "desvio_sio2_pp2": 2.791367417370978,
+              "desvio_al2o3_pp2": 3.6749243180772857,
+              "variacao_receita": 0.27216086364615777,
+              "pontuacao": 0.313451175225
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 4
+          },
+          "alguma_vencedora_base_no_topo": false
+        }
+      }
+    },
+    {
+      "cenario": "limiares_maiores_receita",
+      "grupo": "limiares",
+      "pesos": {
+        "custo_rs": 0.25,
+        "desvio_sio2_pp2": 0.25,
+        "desvio_al2o3_pp2": 0.25,
+        "variacao_receita": 0.25
+      },
+      "razao_consistencia_ahp": 0.0,
+      "limiares_normalizados": {
+        "custo_rs": [
+          0.05,
+          0.25
+        ],
+        "desvio_sio2_pp2": [
+          0.05,
+          0.25
+        ],
+        "desvio_al2o3_pp2": [
+          0.05,
+          0.25
+        ],
+        "variacao_receita": [
+          0.1,
+          0.4
+        ]
+      },
+      "limiares_unidades_originais": {
+        "custo_rs": {
+          "q": 261000.0,
+          "p": 1305000.0
+        },
+        "desvio_sio2_pp2": {
+          "q": 0.22329012277379,
+          "p": 1.11645061386895
+        },
+        "desvio_al2o3_pp2": {
+          "q": 0.21848651585980844,
+          "p": 1.0924325792990421
+        },
+        "variacao_receita": {
+          "q": 0.019044819645438842,
+          "p": 0.07617927858175537
+        }
+      },
+      "metodos": {
+        "ahp": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.746884073329
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        },
+        "promethee_ii": {
+          "vencedoras": [
+            {
+              "id": "b47e00d37e63e5a7",
+              "custo_rs": 65260000.0,
+              "desvio_sio2_pp2": 2.75963987873861,
+              "desvio_al2o3_pp2": 1.8011599541882188,
+              "variacao_receita": 0.24311314029967282,
+              "pontuacao": 0.32538119448
+            }
+          ],
+          "posicoes_vencedoras_base": {
+            "b47e00d37e63e5a7": 1
+          },
+          "alguma_vencedora_base_no_topo": true
+        }
+      }
+    }
+  ]
+}

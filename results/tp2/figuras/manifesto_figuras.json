@@ -1,0 +1,68 @@
+{
+  "titulo": "Campanha oficial TP2",
+  "campanha": "results\\tp2",
+  "auditoria": {
+    "execucoes": 160,
+    "observados": 487200,
+    "arquivos_pareto": 12,
+    "pontos_exportados": 17802,
+    "status": "verificado"
+  },
+  "codigo_figuras_sha256": "1d7a727f925022ec714582485fefb4854cd671e0c8735d6e60778e4eca28f11b",
+  "repeticoes": [
+    42,
+    123,
+    456,
+    789,
+    1011
+  ],
+  "limites_comuns": [
+    [
+      60.1456,
+      66.01440000000001
+    ],
+    [
+      2.1387082109132347,
+      7.140406961046131
+    ],
+    [
+      1.1898596437470461,
+      6.083957599006754
+    ]
+  ],
+  "semantica": "ND 3D por repetição, sem nova filtragem em projeção 2D; f1 em milhões nos gráficos.",
+  "fontes_sha256": {
+    "manifesto.json": "97b3d48272d93b3cd91858be633cee4efcc30ebc95d4cf29762f1cbe50ce99fd",
+    "resumo.json": "903c6be619b8897a3eff04e0614b2ed851ded0781c152411163c66c3abbdbbc2",
+    "pareto\\ponderada_42.json": "078dc698e3e5f0d7b4a5b6424664943869594f2a02223c9978f05d57f8737963",
+    "pareto\\ponderada_123.json": "491a2f4574a690233bc78bf7552553aae49545a8fbb88f6f9e1140ac34eaaf92",
+    "pareto\\ponderada_456.json": "cc7253a63a2a59cfa16fb238ee3518f9b20b90db4129b3ffb9a26dcb13eef750",
+    "pareto\\ponderada_789.json": "45f98cd21dd3dcd37fc39a5bb39a98c6b991afa4a20d0ff8f3c807a25b5dfcdd",
+    "pareto\\ponderada_1011.json": "8d4c6aa283fc047dd377853a1bae120a38c4c1b7f80b721c0060cbcc4ed7403c",
+    "pareto\\ponderada_uniao.json": "82747c54de39b3b3f81bd7617747d046144e66ddde95a57ced5f04dff44d7990",
+    "pareto\\epsilon_42.json": "6ee70b9682ec4190167bab06da752f623e892984c44eac3ac47fa75ec62bd13d",
+    "pareto\\epsilon_123.json": "529c1ad7f28f11647d1a67ecedff8271f84fde0f106e1c4f28628b59916461d9",
+    "pareto\\epsilon_456.json": "123c76b2fe9f9d04df0a56f4fd7b11f37cc693f17c8777200449b1fb42a11dc3",
+    "pareto\\epsilon_789.json": "b487e63652a620b61dd2a102d57f8ca821977e03e69e3287a4ffb7f5644d2899",
+    "pareto\\epsilon_1011.json": "77c553db3657f27912ed501807796bd8ac17499668933a9e29544f5103e7c151",
+    "pareto\\epsilon_uniao.json": "fa3df7554aa23d44a1fa730a2faa7b349cb2f12838829400347931dce67da557"
+  },
+  "produtos_sha256": {
+    "ponderada_f1_f2.png": "d69b9f15ba3abff8029964dd05fe09b33417e51a6ae94f38824ead4331a73f3d",
+    "ponderada_f1_f2.pdf": "0bcda6303aa66db30876e8dd6e93d4a053aba319862fbe0fd2baf907ac8aa748",
+    "ponderada_f1_f3.png": "7d553a61a9075fbaa0dc99f827e11479aa4956c2f804cb2fa08899ad1945b4b9",
+    "ponderada_f1_f3.pdf": "107b8e325075d7a983683f48593eb89e6fab320049ae8da0d4ebe87381d9719a",
+    "ponderada_f2_f3.png": "0635a5a50e5f4ea0a11bc6c30ab2e616e378658e920f00cfb4a391cf7144f541",
+    "ponderada_f2_f3.pdf": "1a61fedd3d543036f6c03d0d2defc6d7e39f76243314354c0f7ee0d15025b50c",
+    "epsilon_f1_f2.png": "f3af01da0350f9cea9de576bdad9462da14b98f90b435b1bb7d9e34f68cd5e6c",
+    "epsilon_f1_f2.pdf": "2e33c0a8ef93c7609cef323d21f7431c19448c1a0f35f8071ea10c1d7f0c965e",
+    "epsilon_f1_f3.png": "b8711f339f2dade26e618febade3b5a15bf6950b4d9a7e041dbc640be86a2a5b",
+    "epsilon_f1_f3.pdf": "2dd940c7f7642b5fd9fc89c63ff5c4e01f08333de5ade8db5419b0b605da70fe",
+    "epsilon_f2_f3.png": "8119251eb687bfce55f42245bf40f6982b5b848c5d59c287031b219b89e5bbe0",
+    "epsilon_f2_f3.pdf": "b39a47756fea03e8dbc454a0654091e396ac5fec700fb186b97b685a1b201516",
+    "resumo_repeticoes.csv": "f1ea5f2e4f85307ff8580a766959159f529ffe0faa90f408a57af67a2925048c",
+    "pontos_projetados.csv": "9a1ea408e21cb9db43fef5984bbecf668180ef7f1d88bdeda2a3cb28ebe8b85f",
+    "resumo_metodos.json": "a782795dce3790c455402b9571b7f3166000c954d6227044a8884ee8983865ca",
+    "tabela_repeticoes.tex": "95d57ebb1d72f707cde1b5c10f28a6e9631d6cc5947e530714281b1a62270fd6"
+  }
+}

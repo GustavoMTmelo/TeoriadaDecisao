@@ -1,0 +1,183 @@
+% Parte cumulativa do relatório. Resultados oficiais inseridos após auditoria.
+\section{Otimização Multiobjetivo}
+\label{sec:multiobjetivo}
+
+As buscas mono-objetivo fornecem referências para explorar compromissos entre
+custo, desvio de $SiO_2$ e desvio de $Al_2O_3$. Nesta etapa são utilizados os
+métodos soma ponderada e $\varepsilon$-restrito sobre os mesmos dados,
+representação, construtiva e vizinhanças do problema original. Seja $X$ o
+conjunto de composições que satisfazem integralidade, massas, compatibilidades,
+disponibilidades e faixas químicas já formuladas. Ambos os métodos mantêm
+todas essas restrições; as restrições agregadas de desvio não substituem as
+faixas químicas individuais de cada pilha.
+
+\subsection{Normalização com referências empíricas do TP1}
+
+Seja $S_{\mathrm{ref}}$ o conjunto das 15 soluções finais viáveis das buscas
+mono-objetivo corrigidas, com cinco sementes para cada objetivo. Os três
+objetivos foram recalculados em cada uma dessas composições, incluindo os
+valores cruzados dos objetivos que não eram o alvo da respectiva busca.
+Para $j\in\{1,2,3\}$, adotam-se
+\begin{align}
+ a_j &= \min_{x\in S_{\mathrm{ref}}} f_j(x), &
+ b_j &= \max_{x\in S_{\mathrm{ref}}} f_j(x), &
+ g_j(x) &= \frac{f_j(x)-a_j}{b_j-a_j}.
+\end{align}
+Os valores $a_j$ e $b_j$ são extremos da amostra, não estimativas certificadas
+do ideal ou do nadir global. Por isso, soluções posteriores podem apresentar
+$g_j<0$ ou $g_j>1$; esses valores são mantidos sem truncamento. A implementação
+rejeita referências não finitas ou com amplitude degenerada. Todas as
+configurações e repetições utilizam a mesma referência congelada, com origem
+das composições e identificador de integridade no arquivo de referência.
+
+\begin{table}[H]
+\centering
+\caption{Extremos empíricos usados na normalização. Valores exibidos arredondados;
+os cálculos utilizam a precisão completa da referência armazenada.}
+\label{tab:referencias_tp2}
+\begin{tabular}{lrr}
+\toprule
+Objetivo & $a_j$ & $b_j$ \\
+\midrule
+$f_1$ (R\$) & \num{60300000} & \num{65840000} \\
+$f_2$ (p.p.$^2$) & \num{2.3727567955} & \num{6.7057453980} \\
+$f_3$ (p.p.$^2$) & \num{1.4361688772} & \num{5.9951294968} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Formulação por soma ponderada}
+
+Para cada vetor de pesos $w$, resolve-se heuristicamente
+\begin{equation}
+ (P_w)\qquad \min_{x\in X}\;\sum_{j=1}^{3}w_jg_j(x),
+ \qquad w_j\geq 0,\quad \sum_{j=1}^{3}w_j=1.
+\end{equation}
+A malha contém os 15 vetores $(i/4,j/4,k/4)$ com $i,j,k$ inteiros não
+negativos e $i+j+k=4$, acrescidos do centro $(1/3,1/3,1/3)$. Assim, cada
+varredura resolve 16 configurações, incluindo os três vértices, preferências
+intermediárias e pesos iguais. A resolução é uma escolha operacional para
+explorar diferentes compromissos com esforço finito, e não uma exigência
+numérica do enunciado. Pesos não normalizam os objetivos por si mesmos e não
+substituem a verificação de viabilidade. Soma ponderada e GVNS não asseguram
+a recuperação de toda a fronteira de um problema discreto.
+
+\subsection{Formulação por $\varepsilon$-restrito}
+
+O custo normalizado é mantido como objetivo principal:
+\begin{equation}
+ (P_{\varepsilon})\qquad
+ \min_{x\in X}\;g_1(x)\quad
+ \text{sujeito a}\quad g_2(x)\leq\varepsilon_2,\quad
+ g_3(x)\leq\varepsilon_3.
+\end{equation}
+Cada limite pertence a $\{0,1/3,2/3,1\}$, de modo que são resolvidos todos
+os 16 pares do produto cartesiano, não apenas os quatro pares da diagonal.
+A malha varia independentemente os dois limites de qualidade agregada.
+Um limite normalizado zero corresponde ao mínimo empírico do respectivo
+desvio no TP1, e não a desvio bruto nulo. Tetos iguais a um também não
+eliminam as restrições físicas, nem tornam o subproblema automaticamente viável.
+
+\subsection{Comparação, inviabilidade e observação dos candidatos}
+
+O núcleo comum utiliza avaliação lexicográfica para ambos os métodos TP2.
+Candidatos estruturalmente inválidos são rejeitados antes do cálculo dos
+objetivos. Entre candidatos estruturalmente válidos, a comparação prioriza
+viabilidade, violação agregada, escalar e desempate determinístico.
+A violação química soma os quadrados dos excessos além da tolerância,
+divididos pela amplitude da respectiva faixa. No método $\varepsilon$-restrito,
+somam-se também os excessos positivos dos dois limites normalizados.
+Qualidade e restrições $\varepsilon$ usam tolerância absoluta $10^{-9}$;
+a soma dos pesos é validada com tolerância absoluta $10^{-12}$.
+
+Na soma ponderada, o desempate utiliza $(\sum_jg_j,g_1,g_2,g_3)$.
+No $\varepsilon$-restrito, utiliza $(g_2+g_3,g_2,g_3)$, sem compensar
+uma piora no custo principal. Empate completo mantém a incumbente.
+Essa regra TP2 é distinta da penalidade histórica preservada para reprodução
+do TP1: multiplicadores de penalidade não são referências de normalização.
+
+A trajetória aceita, a melhor viável do subproblema e o arquivo não dominado
+são objetos distintos. Cada candidato avaliado é observado antes do filtro
+de aceitação, inclusive se for rejeitado ou se encerrar o orçamento. A melhor
+viável é atualizada separadamente. A ausência de uma solução viável encontrada
+é registrada explicitamente e não constitui prova de inviabilidade matemática.
+
+\subsection{Integração do GVNS e critérios de parada}
+
+\begin{algorithm}[H]
+\caption{GVNS escalar com observação e orçamento comum}
+\label{alg:gvns_multiobjetivo}
+\begin{algorithmic}[1]
+\Require Configuração escalar, referência congelada, semente e limites
+\State Inicializar RNG próprio e contadores; melhor viável $\gets\varnothing$
+\State Gerar, avaliar e observar a solução construtiva como incumbente
+\While{há orçamento e os critérios externos permitem continuar}
+  \State $k\gets1$; registrar se houve melhoria da incumbente
+  \While{$k\leq K_{\max}$ e há orçamento}
+    \State Perturbar a incumbente com SHAKE, observando cada avaliação
+    \State Aplicar VND com N1/N2/N3 e comparar pela chave lexicográfica
+    \If{o resultado melhora estritamente a incumbente}
+      \State Atualizar incumbente; $k\gets1$
+    \Else
+      \State $k\gets k+1$
+    \EndIf
+  \EndWhile
+  \State Atualizar histórico e contador de iterações sem melhoria
+\EndWhile
+\State \Return Melhor viável observada, ou ausência explícita, e registros
+\end{algorithmic}
+\end{algorithm}
+
+O orçamento inclui a avaliação inicial e avaliações repetidas, inclusive
+dentro de SHAKE e VND. Tentativas estruturalmente inválidas são contabilizadas
+separadamente. O VND retorna à primeira vizinhança após melhoria enquanto
+dispõe dos cinco reinícios; depois disso, permanece na vizinhança atual
+enquanto houver melhoria e avança quando não há melhoria. O limite não
+equivale a cinco melhorias totais.
+
+Os parâmetros de referência são 200 iterações externas, 60 sem melhoria,
+$K_{\max}=3$, 20 amostras e cinco reinícios VND. O piloto utiliza teto de
+\num{10000} avaliações por subproblema para avaliar tempo e viabilidade.
+Após o piloto, foi mantido o teto de \num{10000} avaliações por run,
+registrado no protocolo antes do início da campanha oficial. As 32 buscas
+ponderadas do piloto encontraram viável; no $\varepsilon$-restrito, foram
+18 de 32, com as ausências concentradas nos mesmos sete pares mais apertados
+nas duas sementes. Esses resultados e o tempo de execução fundamentaram
+a decisão de orçamento; não demonstram inviabilidade matemática desses pares.
+Os dados piloto permanecem separados dos resultados oficiais.
+Os dois métodos recebem o mesmo teto;
+o esforço efetivamente utilizado e o motivo de parada são registrados.
+
+\subsection{Repetições, arquivo não dominado e reprodutibilidade}
+
+Uma execução de uma configuração é denominada \emph{run}; uma varredura
+percorre as 16 configurações de uma abordagem. O desenho oficial contém
+cinco varreduras por método, identificadas pelas sementes-base
+$42,123,456,789,1011$, totalizando $2\times5\times16=160$ runs.
+Cada combinação de base, método e configuração recebe uma semente efetiva
+derivada por SHA-256, evitando dependência da ordem de execução. O piloto
+utiliza bases externas $90001$ e $90002$ e saída própria, sem misturar seus
+dados com a coleta oficial.
+
+O arquivo usa dominância estrita de Pareto nos três objetivos brutos:
+$x$ domina $y$ quando $f_j(x)\leq f_j(y)$ para todo $j$, com desigualdade
+estrita em pelo menos um objetivo. A filtragem ocorre em 3D antes das
+projeções. Composições físicas iguais agregam todas as suas origens;
+composições distintas com vetor igual podem permanecer. Arquivos separados
+por repetição permitem examinar variabilidade, enquanto a união filtrada
+por método reúne as alternativas não dominadas encontradas em suas varreduras.
+Nenhum desses arquivos certifica a fronteira global.
+
+As seis projeções requeridas são $f_1\times f_2$, $f_1\times f_3$ e
+$f_2\times f_3$ para cada método. Cores e símbolos identificam as repetições,
+com escalas comuns entre métodos para cada objetivo. As tabelas devem
+contabilizar todas as runs, inclusive aquelas sem viável encontrada.
+
+Manifestos registram dados, referência, configuração, fontes, versões e seeds.
+A retomada revalida runs completas antes de reutilizá-las e recomeça uma run
+interrompida; arquivos temporários não representam conclusão. O verificador
+independente recalcula objetivos, restrições e proveniência das composições
+e recompõe os arquivos não dominados. Alterações incompatíveis exigem uma
+campanha em diretório novo. A análise comparativa final depende da auditoria
+da coleta oficial; a integração reduzida demonstra funcionamento, não
+superioridade experimental de uma abordagem.

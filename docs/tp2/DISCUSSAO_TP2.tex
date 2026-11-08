@@ -1,0 +1,105 @@
+% Discussão da campanha oficial integralmente auditada.
+\subsection{Compromissos observados entre custo e qualidade}
+
+Na amostra obtida, o $\varepsilon$-restrito alcançou o menor custo,
+R\$~\num{60460000}, enquanto a soma ponderada atingiu os menores desvios
+de $SiO_2$ e $Al_2O_3$, respectivamente \num{2.406656} e \num{1.452043}
+p.p.$^2$. Esses extremos não constituem uma única solução ideal. As
+alternativas completas que os originaram estão na
+Tabela~\ref{tab:tp2_extremos}, com composições e proveniência recuperáveis
+no conjunto de dados.
+
+Por exemplo, a alternativa de menor custo do $\varepsilon$-restrito
+apresenta o vetor, com custo em milhões de reais,
+$(\num{60.460},\num{6.343},\num{5.706})$. A alternativa ponderada de menor
+desvio de $SiO_2$ tem vetor
+$(\num{63.700},\num{2.407},\num{3.284})$.
+Nesse par, um acréscimo de R\$~\num{3240000} reduz ambos os desvios,
+evidenciando o compromisso entre economia e qualidade.
+
+A alternativa ponderada de menor desvio de $Al_2O_3$ tem vetor
+$(\num{65.660},\num{5.498},\num{1.452})$.
+Em relação à alternativa ponderada de menor desvio de $SiO_2$, custa
+R\$~\num{1960000} a mais, melhora $Al_2O_3$ e piora $SiO_2$.
+Portanto, o conflito também ocorre entre as duas medidas de qualidade,
+não apenas entre custo e um indicador agregado.
+
+O mínimo individual corrigido do TP1 para custo foi R\$~\num{60300000}.
+Para os desvios de $SiO_2$ e $Al_2O_3$, os mínimos foram, respectivamente,
+\num{2.372757} e \num{1.436169} p.p.$^2$. A coleta multiobjetivo não
+superou esses três mínimos marginais; sua finalidade é explorar
+compromissos, e não repetir a otimização isolada de cada objetivo.
+Também foi encontrado $f_2$ de \num{6.872459} p.p.$^2$ na união ponderada,
+acima do máximo empírico TP1 de \num{6.705745}; o valor normalizado é
+aproximadamente \num{1.038}. Isso é permitido pela normalização sem
+truncamento e não implica violar as restrições físicas.
+
+\subsection{Semelhança e variabilidade entre as cinco varreduras}
+
+As cinco varreduras ponderadas encontraram intervalos marginais bastante
+semelhantes. Entre os dez pares de varreduras, a menor razão entre o
+comprimento da interseção e o da união dos intervalos foi
+\num{91.53}\% para custo, \num{91.42}\% para $SiO_2$ e \num{87.47}\%
+para $Al_2O_3$. No $\varepsilon$-restrito, esses mínimos foram
+\num{67.49}\%, \num{87.32}\% e \num{58.39}\%, respectivamente.
+A medida é apenas descritiva e marginal: não demonstra que as composições
+ou a distribuição dos pontos em 3D sejam iguais.
+
+Nas seis projeções das Figuras~\ref{fig:tp2_ponderada_1_2}
+a~\ref{fig:tp2_epsilon_2_3}, as cores e símbolos das cinco repetições
+ocupam faixas amplamente sobrepostas dentro de cada abordagem. A projeção
+custo versus $Al_2O_3$ mostra bandas decrescentes comuns às repetições;
+na projeção das duas qualidades, observam-se agrupamentos e lacunas,
+sobretudo no $\varepsilon$-restrito. Assim, as repetições alcançaram regiões
+projetadas semelhantes, com diferenças de extensão e densidade local,
+sem evidência de identidade entre os conjuntos tridimensionais.
+
+Os arquivos por repetição contêm de \num{1617} a \num{1963} composições
+ponderadas e de \num{634} a \num{790} composições $\varepsilon$-restritas
+ND. Assim, contagens diferentes coexistem com intervalos sobrepostos;
+uma varredura com mais composições não necessariamente amplia a região
+de objetivos alcançada. As projeções identificam a distribuição de cada
+repetição; a união por método preserva a proveniência e filtra novamente
+em três objetivos.
+
+Em todas as sementes, as 16 configurações ponderadas encontraram viável,
+enquanto nove dos 16 pares $\varepsilon$ encontraram viável. As 35 ausências
+se concentram nos sete pares com pelo menos um limite normalizado zero:
+$(0,0)$, $(0,1/3)$, $(0,2/3)$, $(0,1)$, $(1/3,0)$, $(2/3,0)$ e $(1,0)$.
+Esse padrão sugere dificuldade persistente da busca em alcançar os
+extremos empíricos de qualidade sob os limites simultâneos. Não demonstra
+que esses subproblemas sejam matematicamente inviáveis, nem autoriza
+substituir as sementes por repetições bem-sucedidas.
+
+\subsection{Limitações e implicações para a continuidade}
+
+A soma ponderada produziu maior cobertura descritiva da amostra oposta,
+conforme a comparação bidirecional em três objetivos, e alcançou extremos
+de qualidade mais próximos dos resultados mono-objetivo. O
+$\varepsilon$-restrito forneceu o menor custo e alternativas que não são
+todas dominadas pela união ponderada. As duas amostras contribuem para
+explicitar preferências diferentes; cardinalidade, mínimos marginais e
+cobertura devem ser considerados em conjunto.
+
+As conclusões se restringem à instância, ao GVNS, às duas malhas e ao teto
+de \num{10000} avaliações por configuração. Malhas finitas podem omitir
+regiões relevantes; a escalarização ponderada não recupera necessariamente
+toda a fronteira de um problema discreto. O orçamento e as sementes
+limitam a exploração, e o arquivo contém apenas soluções observadas pela
+heurística. Não se dispõe de prova de otimalidade ou de completude da
+fronteira. A comparação de tempos é descritiva, com custo adicional de
+observação, persistência, consolidação e auditoria explicitado no protocolo.
+
+\section{Considerações Finais da Entrega 2}
+
+Foram integradas duas formulações escalares normalizadas ao GVNS existente,
+com orçamento comum, cinco varreduras por abordagem, preservação da melhor
+viável e dos candidatos não dominados, registros completos e verificação
+independente. As seis projeções e as tabelas permitem examinar custo,
+qualidades e variabilidade sem substituir a comparação tridimensional por
+dominância aparente em duas dimensões.
+
+A escolha de uma ação final permanece para a etapa multicritério seguinte.
+As composições e suas origens foram preservadas para permitir recuperar os
+três objetivos e calcular atributos adicionais sem reconstruir receitas
+a partir de gráficos ou valores arredondados.
