@@ -1,0 +1,30 @@
+{
+  "total_alternativas": 5167,
+  "total_pareto_4d": 4327,
+  "minimos_por_criterio": {
+    "custo_rs": {
+      "valor": 60460000.0,
+      "ids": [
+        "c131c7c9c53c5ad4"
+      ]
+    },
+    "desvio_sio2_pp2": {
+      "valor": 2.406656358241783,
+      "ids": [
+        "7b15287ff87cf223"
+      ]
+    },
+    "desvio_al2o3_pp2": {
+      "valor": 1.4520434627788161,
+      "ids": [
+        "90aee39e569b0f75"
+      ]
+    },
+    "variacao_receita": {
+      "valor": 0.24311314029967282,
+      "ids": [
+        "b47e00d37e63e5a7"
+      ]
+    }
+  }
+}

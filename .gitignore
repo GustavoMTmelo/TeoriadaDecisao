@@ -18,3 +18,41 @@ pytest-cache-files-*/
 *.snm
 *.synctex.gz
 *.toc
+
+myenv/
+venv/
+.venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Arquivos temporários
+*.log
+*.tmp
+*.temp
+*.bak
+.DS_Store
+Thumbs.db
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Builds e distribuições
+build/
+dist/
+
